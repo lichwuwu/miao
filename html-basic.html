@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="icon" href="https://ts1.cn.mm.bing.net/th/id/R-C.b88996037fadd3d109394ef7a600b390?rik=jpDxSrMy%2f%2bE%2b4w&riu=http%3a%2f%2fpic50.photophoto.cn%2f20190305%2f1190120588923839_b.jpg&ehk=YNypv2FfdV0fscJ5jS0i7Y78DhZjliXHl73K7gBli2Y%3d&risl=&pid=ImgRaw&r=0">
+  <title>lorem</title>
 </head>
 <body>
   <h1>lorem</h1>
@@ -34,45 +35,185 @@
   <hr>
 
   <ul>
-    <li>小学</li>
-    <ol>
-      <li>一年级</li>
+    <li>小学
       <ol>
-        <li>上学期</li>
-        <li>下学期</li>
+        <li>一年级
+          <ol>
+            <li>上学期</li>
+            <li>下学期</li>
+          </ol>
+        </li>
+        <li>二年级</li>
+        <li>三年级</li>
       </ol>
-      <li>二年级</li>
-      <li>三年级</li>
-    </ol>
+    
+      
+    </li>
+    
     <li>中学</li>
     <li>大学</li>
   </ul>
   <hr>
   <dl>
     <dt>班级</dt>
-    <dl>
-      <dd>三年二班</dd数> 
-    </dl>
+    <dd>三年二班</dd数> 
+    
     <dt>老师</dt>
-    <dl>
-      <dd>张老师</dd>
-      <dd>李老师</dd>
-      <dd>王老师</dd>
-    </dl>
+    <dd>张老师</dd>
+    <dd>李老师</dd>
+    <dd>王老师</dd>
+
     <td>学生</td>
-    <dl>
-      <dd>小明</dd>
-      <dd>豆豆</dd>
-    </dl>
+    <dd>小明</dd>
+    <dd>豆豆</dd>
   </dl>
   <hr>
   <div>
   <h2>Google搜索</h2>
   <form target="_blank" action="https://www.google.com/">
-  <input  type="text" id="a2">
+  <input name="q"  type="text" >
   <button type="submit" >  在新窗口打开搜索结果</button>
   </div>
   </form>
-  <span id="a1">页面底部</span>
+  <hr>
+  <div>
+    <p>个人信息调查表</p>
+    <form action="">
+      <dl>
+        <dt>性别</dt>
+        <dd><input type="radio" name="sex" id="sex" value="男" checked />男
+        <input type="radio" name="sex" id="sex" value="男" />女</dd>
+        <dt>年龄</dt>
+        <dd>
+          <select name="" id="">
+            <option selected  disabled="disabled" label="请选择"  value=""></option>
+            <optgroup label="儿童">
+              <option value="1">0-6岁</option>
+              <option value="2">6-12岁</option>
+
+            </optgroup>
+            <optgroup label="少年">
+              <option value="1">12-16岁</option>
+              <option value="2">16-18岁</option>
+            </optgroup>
+            <optgroup label="青年">
+              <option value="1">18-25岁</option>
+              <option value="2">25-30岁</option>
+              <option value="3">30-35岁</option>
+              <option value="4">35-40岁</option>
+            </optgroup>
+
+          
+          </select>
+        </dd>
+        <dt>生日</dt>
+        <dd>
+          <input type="date" value="2023-03-20" >
+        </dd>
+        <td>生辰</td>
+        <dd>
+          <input type="time" >
+        </dd>
+        <dt>照片</dt>
+        <dd>
+          <label for="wenjian">
+          <input type="file"  hidden accept="image/*"  id="wenjian" >点我上传文件，我比上传文件按钮好看
+        </label>
+        </dd>
+        <dt>自我介绍</dt>
+        <dd>
+          <textarea name="" id="" cols="30" rows="10"></textarea>
+        </dd>
+    
+          <fieldset>
+            <legend>这里全部禁用</legend>
+            <input type="text" disabled>  
+            <input type="text" disabled> 
+            <input type="text" disabled> 
+            <input type="text" disabled> 
+          </fieldset>
+    
+      </dl>
+    <button>提交</button>
+    <input type="reset" value="重置">
+    </form>
+  </div>
+  <hr>
+  <table border="2" >
+    <col>
+    <col bgcolor="red" >
+    
+  <thead>
+  <tr>
+    <th>编号</th>
+    <th>品名</th>
+    <th>进价</th>
+    <th>出价</th>  
+  </tr>
+</thead>
+  <!-- <tfoot>
+    <tr>
+      <th>编号</th>
+      <th>品名</th>
+      <th>进价</th>
+      <th>出价</th>  
+    </tr>
+  </tfoot>页脚显示 -->
+<tbody>
+  <tr>
+    <td>aa</td>
+    <td >a</td>
+    <td rowspan="2">aa</td>
+    <td>a</td>
+  </tr>
+  <tr>
+    <td>aa</td>
+    <td>aa</td>
+    
+    <td>a</td>
+  </tr>
+  <tr>
+    <td>aa</td>
+    <td >a</td>
+    <td>aa</td>
+    <td>a</td>
+  </tr>
+  <tr>
+    <td>aaa</td>
+    <td>a</td>
+    <td>aa</td>
+    <td>a</td>
+  </tr>
+</tbody>
+</table>
+<hr>
+
+<img usemap="#map1"  src="https://drscdn.500px.org/photo/174778125/m%3D1170_k%3D1/2841ccf2a3720e8e794a6a6930f6ff2c" width="300" alt="">
+<map name="map1">
+  <area shape="rect" coords="30,117,228,80" href="https://jd.com" alt="">
+  <area shape="circle" coords="150,190,100" href="https://jd.com" alt="">
+</map>
+<br><br>
+<br>
+<a target="poo" href="https://lichwuwu.github.io/miao/html-basic.html">小米</a>
+
+<div></div>
+
+<iframe name="poo" width="300" height="350"  src="https://www.nodejs.org/" frameborder="1" >
+  
+</iframe>
+<br>
+
+
+  
+  <div>
+    aaa&nbsp;&nbsp;&nbsp;&nbsp;bbbbb
+    <pre>aaa    bbbbb</pre>
+  </div>
+  <div>
+    &gt;>>>>>>>>>>>>>>>>>>&lt;<<<<<<<<<<<< &lt;span>&lt;/span>
+    
+  </div>
+  <span id="a1" t></span>
 </body>
 </html>
