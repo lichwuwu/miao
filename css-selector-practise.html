@@ -60,19 +60,14 @@
       .b li:nth-child(n+65){
         color: green;
       }
-       .prime li:first-child,
-      .prime li:nth-child(2n+4),
-      .primeli:nth-child(2n+6),
-      .primeli:nth-child(2n+10),
-      .prime li:nth-child(2n+14)
-      {
-        color: red;
-      }
-      .prime li:not(:first-child):not(:nth-child(2n+4)):not(:nth-child(2n+6)):not(:nth-child(2n+10)):not(:nth-child(2n+14)){
-        color: yellow;
+      .prime li:not(:first-child):not(:nth-child(2n+4)):not(:nth-child(3n+6)):not(:nth-child(5n+10)){
+        color: rgb(134, 255, 4);
       }
       .prime li:first-child{
         color: black;
+      }
+      .prime li{
+        color: blueviolet;
       }
     </style>
   </head>
