@@ -6,18 +6,20 @@
 
     <style>
       /* 只能在这个style标签里写css，不能改变html结构 */
-      body > :first-child{
-        color: red;
-      }
-      [tabindex="1"]:hover{
+      body > p:first-child{
         color: red;
       }
       [tabindex="1"]:focus{
         color: blue;
       }
+      [tabindex="1"]:hover{
+        color: red;
+      }
       [tabindex="1"]:active{
         color: green;
       }
+      
+      
       .a.c> :first-child{
         color: red;
       }
@@ -34,14 +36,14 @@
       a:link{
         color: pink;
       }
-      a[href*="@"]{
+      a[href*="mailto:" i ]{
         
         color: blue;
       }
-      a[href*="tel"]{
+      a[href^="tel"]{
         color: yellow;
       }
-      a[href*="aaa"]{
+      a[href$="pdf" i ]{
         font-size: 30px;
         
       }
@@ -60,15 +62,21 @@
       .b li:nth-child(n+65){
         color: green;
       }
-      .prime li:not(:first-child):not(:nth-child(2n+4)):not(:nth-child(3n+6)):not(:nth-child(5n+10)){
-        color: rgb(134, 255, 4);
+      .prime li:first-child,
+      .prime li:nth-child(2n+4),
+      .prime li:nth-child(3n+6),
+      .prime li:nth-child(5n+25),
+      .prime li:nth-child(7n+49){
+        color: blue;
+      }
+      
+      .prime li:not(:first-child):not(:nth-child(2n+4)):not(:nth-child(3n+6)):not(:nth-child(5n+25)):not(:nth-child(7n+49)){
+        color: red;
       }
       .prime li:first-child{
         color: black;
       }
-      .prime li{
-        color: blueviolet;
-      }
+      
     </style>
   </head>
   <body>
