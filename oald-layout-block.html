@@ -6,105 +6,123 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    *{
+    /* *{
       margin: 0;
       padding: 0;
-    }
+    } */
     html{
-      height: 100%;
+      height: 100vh;
+
     }
     body{
-      height: 100%;
+      height: 100vh;
+      min-width: 900px;
+      margin: 0;
+      padding: 0;
+
     }
     .c{
-      width: 15%;
-      height: 100%;
+      width: 200px;
+      height: 100vh;
       background-color: pink;
-
       text-align: center;
-
+    }
+    .c ul{
+      list-style: none;
     }
     .c11{
       overflow: auto;
-      height:calc(100% - 100px) ;
+      height:calc(100vh - 100px) ;
     }
     .c1{
       height:   100px;
     }
 
-    .c2{
-      margin-bottom:  10px;
-    }
+    
     h2{
       height: 50px;
       font-size: 18px;
       line-height:50px;
       margin-bottom: 10px;
+      margin-top: 0px;
     }
 
     .c input{
-      width: 75%;
+      width: 140px;
       height: 20px;
       display: inline-block;
       margin-left:0px;
     }
     .c button{
-      width: 15%;
-     height: 15px;
+      width: 30px;
+     height: 20px;
      display: inline-block;
+     margin-bottom: 0px;
 
     }
 
     .n{
-      width: 55%;
-      height: 100%;
-      margin-left: 15%;
+      width: calc(100% - 600px);
+      height: 100vh;
+      margin-left: 200px;
       margin-top: -100vh;
-
+      min-width: 300px;
       background-color: bisque;
+      border-left: 2px solid;
+      box-sizing: border-box;
     }
     .n > div {
       border-top: 2px solid;
+      box-sizing: border-box;
       overflow: auto;
-      height: calc(100% - 62px);
+      height: calc(100vh - 60px);
+
 
 
     }
     .n div ul{
-      margin-left: 30px;
+      margin-left: 20px;
       list-style: none;
+
+
+
 
     }
     .n div ul > li{
-      margin: 15px 10px;
+      margin: 10px 5px;
     }
     .n h3{
 
       height: 60px;
-      line-height: 58px;
+      line-height: 60px;
       margin-left: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
     }
     .l1{
-      margin-left: 30px;
+      margin-left: 10px;
+
     }
     .p{
-      width: 15%;
+      width: 200px;
       height: 100vh;
-      margin-left: 70%;
+      margin-left: calc(100% - 400px);
       background-color: yellow;
-      border: 2px solid;
+      border-width: 0 2px 0 2px;
+      border-style: solid;
       margin-top: -100vh;
       box-sizing: border-box;
     }
     .p1{
-      width: 15%;
+      width: 200px;
       height: 100vh;
-      margin-left: 85%;
+      margin-left: calc(100% - 200px);
       background-color: yellow;
       border-style: solid;
-      border-width: 2px 2px 2px 0;
+      border-width: 0 2px 0 0;
       margin-top: -100vh;
       box-sizing: border-box;
+
     }
   </style>
 </head>
