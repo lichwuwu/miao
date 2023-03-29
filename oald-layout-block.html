@@ -10,29 +10,36 @@
       margin: 0;
       padding: 0;
     }
-
-
+    html{
+      height: 100%;
+    }
+    body{
+      height: 100%;
+    }
     .c{
       width: 15%;
-      height: 100vh;
+      height: 100%;
       background-color: pink;
 
       text-align: center;
 
     }
-    .c ul{
+    .c11{
       overflow: auto;
-      height: 85vh;
+      height:calc(100% - 100px) ;
+    }
+    .c1{
+      height:   100px;
     }
 
-    .c1{
+    .c2{
       margin-bottom:  10px;
     }
     h2{
-      height: 40px;
-      font-size: 20px;
-      line-height:10vh;
-      margin-bottom: 5vh;
+      height: 50px;
+      font-size: 18px;
+      line-height:50px;
+      margin-bottom: 10px;
     }
 
     .c input{
@@ -40,9 +47,6 @@
       height: 20px;
       display: inline-block;
       margin-left:0px;
-
-
-
     }
     .c button{
       width: 15%;
@@ -52,8 +56,8 @@
     }
 
     .n{
-      width: 60%;
-      height: 100vh;
+      width: 55%;
+      height: 100%;
       margin-left: 15%;
       margin-top: -100vh;
 
@@ -62,35 +66,59 @@
     .n > div {
       border-top: 2px solid;
       overflow: auto;
-      height: 90vh;
+      height: calc(100% - 62px);
+
 
     }
     .n div ul{
       margin-left: 30px;
       list-style: none;
+
     }
     .n div ul > li{
       margin: 15px 10px;
     }
     .n h3{
 
-      height: 10vh;
-      line-height: 10vh;
+      height: 60px;
+      line-height: 58px;
       margin-left: 20px;
     }
     .l1{
       margin-left: 30px;
     }
-
+    .p{
+      width: 15%;
+      height: 100vh;
+      margin-left: 70%;
+      background-color: yellow;
+      border: 2px solid;
+      margin-top: -100vh;
+      box-sizing: border-box;
+    }
+    .p1{
+      width: 15%;
+      height: 100vh;
+      margin-left: 85%;
+      background-color: yellow;
+      border-style: solid;
+      border-width: 2px 2px 2px 0;
+      margin-top: -100vh;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
-  <div class="a">
+
   <div class="c">
-    <h2>OALD Se7en</h2>
-    <div class="c1"><input type="text">
-      <button></button></div>
-    <div>
+    <div class="c1">
+      <h2>OALD Se7en</h2>
+      <div class="c2">
+        <input type="text">
+      <button></button>
+      </div>
+    </div>
+    <div class="c11">
       <ul>
         <li>1</li>
         <li>2</li>
@@ -139,6 +167,7 @@
     </div>
   </div>
   <div class="n">
+
     <h3>fantasy</h3>
     <div>
       <ul>
@@ -161,7 +190,11 @@
         </li>
       </ul>
     </div>
+
   </div>
-</div>
+  <div class="p">11111111</div>
+  <div class="p1">13213131</div>
+
+
 </body>
 </html>
