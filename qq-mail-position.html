@@ -31,11 +31,11 @@
     .main-left{
       margin: 0;
       width: 150px;
-      height: calc(100% - 150px);
       background-color: aqua;
       position: fixed;
       left: 0;
       top: 150px;
+      bottom: 0;
       border-right: 2px solid;
       box-sizing: border-box;
     }
@@ -53,12 +53,14 @@
     }
     .main-right{
       display: inline-block;
-      width: calc(100% - 150px);
-      height: calc(100% - 150px);
+      left: 150px;
+      top: 150px;
+      right: 0;
+      bottom: 0;
       background-color: rgb(124, 216, 216);
       position: fixed;
-      right: 0;
-      top: 150px;
+
+
 
 
     }
@@ -105,6 +107,6 @@
     </div>
     <div class="main-right">22</div>
   </div>
-  
+
 </body>
 </html>

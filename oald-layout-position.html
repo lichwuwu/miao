@@ -16,10 +16,12 @@
     }
     .left{
       width: 200px;
-      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
       background-color: rgb(89, 183, 183);
       position: fixed;
-      left: 0;
+
       border-right: 2px solid;
       box-sizing: border-box;
       z-index: 5;
@@ -56,11 +58,12 @@
       height: calc(100% - 100px);
     }
     .main{
-      width: calc(100% - 200px * 3);
-      height: 100%;
+      left: 200px;
+      top: 0;
+      bottom: 0;
+      right: 400px;
       background-color: rgb(47, 120, 120);
       position: fixed;
-      left: 200px;
       border-right: 2px solid;
       box-sizing: border-box;
       min-width: 300px;
@@ -82,9 +85,10 @@
     }
     .right1{
       width: 200px;
-      height: 100%;
       background-color: bisque;
       position: fixed;
+      top: 0;
+      bottom: 0;
       right: 200px;
       border-right: 2px solid;
       box-sizing: border-box;
@@ -92,9 +96,10 @@
     }
     .right2{
       width: 200px;
-      height: 100%;
       background-color: rgb(94, 205, 133);
       position: fixed;
+      top: 0;
+      bottom: 0;
       right: 0px;
       border-right: 2px solid;
       box-sizing: border-box;
