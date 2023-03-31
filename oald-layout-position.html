@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html{
+      min-width: 900px;
+    }
+    html,body,body > div{
+      height: 100%;
+      margin: 0;
+
+    }
+    .left{
+      width: 200px;
+      height: 100%;
+      background-color: rgb(89, 183, 183);
+      position: fixed;
+      left: 0;
+      border-right: 2px solid;
+      box-sizing: border-box;
+      z-index: 5;
+    }
+    .left div{
+      width: 100%;
+      height: 100px;
+      font-size: 0;
+
+    }
+    .left div h3{
+      line-height: 70px;
+      font-size: initial;
+      height: 70px;
+      margin: 0;
+    }
+    input{
+      width: 150px;
+      height: 30px;
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    button{
+      width: 48px;
+      height: 30px;
+      box-sizing: border-box;
+      display: inline-block;
+      vertical-align: bottom;
+    }
+    .left ul{
+      overflow: auto;
+      margin: 0;
+      height: calc(100% - 100px);
+    }
+    .main{
+      width: calc(100% - 200px * 3);
+      height: 100%;
+      background-color: rgb(47, 120, 120);
+      position: fixed;
+      left: 200px;
+      border-right: 2px solid;
+      box-sizing: border-box;
+      min-width: 300px;
+      z-index: 4;
+    }
+    .main h3{
+      height: 70px;
+      text-align: center;
+      line-height: 68px;
+      border-bottom: 2px solid;
+      margin: 0;
+    }
+    .main ul{
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      height: calc(100% - 70px);
+      overflow-y: scroll;
+    }
+    .right1{
+      width: 200px;
+      height: 100%;
+      background-color: bisque;
+      position: fixed;
+      right: 200px;
+      border-right: 2px solid;
+      box-sizing: border-box;
+      z-index: 3;
+    }
+    .right2{
+      width: 200px;
+      height: 100%;
+      background-color: rgb(94, 205, 133);
+      position: fixed;
+      right: 0px;
+      border-right: 2px solid;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+    :is(.right1 h3,.right2 h3){
+      text-align: center;
+      font-size: 25px;
+      color: rgb(251, 111, 11)
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="left">
+      <div>
+        <h3>offskagg</h3>
+        <input type="text">
+        <button></button>
+      </div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+    </div>
+    <div class="main">
+      <h3>xfjsjfajgag</h3>
+      <ul>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi ratione incidunt tempore et nam est facere at? Incidunt saepe, ea natus et, velit necessitatibus culpa cupiditate ullam obcaecati corporis deserunt.</li>
+        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum aliquam nihil iusto laboriosam! Vitae corporis, illo nesciunt assumenda fugit vel, soluta placeat, iure recusandae natus ut harum saepe hic? Provident?</li>
+        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, placeat. Doloremque officia nobis aliquid aperiam placeat repudiandae explicabo quibusdam quam voluptatem? Ipsa a recusandae magnam aliquam incidunt. In, ipsum hic!</li>
+      </ul>
+    </div>
+    <div class="right1">
+      <h3>gjdagsgsg</h3>
+    </div>
+    <div class="right2">
+      <h3>s;kgjjagsgk</h3>
+    </div>
+  </div>
+
+</body>
+</html>

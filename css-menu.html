@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,body{
+      margin: 0;
+      background-color: rgb(168,188,165);
+    }
+    .header{
+      width: 100%;
+      height: 30px;
+      background-color: red;
+      min-width: 900px;
+
+    }
+    .header ul{
+      width: 100%;
+      height: 30px;
+      font-size: 0;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(173,193,170);
+      color: rgb(249,251,249);
+    }
+    .header ul li{
+      display: inline-block;
+      margin: 0;
+      font-size: 16px;
+      line-height: 30px;
+      margin-left: 20px;
+    }
+
+    .d .d1{
+      position: fixed;
+      width: 150px;
+      height: 210px;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(255,255,255);
+      color: rgb(0, 0, 0);
+      top: 30px;
+      left: 20px;
+
+      display: none;
+    }
+    .d .d1 li{
+      display: block;
+      margin: 10px 0;
+      padding: 0;
+      height: 30px;
+
+      width: 150px;
+      box-sizing: border-box;
+
+    }
+    .d:hover{
+
+      color: rgb(216,226,215);
+    }
+    .d:hover .d1{
+      display: block;
+
+    }
+    .d .d1 li:hover{
+
+      background-color: rgb(245,245,245);
+    }
+    .d .d1 li .d11{
+      position: fixed;
+      width: 150px;
+      height: 210px;
+      margin: 0;
+      padding: 0;
+      background-color: rgb(240, 235, 235);
+      color: rgb(0, 0, 0);
+      top: 40px;
+      left: 170px;
+
+      display: none;
+    }
+    .d1 :first-child:hover .d11{
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <ul>
+      <li class="d">
+        <span>航拍无人机</span>
+        <ul class="d1">
+          <li>
+            <span>大疆mini se</span>
+            <ul class="d11">
+              <li>大疆mini se 1</li>
+              <li>大疆mini se 2</li>
+              <li>大疆mini se 3</li>
+              <li>大疆mini se 4</li>
+              <li>大疆mini se 5</li>
+            </ul>
+
+          </li>
+          <li>大疆mini 2</li>
+          <li>大疆mini 2 pro</li>
+          <li>大疆mini 3</li>
+          <li>大疆mini 3 pro</li>
+        </ul>
+      </li>
+      <li>
+        <span>手持摄影设备</span>
+      </li>
+      <li>
+        <span>商用产品及方案</span>
+
+      </li>
+      <li>
+        <span>探索精彩</span>
+       </li>
+      <li>
+        <span>服务与支持</span>
+      </li>
+      <li>
+        <span>购买渠道</span>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
