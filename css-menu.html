@@ -8,126 +8,127 @@
   <style>
     html,body{
       margin: 0;
-      background-color: rgb(168,188,165);
+      padding: 0;
     }
-    .header{
-      width: 100%;
-      height: 30px;
-      background-color: red;
-      min-width: 900px;
-
+    ul{
+      list-style: none;
+      padding: 0;
+      color: white;
     }
-    .header ul{
-      width: 100%;
-      height: 30px;
+    .navber{
       font-size: 0;
+      list-style: none;
       margin: 0;
       padding: 0;
-      background-color: rgb(173,193,170);
-      color: rgb(249,251,249);
-    }
-    .header ul li{
-      display: inline-block;
-      margin: 0;
-      font-size: 16px;
-      line-height: 30px;
-      margin-left: 20px;
-    }
-
-    .d .d1{
-      position: fixed;
-      width: 150px;
-      height: 210px;
-      margin: 0;
-      padding: 0;
-      background-color: rgb(255,255,255);
-      color: rgb(0, 0, 0);
-      top: 30px;
-      left: 20px;
-
-      display: none;
-    }
-    .d .d1 li{
-      display: block;
-      margin: 10px 0;
-      padding: 0;
+      background-color: rgb(60,60,60);
       height: 30px;
-
-      width: 150px;
-      box-sizing: border-box;
-
     }
-    .d:hover{
-
-      color: rgb(216,226,215);
+    .navber *{
+      font-size: 16px;
     }
-    .d:hover .d1{
+    .navber > li{
+      display: inline-block;
+      background-color: rgb(60,60,60);
+      margin: 0 10px;
+      line-height: 30px;
+    }
+    .navber  li{
+      position:relative;
+      white-space: nowrap;
+    }
+    .navber ul li{
+      background-color: rgb(37,37,38);
+    }
+    .navber ul{
+      position: absolute;
       display: block;
-
+      left: 0;
+      top: 100%;
     }
-    .d .d1 li:hover{
-
-      background-color: rgb(245,245,245);
-    }
-    .d .d1 li .d11{
-      position: fixed;
-      width: 150px;
-      height: 210px;
-      margin: 0;
-      padding: 0;
-      background-color: rgb(240, 235, 235);
-      color: rgb(0, 0, 0);
-      top: 40px;
-      left: 170px;
-
+    .navber ul li{
       display: none;
+      padding-right: 6em;
+
     }
-    .d1 :first-child:hover .d11{
+    .navber li:hover{
+      background-color: rgb(207, 207, 195);
+    }
+    .navber li:hover > ul > li{
       display: block;
     }
 
+    .navber ul ul{
+      position: absolute;
+      top: 0;
+      left: 100%;
+
+    }
+    .navber ul ul::before{
+      content: ">";
+      position: absolute;
+      right: 100%;
+    }
+    .navber ul li::after{
+      content: attr(data-shortucut);
+      position: absolute;
+      right: 5px;
+      margin-right: 10px;
+    }
   </style>
 </head>
 <body>
-  <div class="header">
-    <ul>
-      <li class="d">
-        <span>航拍无人机</span>
-        <ul class="d1">
-          <li>
-            <span>大疆mini se</span>
-            <ul class="d11">
-              <li>大疆mini se 1</li>
-              <li>大疆mini se 2</li>
-              <li>大疆mini se 3</li>
-              <li>大疆mini se 4</li>
-              <li>大疆mini se 5</li>
-            </ul>
-
-          </li>
-          <li>大疆mini 2</li>
-          <li>大疆mini 2 pro</li>
-          <li>大疆mini 3</li>
-          <li>大疆mini 3 pro</li>
-        </ul>
-      </li>
-      <li>
-        <span>手持摄影设备</span>
-      </li>
-      <li>
-        <span>商用产品及方案</span>
-
-      </li>
-      <li>
-        <span>探索精彩</span>
-       </li>
-      <li>
-        <span>服务与支持</span>
-      </li>
-      <li>
-        <span>购买渠道</span>
-      </li>
-    </ul>
-  </div>
+  <ul class="navber">
+    <li>文件
+      <ul>
+        <li data-shortucut="ctrl+o">打开</li>
+        <li data-shortucut="ctrl+n">打开最近</li>
+        <li>新建文件夹
+          <ul>
+            <li>1111111</li>
+            <li>2222333</li>
+            <li>1123133
+              <ul>
+                <li>ewdaf</li>
+                <li>dafaf</li>
+                <li>fafafa</li>
+                <li>faafaf</li>
+              </ul>
+            </li>
+            <li>31312321</li>
+            <li>313233131</li>
+          </ul>
+        </li>
+        <li data-shortucut="ctrl+s">保存</li>
+      </ul>
+    </li>
+    <li>编辑
+      <ul>
+        <li>撤销</li>
+        <li>恢复</li>
+        <li>剪切</li>
+        <li>复制</li>
+        <li>粘贴</li>
+      </ul>
+    </li>
+    <li>选择
+      <ul>
+        <li>全选</li>
+        <li>扩大选区</li>
+        <li>缩小选区</li>
+        <li>向上</li>
+        <li>向下</li>
+      </ul>
+    </li>
+    <li>查看
+      <ul>
+        <li>命名面板</li>
+        <li>打开视图</li>
+        <li>外观</li>
+        <li>搜索</li>
+        <li>问题</li>
+      </ul>
+    </li>
+    <li>转到</li>
+  </ul>
 </body>
 </html>
