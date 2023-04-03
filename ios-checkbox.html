@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .w{
+      box-sizing: border-box;
+      width: 270px;
+      height: 156px;
+      border: 3px solid rgb(203,203,203);
+      border-radius: 150px;
+      transition: 1s;
+      position: relative;
+      background-color: white;
+
+      padding: 7px;
+    }
+    .n{
+      width: 136px;
+      height: 136px;
+      border-radius: 200px;
+      background-color: white;
+      position: absolute;
+      transition: 1s;
+      transition-timing-function: cubic-bezier(.19,.41,.56,1.06);
+
+      box-shadow: 0px 0px 20px gray;
+    }
+
+
+    .w:hover > .n{
+      background-color: rgb(255, 255, 255);
+      margin-left: 115px;
+      margin-top: 3px;
+
+    }
+
+    .w:hover{
+      border: 3px solid rgb(48,243,73);
+      background-color: rgb(48,243,73);
+      border: none;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="w">
+    <div class="n"></div>
+    <div class="n1"></div>
+  </div>
+</body>
+</html>
