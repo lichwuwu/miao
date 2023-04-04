@@ -6,22 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    div{
+    label{
       width: 100px;
       height: 100px;
       overflow: hidden;
-
+      display: block;
+      border: 5px solid;
+      margin:0 auto;
     }
-    div:active img{
-      margin-left: -2900px;
-      transition: steps(29) 1.5s;
+
+    input:checked  +label img{
+      margin-left: -2800px;
+      transition: steps(28) 1.5s;
     }
   </style>
 </head>
 <body>
-  <div>
+  <input type="checkbox" id="a" hidden>
+  <label for="a">
     <img src="image/1_MTZW1G1mE7LSX1CnhTYeHA.png" alt="">
-  </div>
-
+  </label>
 </body>
 </html>
