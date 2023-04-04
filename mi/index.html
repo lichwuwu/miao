@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,body{
+      margin: 0;
+    }
+    a{
+      text-decoration: none;
+      color: rgb(176,176,176);
+    }
+    header ul{
+      list-style: none;
+      padding: 0;
+      display: inline-block;
+      margin: 0;
+      font-size: 10px;
+    }
+    header ul a:hover{
+      color: white;
+    }
+    header{
+      width: 100%;
+      height: 40px;
+      background-color: black;
+      color: rgb(176,176,176);
+      font-size: 0;
+
+
+    }
+    .header{
+      width: 1230px;
+      height: 40px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .header-left li{
+      display: inline-block;
+      line-height: 40px;
+    }
+    .header-left li:nth-child(2n+2),.header-right li:nth-child(2n+2){
+      color: rgb(66,66,66);
+    }
+    .header-right li:nth-child(7)::before{
+      content: "\E60C";
+    }
+    .header-left{
+      position: absolute;
+      left: 0;
+
+    }
+    .header-right{
+      position: absolute;
+      right: 0;
+
+    }
+    .header-right li{
+      display: inline-block;
+      line-height: 40px;
+
+    }
+    .header-top{
+      width: 1230px;
+      height: 102px;
+      margin: 0 auto;
+      font-size: 0;
+      position: relative;
+    }
+    .header-top *{
+      font-size: 16px;
+    }
+    .header-top ul,input,button{
+      display: inline-block;
+    }
+    .header-top-item{
+      position: absolute;
+      top: 23px;
+      margin-left: 190px;
+      padding: 0;
+      height: 54px;
+
+
+
+    }
+    .header-top-item li{
+      display: inline-block;
+    }
+    .header-top-item li:hover{
+      color: rgb(255,103,0);
+    }
+    .header-top input{
+      width: 246px;
+      height: 50px;
+      border: 1px solid;
+      vertical-align: middle;
+      box-sizing: border-box;
+      position: absolute;
+      top: 27px;
+      right: 50px;
+    }
+    .header-top button{
+      width: 50px;
+      height: 50px;
+      vertical-align: middle;
+      border: 1px solid;
+      box-sizing: border-box;
+      position: absolute;
+      top: 27px;
+      right: 0;
+    }
+    .navber{
+      width: 1230px;
+      height: 460px;
+      margin: 0 auto;
+      position: relative;
+
+    }
+    .navber-left{
+      width: 235px;
+      height: 430px;
+      margin: 0;
+      background-color: rgb(165,163,163);
+      padding: 15px 0 ;
+      list-style: none;
+    }
+    .navber-left li{
+      height: 43px;
+      line-height: 43px;
+      padding-left: 30px;
+      position: relative;
+      color: white;
+    }
+    .navber-left li:hover{
+      background-color: rgb(255,103,0);
+    }
+    .navber-left li::after{
+      content: ">";
+      position: absolute;
+      right:  30px;
+    }
+    .navber-right{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+    .navber-right{
+      display: inline-block;
+      width: 995px;
+      height: 460px;
+    }
+    .navber-right img {
+      display: inline-block;
+      width: 995px;
+      height: 460px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header">
+      <ul class="header-left">
+        <li><a href="">小米官网</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">小米商城</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">MIUI</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">loT</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">云服务</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">天星数科</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">有品</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">小爱开放平台</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">企业团购</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">资质证据</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">协议规则</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">下载app</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li> <a href="">Select Location</a></li>
+      </ul>
+
+      <ul class="header-right">
+        <li><a>登录</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a>注册</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a>消息通知</a></li>
+        <li>&nbsp;|&nbsp;</li>
+        <li><a href="">购物车</a> </li>
+      </ul>
+    </div>
+  </header>
+  <section class="header-top">
+      <img style="width: 54px; height: 54px;margin-top: 24px;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png" alt="">
+      <ul class="header-top-item">
+        <li>Xiaomi手机&nbsp;</li>
+        <li>Redmi手机&nbsp;</li>
+        <li>电视&nbsp;</li>
+        <li>笔记本&nbsp;</li>
+        <li>平板&nbsp;</li>
+        <li>家电&nbsp;</li>
+        <li>路由器&nbsp;</li>
+        <li>服务中心&nbsp;</li>
+        <li>社区</li>
+      </ul>
+      <input type="text"  >
+      <button></button>
+  </section>
+  <section class="navber">
+    <ul class="navber-left" >
+      <li>手机</li>
+      <li>电视</li>
+      <li>家电</li>
+      <li>笔记本 平板</li>
+      <li>出行 穿戴</li>
+      <li>耳机 音箱</li>
+      <li>健康 儿童</li>
+      <li>生活 箱包</li>
+      <li>智能 路由器</li>
+      <li>电源 配件</li>
+    </ul>
+      <a class="navber-right" href="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920"><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/217ee00a9d7e592f40eae2ef34fb97d0.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt=""></a>
+  </section>
+
+</body>
+</html>
