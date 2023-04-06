@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .a{
+      position: relative;
+      width: 500px;
+      height: 500px;
+      overflow: hidden;
+      border: 2px solid;
+      z-index: 22;
+    }
+    .yq{
+
+      position: absolute;
+      z-index: 99;
+    }
+    .yq label{
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 2px solid;
+      border-radius: 33px;
+    }
+    .a img{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 100%;
+
+    }
+    input:checked +*+*+*+*{
+      left: 0;
+    }
+
+    input:checked:nth-child(1) ~ .yq label:nth-child(1),
+    input:checked:nth-child(2) ~ .yq label:nth-child(2),
+    input:checked:nth-child(3) ~ .yq label:nth-child(3),
+    input:checked:nth-child(4) ~ .yq label:nth-child(4){
+      background-color: red;
+    }
+    .jt{
+
+      width: 500px;
+      height: 100px;
+      position: absolute;
+      left: 0;
+      top: 300px;
+
+      z-index: 11111;
+
+    }
+    .jt .l{
+
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: -50px;
+      display: none;
+
+    }
+    .jt .r{
+
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      left: 400px;
+      display: none;
+
+      }
+
+    input:checked:nth-child(1) ~.jt .jt1 .l,
+    input:checked:nth-child(2) ~.jt .jt2 .l,
+    input:checked:nth-child(3) ~.jt .jt3 .l,
+    input:checked:nth-child(4) ~.jt .jt4 .l{
+      display: block;
+
+    }
+    input:checked:nth-child(1) ~.jt .jt1 .r,
+    input:checked:nth-child(2) ~.jt .jt2 .r,
+    input:checked:nth-child(3) ~.jt .jt3 .r,
+    input:checked:nth-child(4) ~.jt .jt4 .r{
+      display: block;
+
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="a">
+    <input type="radio" name="s1" id="a1" checked>
+    <input type="radio" name="s1" id="a2">
+    <input type="radio" name="s1" id="a3">
+    <input type="radio" name="s1" id="a4">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920" alt="">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7c21d01bbe93eafc7d07d3796a3c59c.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6494adc68900269b551de5ba96bd10a9.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/08a9d7eec7b055bac247b5068f817b1d.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
+    <div class="yq">
+      <label for="a1"></label>
+      <label for="a2"></label>
+      <label for="a3"></label>
+      <label for="a4"></label>
+    </div>
+    <div class="jt">
+      <div class="jt1">
+        <label class="l" for="a4"><img src="image/向左箭头(1).png"></label>
+        <label class="r" for="a2"><img src="image/向右箭头(1).png"></label>
+      </div>
+      <div class="jt2">
+        <label class="l" for="a1"><img src="image/向左箭头(1).png"></a></label>
+        <label class="r" for="a3"><img src="image/向右箭头(1).png"></a></label>
+      </div>
+      <div class="jt3">
+        <label class="l" for="a2"><img src="image/向左箭头(1).png"></a></label>
+        <label class="r" for="a4"><img src="image/向右箭头(1).png"></a></label>
+      </div>
+      <div class="jt4">
+        <label class="l" for="a3"><img src="image/向左箭头(1).png"></label>
+        <label class="r" for="a1"><img src="image/向右箭头(1).png"></label>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
