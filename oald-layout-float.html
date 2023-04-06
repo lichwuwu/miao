@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div,body,html{
+      height: 100%;
+      margin: 0;
+    }
+    div *{
+      box-sizing: border-box;
+    }
+    .left{
+      width: 200px;
+      height: 100%;
+      background-color: aqua;
+      float: left;
+      border-right: 2px solid;
+    }
+    main{
+
+      width: calc(100% - 600px);
+      float: left;
+
+      height: 100%;
+      background-color: rgb(95, 95, 60);
+      border-right: 2px solid;
+
+
+
+    }
+    .right2{
+      width: 200px;
+      height: 100%;
+      background-color: rgb(231, 142, 243);
+      float: right;
+      border-right: 2px solid;
+
+    }
+    .right{
+      width: 200px;
+      height: 100%;
+      background-color: rgb(63, 79, 79);
+      float:left;
+      border-right: 2px solid;
+
+    }
+    main h1{
+      height: 100px;
+      line-height: 100px;
+      border-bottom: 2px solid;
+      margin: 0;
+    }
+
+    .content{
+      overflow-y: scroll;
+
+      height: calc(100% - 102px) ;
+    }
+    header{
+      height: 100px;
+      margin: 0;
+
+    }
+    header h1{
+      margin: 0;
+      line-height: 50px;
+    }
+    .le{
+      overflow-y: scroll;
+      height: calc(100% - 102px) ;
+    }
+    input,button{
+      display: inline-block;
+    }
+    input{
+      height: 30px;
+      width: 130px;
+      vertical-align: middle;
+    }
+    button{
+      height: 30px;
+      width: 50px;
+      vertical-align: middle;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <section class="left">
+      <header>
+        <h1>111</h1>
+        <input type="text">
+        <button></button>
+      </header>
+      <div class="le"></div>
+    </section>
+
+    <main>
+      <h1>afhsdfshafd</h1>
+      <div class="content"></div>
+    </main>
+    <section class="right"></section>
+    <section class="right2"></section>
+  </div>
+</body>
+</html>

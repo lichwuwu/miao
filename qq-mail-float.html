@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    body,html{
+      margin: 0;
+    }
+    body,html,div{
+      height: 100%;
+    }
+    header{
+      width: 100%;
+      height: 100px;
+      background-color: bisque;
+    }
+    section{
+      width: 100px;
+      height: calc(100% - 100px);
+      background-color: cadetblue;
+      float: left;
+      overflow: scroll;
+    }
+    main{
+      overflow: scroll;
+      background-color: aqua;
+      height: calc(100% - 100px);
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <header>qq</header>
+    <section>111</section>
+    <main>222</main>
+  </div>
+</body>
+</html>
