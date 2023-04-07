@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ <style>
+   html,body{
+    margin: 0;
+    height: 100%;
+  }
+  body > div{
+    height: 100%;
+    display: flex;
+  }
+  .aside{
+    width: 200px;
+    background-color: aqua;
+    min-width:200px;
+  }
+  .aside .a1{
+    height: 100px;
+  }
+  .aside h1{
+    margin: 0;
+    height: 70px;
+    line-height: 70px;
+    text-align: center;
+  }
+  .aside .a1{
+
+    height: 100px ;
+  }
+  .aside .a2{
+    height: calc(100% - 100px);
+    overflow: auto;
+  }
+  .main{
+    flex-grow: 1;
+    background-color: blueviolet;
+    overflow: auto;
+  }
+  .main h1{
+    height: 68px;
+    line-height: 68px;
+    text-align: center;
+    border-bottom: 2px solid;
+    margin: 0;
+  }
+
+  .main section{
+    height: calc(100% - 70px);
+    overflow: auto;
+  }
+  .right{
+    width: 200px;
+    height: 100%;
+    background-color: rgb(136, 88, 143);
+    min-width:200px;
+    overflow: auto;
+  }
+  .right2{
+    width: 200px;
+    height: 100%;
+    background-color: rgb(75, 215, 145);
+    min-width:200px;
+    overflow: auto;
+  }
+ </style>
+</head>
+<body>
+  <div>
+    <div class="aside">
+
+      <div class="a1">
+        <h1>gahsjg</h1>
+        <input type="text">
+        <button></button></div>
+      <div class="a2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+      </div>
+    </div>
+    <div class="main">
+      <h1>dfsafg</h1>
+      <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dolorem quia nemo voluptates dolores illo quasi? Perferendis harum eligendi atque tempore nostrum soluta, reprehenderit, recusandae minus enim ducimus voluptatibus totam!
+
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam nam quis rem possimus dolorum pariatur dignissimos non doloribus, facilis modi libero deleniti hic cupiditate qui illum velit consequuntur! Provident, id!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi cumque inventore, odio aut consectetur esse corporis explicabo at similique aperiam, aliquid reprehenderit reiciendis sed soluta labore minus ab culpa dolore.
+        Ab, fugiat veritatis autem, obcaecati deleniti officia odio, nobis iusto illo ipsa aperiam unde dignissimos adipisci ut recusandae omnis consequuntur totam repellendus perferendis quae cum laboriosam. Odit quibusdam omnis quis?
+        Dolores sit tempora nihil ullam ea nemo hic amet laboriosam, incidunt iste sequi, dolorum placeat, mollitia id maxime odit temporibus. Quis impedit odit minima deserunt ab aliquam sequi autem ratione?
+        Sit sed hic architecto iure reiciendis ullam, voluptatibus mollitia praesentium adipisci. Rem itaque esse quasi a, illum magnam repellendus unde quis mollitia fugiat explicabo ducimus quibusdam debitis cumque natus! Corrupti.
+        Quas repellat consectetur blanditiis eos qui sapiente ratione neque minima! Odit aut minus neque nemo soluta corporis error? Ut illo laboriosam optio nesciunt quo ad asperiores esse enim, unde iusto!
+        Exercitationem maiores voluptas animi eveniet explicabo saepe sequi nemo iure vel vitae. Repudiandae quae ipsum tenetur, nesciunt eligendi pariatur voluptatem possimus asperiores. Accusantium, mollitia ipsam. Velit est architecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!
+      </section>
+    </div>
+    <div class="right">
+      hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!
+    </div>
+    <div class="right2">
+      hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!hitecto sunt tenetur!
+        Illum officiis exercitationem maiores deleniti aperiam expedita eos tenetur dolore rerum recusandae necessitatibus in natus voluptatibus culpa, provident qui maxime dolorum, non dolorem, excepturi ut iste asperiores nulla placeat. Dolor.
+        Repudiandae autem neque, earum dicta nostrum iusto tempore aperiam, hic odit dignissimos esse. Tempore delectus nihil quidem deserunt distinctio maiores, numquam et rerum exercitationem natus cum beatae neque ea corporis.
+        Aliquid quia adipisci libero illum iure dolorem molestiae dolore porro impedit enim, ullam eius ad praesentium ducimus perferendis sint quas autem iste facere omnis unde debitis! Error nulla eos tempore?
+        Autem cumque perspiciatis repellat necessitatibus iure eaque odit tenetur illo laboriosam beatae voluptas pariatur tempora et similique cupiditate veritatis ipsam, provident unde debitis. Voluptatibus, odio. Eligendi suscipit officia tenetur placeat!
+    </div>
+  </div>
+
+</body>
+</html>

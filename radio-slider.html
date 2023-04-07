@@ -35,12 +35,14 @@
       height: 100%;
       position: absolute;
       left: 100%;
+
       transition: 1S
 
     }
     input:checked +*+*+*+*{
       left: 0;
       z-index: 222;
+      opacity: 1;
     }
 
     input:checked:nth-child(1) ~ .yq label:nth-child(1),
@@ -48,6 +50,7 @@
     input:checked:nth-child(3) ~ .yq label:nth-child(3),
     input:checked:nth-child(4) ~ .yq label:nth-child(4){
       background-color: rgb(177, 255, 164);
+
     }
     .jt{
 
@@ -82,16 +85,16 @@
     input:checked:nth-child(1) ~.jt .jt1 .l,
     input:checked:nth-child(2) ~.jt .jt2 .l,
     input:checked:nth-child(3) ~.jt .jt3 .l,
-    input:checked:nth-child(4) ~.jt .jt4 .l{
-      display: block;
-
-    }
+    input:checked:nth-child(4) ~.jt .jt4 .l,
     input:checked:nth-child(1) ~.jt .jt1 .r,
     input:checked:nth-child(2) ~.jt .jt2 .r,
     input:checked:nth-child(3) ~.jt .jt3 .r,
     input:checked:nth-child(4) ~.jt .jt4 .r{
       display: block;
 
+    }
+    :is(.jt .l,.jt .r) :hover{
+      background-color: aqua;
     }
 
 
