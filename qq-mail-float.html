@@ -18,9 +18,13 @@
       height: 100px;
       background-color: bisque;
     }
+    .bottom{
+      height: calc(100% - 100px);
+      overflow: hidden;
+    }
     section{
       width: 100px;
-      height: calc(100% - 100px);
+      height: 100%;
       background-color: cadetblue;
       float: left;
       overflow: scroll;
@@ -28,15 +32,17 @@
     main{
       overflow: scroll;
       background-color: aqua;
-      height: calc(100% - 100px);
+      height: 100%;
     }
   </style>
 </head>
 <body>
   <div>
     <header>qq</header>
-    <section>111</section>
-    <main>222</main>
+    <div class="bottom">
+      <section>111</section>
+      <main>222</main>
+    </div>
   </div>
 </body>
 </html>
