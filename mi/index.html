@@ -212,7 +212,7 @@
           }
         }
       }
-      .navber-right{
+      /* .navber-right{
         position: absolute;
         bottom: 0;
         right: 0;
@@ -225,44 +225,121 @@
           width: 1230px;
           height: 460px;
         }
-      }
+      } */
      .banner{
       position: relative;
+      width: 1230px;
+      height: 460px;
 
-      .button{
-        overflow: hidden;
-      }
+
       .banner-img{
         position: absolute;
         top: 0;
+        bottom: 0;
+        left: 0;
+        width: 1230px;
+        height: 460px;
 
 
       }
       .banner-img img{
-        width: 1230px;
-        height: 460px;
+        width: 100%;
+        height: 100%;
         position: absolute;
+        top: 0;
+
+
         left: 100%;
 
 
       }
       .yq{
+        position: absolute;
+        top:440px;
+        left:1140px;
+        z-index: 99999;
         label{
-          border: 1px solid;
-          width: 20px;
-          height: 20px;
-          border-radius:333px;
+          border: 3px solid rgb(142,161,180);
+          background-color:rgba(137,135,134);
+          width: 10px;
+          height: 10px;
+          margin: 0;
+          border-radius:22px;
+          display:inline-block;
+
+
+        }
+      }
+      .jt{
+        z-index: 999999;
+        position: absolute;
+        top: 130px;
+        bottom: 130px;
+        left: 234px;
+        width:996px;
+        height: 200px;
+
+        .jtl{
           position: absolute;
-          top:100px;
-          left:200px;
-          z-index: 99999;
+          left: 0;
+          width: 30px;
+          height: 30px;
+          top:75px;
+          bottom:75px;
+        }
+        .jtr{
+          position: absolute;
+          right: 0;
+          width: 30px;
+          height: 30px;
+          top:75px;
+          bottom:75px;
+
+        }
+        img{
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          display: none;
+
         }
       }
 
+
+
      }
     }
+    input:checked:nth-child(1) ~ .banner-img img:nth-child(1),
+    input:checked:nth-child(2) ~ .banner-img img:nth-child(2),
+    input:checked:nth-child(3) ~ .banner-img img:nth-child(3),
+    input:checked:nth-child(4) ~ .banner-img img:nth-child(4){
+          left: 0;
+        }
+    input:checked:nth-child(1) ~ .yq label:nth-child(1),
+    input:checked:nth-child(2) ~ .yq label:nth-child(2),
+    input:checked:nth-child(3) ~ .yq label:nth-child(3),
+    input:checked:nth-child(4) ~ .yq label:nth-child(4){
+          background-color: white;
+        }
+    input:checked:nth-child(1) ~ .jt .jtl label:nth-child(1) img,
+    input:checked:nth-child(1) ~ .jt .jtr label:nth-child(1) img,
+    input:checked:nth-child(2) ~ .jt .jtl label:nth-child(2) img,
+    input:checked:nth-child(2) ~ .jt .jtr label:nth-child(2) img,
+    input:checked:nth-child(3) ~ .jt .jtl label:nth-child(3) img,
+    input:checked:nth-child(3) ~ .jt .jtr label:nth-child(3) img,
+    input:checked:nth-child(4) ~ .jt .jtl label:nth-child(4) img,
+    input:checked:nth-child(4) ~ .jt .jtr label:nth-child(4) img{
+      display: block;
+    }
+    .banner .yq label:hover{
+      background-color: white !important;
+      border-color: rgb(137,135,134) !important;
 
-
+    }
+    .jt img:hover{
+          background-color:rgb(94, 92, 92);
+        }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/less" ></script>
 </head>
@@ -644,12 +721,12 @@
       <li>电源 配件</li>
     </ul>
     <div class="banner">
-      <div class="button">
-        <input type="radio" name="n1" id="a1">
+
+        <input type="radio" name="n1" id="a1" checked>
         <input type="radio" name="n1" id="a2">
         <input type="radio" name="n1" id="a3">
         <input type="radio" name="n1" id="a4">
-      </div>
+
       <div class="banner-img">
         <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/217ee00a9d7e592f40eae2ef34fb97d0.jpg?thumb=1&w=1226&h=460&f=webp&q=90"" alt="">
         <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7c21d01bbe93eafc7d07d3796a3c59c.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
@@ -657,10 +734,24 @@
         <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920" alt="">
       </div>
       <div class="yq">
-        <label for=""></label>
-        <label for=""></label>
-        <label for=""></label>
-        <label for=""></label>
+        <label for="a1">1</label>
+        <label for="a2">2</label>
+        <label for="a3">3</label>
+        <label for="a4">4</label>
+      </div>
+      <div class="jt">
+        <div class="jtl">
+          <label for="a4"><img src="../image/向左箭头(1).png" alt=""></label>
+          <label for="a1"><img src="../image/向左箭头(1).png" alt=""></label>
+          <label for="a2"><img src="../image/向左箭头(1).png" alt=""></label>
+          <label for="a3"><img src="../image/向左箭头(1).png" alt=""></label>
+        </div>
+        <div class="jtr">
+          <label for="a2"><img src="../image/向右箭头(1).png" alt=""></label>
+          <label for="a3"><img src="../image/向右箭头(1).png" alt=""></label>
+          <label for="a4"><img src="../image/向右箭头(1).png" alt=""></label>
+          <label for="a1"><img src="../image/向右箭头(1).png" alt=""></label>
+        </div>
       </div>
 
 
