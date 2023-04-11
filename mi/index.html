@@ -10,6 +10,7 @@
   <style type="text/less">
      html,body{
       margin: 0;
+      min-width: 1230px;
     }
     a{
       text-decoration: none;
@@ -184,7 +185,6 @@
       margin: 0 auto;
       position: relative;
 
-
       .navber-left{
         width: 234px;
         height: 430px;
@@ -233,11 +233,12 @@
 
 
               li{
-              width: 265px;
-              height: 76px;
-              height: 40px;
-              padding: 18px 20px;
-              &:nth-child(7){
+                width: 265px;
+                height: 76px;
+                height: 40px;
+                padding: 18px 20px;
+
+                &:nth-child(7){
                 margin-left: 265px;
                 margin-top:-456px;
 
@@ -294,15 +295,8 @@
                     }
                   }
                 }
-
-
-
+              }
             }
-            }
-
-
-
-
 
           }
         }
@@ -312,6 +306,7 @@
       position: relative;
       width: 1230px;
       height: 460px;
+      overflow: hidden;
 
 
       input:checked:nth-child(1) ~ .banner-img img:nth-child(1),
@@ -419,7 +414,237 @@
           background-color:rgb(94, 92, 92);
 
         }
-  </style>
+    .four{
+      margin-top: 15px;
+
+
+
+      .four-content{
+        position: relative;
+        width: 1230px;
+        height: 170px;
+
+        margin: 0 auto;
+
+        .four-content-left{
+          width: 234px;
+          height: 170px;
+
+          background-color: rgb(95,87,80);
+
+
+          ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+
+
+            li{
+              float: left;
+              width: 78px;
+              height: 85px;
+              opacity: 0.5;
+
+              &:hover{
+                opacity: 1;
+              }
+
+              &:nth-child(n+1){
+
+                border-bottom: 1px solid rgb(102,94,87) ;
+                border-right:1px solid rgb(102,94,87);
+                box-sizing: border-box;
+              }
+              &:nth-child(n+4){
+                border-bottom: none ;
+
+
+              }
+              &:nth-child(3n+3){
+
+                border-right: none ;
+                box-sizing: border-box;
+              }
+
+
+              a{
+                text-align: center;
+                font-size:12px;
+                display: block;
+                margin: 20px 0;
+
+                color: white;
+
+                img{
+                  width: 24px;
+                  height: 24px;
+                  display: block;
+                  margin: 0 auto 5px;
+
+                }
+
+              }
+            }
+          }
+        }
+      }
+      .four-content-right{
+        position: absolute;
+        top: 0;
+        left: 234px;
+
+        display: flex;
+        width: 981px;
+        height: 170px;
+        margin-left: 15px;
+        justify-content: space-between;
+
+        img{
+          width: 100%;
+          height: 100%;
+
+        }
+      }
+      .four-content-right1,.four-content-right2,.four-content-right3{
+
+        width: 317px;
+        height: 170px;
+        flex-grow: 0;
+        transition: 0.3s;
+        &:hover{
+          box-shadow: 0 2px 10px ;
+        }
+      }
+    }
+
+    .main-content{
+        margin-top: 30px;
+        background-color: rgb(245,245,245);
+        overflow: hidden;
+        height: 100%;
+
+        .mian-content-header{
+          width: 1230px;
+          height: 120px;
+          margin: 0 auto;
+          background-color: rgb(245,245,245);
+          margin-top:25px;
+        }
+        .main-content-banner-cd{
+
+          .main-content-bt{
+            div{
+              display: inline;
+              width: 200px;
+              height: 0;
+
+
+               span:hover {
+                  color: red;
+                  transition: none;
+                }
+
+                span{
+                  transition: 0s 999999s;
+                  color: black;
+                  margin-left: 10px;
+
+                  &:first-child {
+                    color: red;
+                    transition: 0s 99999s;
+                  }
+
+
+                }
+
+                span:hover {
+                    color: red;
+                    transition: none;
+                  }
+                span:hover:is(span):has(:not(span:hover) ){
+                  color: black;
+                  transition: none;
+                }
+            }
+
+          }
+
+
+        }
+        .main-content-bt{
+
+          width: 1230px;
+          height: 58px;
+          line-height: 58px;
+          margin: 20px auto 0;
+
+          h2{
+            margin: 0;
+            padding: 0;
+            display: inline;
+            font-weight:400;
+          }
+
+
+          span{
+            float:right;
+
+          }
+        }
+        .main-content-banner{
+          width: 1230px;
+          height: 614px;
+          margin: 0 auto;
+
+          ul{
+            list-style: none;
+            padding: 0;
+
+
+            li{
+              display: inline-block;
+              transition: 0.6s;
+
+              &:first-child{
+              width: 234px;
+              height: 614px;
+              float: left;
+              }
+              &:hover{
+                box-shadow: 20px 20px 20px 5px rgb(231,231,231), -20px -20px 20px -5px rgb(231,231,231);
+              }
+              &:nth-child(n+2){
+                width: 234px;
+                height: 300px;
+                background-color: white;
+
+                float: left;
+                margin-top: 0px;
+                margin-left: 15px;
+              }
+              &:nth-child(n+6){
+
+                margin-top: 15px;
+
+
+
+              }
+            }
+
+          }
+
+        }
+
+
+
+    }
+
+
+
+
+
+ </style>
   <script src="https://cdn.jsdelivr.net/npm/less" ></script>
 </head>
 <body>
@@ -1915,7 +2140,7 @@
         <input type="radio" name="n1" id="a4">
 
       <div class="banner-img">
-        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/217ee00a9d7e592f40eae2ef34fb97d0.jpg?thumb=1&w=1226&h=460&f=webp&q=90"" alt="">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6494adc68900269b551de5ba96bd10a9.jpg?thumb=1&w=1226&h=460&f=webp&q=90"" alt="">
         <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7c21d01bbe93eafc7d07d3796a3c59c.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
         <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/08a9d7eec7b055bac247b5068f817b1d.jpg?thumb=1&w=1226&h=460&f=webp&q=90" alt="">
         <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0d03df40a5e8ef760731a8f4f3f61172.jpg?w=2452&h=920" alt="">
@@ -1945,6 +2170,115 @@
     </div>
 
   </section>
+  <section class="four">
+    <div class="four-content">
+      <div class="four-content-left">
+        <ul>
+          <li>
+            <a href="">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/82abdba456e8caaea5848a0cddce03db.png?w=48&h=48" alt="">
+              <span>保障服务</span></img>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/806f2dfb2d27978e33fe3815d3851fa3.png?w=48&h=48" alt="">
+              <span>企业团购</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/eded6fa3b897a058163e2485532c4f10.png?w=48&h=48" alt="">
+              <span>F码通道</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/43a3195efa6a3cc7662efed8e7abe8bf.png?w=48&h=48" alt="">
+              <span>米粉卡</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f4846bca6010a0deb9f85464409862af.png?w=48&h=48" alt="">
+              <span>以旧换新</span>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9a76d7636b08e0988efb4fc384ae497b.png?w=48&h=48" alt="">
+              <span>话费</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="four-content-right">
+        <div class="four-content-right1">
+          <a href="">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0cf5e958bc88727b50c5c5fba7a8f47a.jpg?w=632&h=340" alt="">
+          </a>
+
+        </div>
+        <div class="four-content-right2">
+          <a href="">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6dd2f3e0de4e6cbba98fd3799cfa5bf7.jpg?w=632&h=340" alt="">
+          </a>
+
+        </div>
+        <div class="four-content-right3">
+          <a href="">
+            <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d7d4be1a9e701e16de498f89b1865867.jpg?w=632&h=340" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="main-content">
+    <header class="mian-content-header">
+      <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8bfb50f1aa84b32bf2de165a72c2870e.jpg?thumb=1&w=1226&h=120&f=webp&q=90" alt="">
+    </header>
+    <div class="main-content-banner-sj">
+      <div class="main-content-bt">
+        <h2>手机</h2>
+        <span>查看更多 <span>></span></span>
+      </div>
+      <div class="main-content-banner">
+        <div>
+          <ul>
+            <li><a href=""><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d91bb6cf7da0947e8a6e50e03f4daf06.jpg?thumb=1&w=234&h=614&f=webp&q=90" alt=""></a></li>
+            <li><a href=""><img src="" alt="">1111111</a></li>
+            <li><a href=""><img src="" alt="">2211111</a></li>
+            <li><a href=""><img src="" alt="">3311111</a></li>
+            <li><a href=""><img src="" alt="">4411111</a></li>
+            <li><a href=""><img src="" alt="">5511111</a></li>
+            <li><a href=""><img src="" alt="">6611111</a></li>
+            <li><a href=""><img src="" alt="">7711111</a></li>
+            <li><a href=""><img src="" alt="">8811111</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-banner-cd" >
+      <div class="main-content-bt">
+        <h2>智能穿戴</h2>
+        <div class="qh">
+          <span>耳机 </span>
+          <span>穿戴</span>
+        </div>
+      </div>
+      <div class="main-content-banner">
+        <div>
+          <ul>
+            <li><a href=""><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c9550c95ee33a22dc8db677dada00f09.jpg?thumb=1&w=234&h=614&f=webp&q=90" alt=""></a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
 
 </body>
 </html>
