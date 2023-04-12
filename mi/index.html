@@ -531,112 +531,129 @@
           background-color: rgb(245,245,245);
           margin-top:25px;
         }
+        .main-content-banner-sj{
+          .main-content-bt{
+
+            width: 1230px;
+            height: 58px;
+            line-height: 58px;
+            margin: 20px auto 0;
+
+            h2{
+              margin: 0;
+              padding: 0;
+              display: inline;
+              font-weight:400;
+            }
+
+
+            span{
+              float:right;
+
+            }
+            }
+            .main-content-banner{
+            width: 1230px;
+            height: 614px;
+            margin: 0 auto;
+
+            ul{
+              list-style: none;
+              padding: 0;
+
+
+              li{
+                display: inline-block;
+                transition: 0.6s;
+
+                &:first-child{
+                width: 234px;
+                height: 614px;
+                float: left;
+                }
+                &:hover{
+                  box-shadow: 20px 20px 20px 5px rgb(231,231,231), -20px -20px 20px -5px rgb(231,231,231);
+                }
+                &:nth-child(n+2){
+                  width: 234px;
+                  height: 300px;
+                  background-color: white;
+
+                  float: left;
+                  margin-top: 0px;
+                  margin-left: 15px;
+                }
+                &:nth-child(n+6){
+
+                  margin-top: 15px;
+                }
+              }
+
+            }
+
+          }
+        }
         .main-content-banner-cd{
+          width: 1230px;
+          margin: 10px auto ;
+          position: relative;
 
           .main-content-bt{
-            div{
+            width: 1230px;
+            height: 58px;
+            margin: 0 auto;
+            h2{
+              margin: 0;
+              display: inline-block;
+              line-height: 58px;
+            }
+            .qh{
               display: inline;
               width: 200px;
               height: 0;
-
-
-               span:hover {
-                  color: red;
-                  transition: none;
-                }
+              float: right;
+              line-height: 58px;
 
                 span{
                   transition: 0s 999999s;
                   color: black;
                   margin-left: 10px;
+                  ul{
+                    list-style: none;
+                    position: absolute;
+                    padding: 0;
+                    width: 981px;
+                    height: 614px;
+                    background-color: red;
+                    top: 58px;
+                    left: 249px;
+                  }
 
                   &:first-child {
                     color: red;
                     transition: 0s 99999s;
                   }
 
-
                 }
-
+                &:hover span{
+                  color: black;
+                  transition: none;
+                }
                 span:hover {
                     color: red;
                     transition: none;
                   }
-                span:hover:is(span):has(:not(span:hover) ){
-                  color: black;
-                  transition: none;
-                }
             }
 
           }
 
-
-        }
-        .main-content-bt{
-
-          width: 1230px;
-          height: 58px;
-          line-height: 58px;
-          margin: 20px auto 0;
-
-          h2{
-            margin: 0;
-            padding: 0;
-            display: inline;
-            font-weight:400;
-          }
-
-
-          span{
-            float:right;
-
-          }
-        }
-        .main-content-banner{
-          width: 1230px;
-          height: 614px;
-          margin: 0 auto;
-
-          ul{
-            list-style: none;
-            padding: 0;
-
-
-            li{
-              display: inline-block;
-              transition: 0.6s;
-
-              &:first-child{
-              width: 234px;
-              height: 614px;
-              float: left;
-              }
-              &:hover{
-                box-shadow: 20px 20px 20px 5px rgb(231,231,231), -20px -20px 20px -5px rgb(231,231,231);
-              }
-              &:nth-child(n+2){
-                width: 234px;
-                height: 300px;
-                background-color: white;
-
-                float: left;
-                margin-top: 0px;
-                margin-left: 15px;
-              }
-              &:nth-child(n+6){
-
-                margin-top: 15px;
-
-
-
-              }
-            }
-
-          }
+          .main-content-banner{
+            width: 1230px;
+            margin: 10px auto ;
 
         }
 
-
+        }
 
     }
 
@@ -2263,16 +2280,43 @@
       <div class="main-content-bt">
         <h2>智能穿戴</h2>
         <div class="qh">
-          <span>耳机 </span>
+          <span class="ej">耳机
+            <ul>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+              <li><a href="">
+                <img src="" alt="">
+              </a></li>
+            </ul>
+          </span>
           <span>穿戴</span>
         </div>
       </div>
       <div class="main-content-banner">
         <div>
-          <ul>
-            <li><a href=""><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c9550c95ee33a22dc8db677dada00f09.jpg?thumb=1&w=234&h=614&f=webp&q=90" alt=""></a></li>
+          <div class="main-content-banner-left">
+            <a href=""><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c9550c95ee33a22dc8db677dada00f09.jpg?thumb=1&w=234&h=614&f=webp&q=90" alt=""></a>
 
-          </ul>
+          </div>
         </div>
       </div>
     </div>

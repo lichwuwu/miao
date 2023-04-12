@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    div ul{
+      box-shadow: 0 5px 20px;
+      grid-auto-columns: 100px;
+      width: 795px;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-rows: repeat(6,76px);
+      grid-template-columns: repeat(auto-fill,265px);
+      background-color: antiquewhite;
+    }
+    div ul li{
+      width: 265px;
+      height: 76px;
+      padding: 20px 18px;
+    }
+    div ul li a{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+    }
+    div ul li a img{
+      float: left;
+      width: 40px;
+      height: 40px;
+
+    }
+    div ul li a span{
+      float: left;
+      line-height: 40px;
+    }
+    .cd-content{
+      padding: 20px 0;
+
+      background: rgb(245,245,245);
+    }
+    .cd-content > ul{
+      list-style: none;
+      margin: 0 auto;
+      width: 1230px;
+      height: 614px;
+      padding: 0;
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-columns: repeat(5,234px);
+      grid-template-rows: repeat(2,300px);
+      grid-gap:  14px;
+
+
+    }
+    .cd-content ul > li{
+      background-color: #fff;
+      font-size: 0.5em;
+      text-align: center;
+    }
+    .cd-content ul > li:first-child{
+      grid-row: span 2;
+    }
+    .cd-content ul > li:nth-child(n+2) img{
+      width: 160px;
+      height: 16opx;
+      display: block;
+      margin: 0 auto;
+
+    }
+    .cd-content ul > li:last-child{
+
+      background-color: #fff;
+
+    }
+    .cd-content ul > li:last-child > ul {
+     list-style: none;
+     display: grid;
+     grid-gap: 14px;
+
+     grid-template-rows: 1fr;
+
+      padding: 0;
+
+    }
+    .cd-content ul > li:last-child > ul li{
+      background-color: rebeccapurple;
+      height: 143px;
+
+    }
+    .cd-content ul li span:last-child{
+      color: rgb(189,189,189);
+      text-decoration: line-through ;
+    }
+    .cd-content ul li span{
+      color: rgb(236,102,23);
+
+    }
+
+    main ul{
+      width: 150px;
+      display: grid;
+      padding: 0;
+      list-style: none;
+      background-color: aquamarine;
+      grid-template-columns: repeat(3,50px);
+
+    }
+    main li{
+      width: 50px;
+      height: 50px;
+      background-color: yellowgreen;
+      text-align: center;
+      border: 2px solid;
+      box-sizing: border-box;
+    }
+    main li:nth-child(4){
+      width: 100px;
+      height: 100px;
+      grid-row: 2/ span 2;
+      grid-column: span 2;
+    }
+    main li:nth-child(16){
+      width: 100px;
+      height: 100px;
+      grid-row: 8/ span 2;
+      grid-column: span 2;
+    }
+    main li:nth-child(10){
+      width: 100px;
+      height: 100px;
+      grid-row: 5/ span 2;
+      grid-column:2/ span 2;
+
+    }
+    main li:nth-child(22){
+      width: 100px;
+      height: 100px;
+      grid-row: 11/ span 2;
+      grid-column:2/ span 2;
+
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+          <span>Redmi Note系列
+          </span>
+        </a>
+      </li>
+      <li><a href="">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+        <span>Redmi Note系列
+        </span>
+      </a></li>
+      <li><a href="">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+        <span>Redmi Note系列
+        </span>
+      </a></li>
+      <li><a href="">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+        <span>Redmi Note系列
+        </span>
+      </a></li>
+      <li><a href="">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+        <span>Redmi Note系列
+        </span>
+      </a></li>
+      <li><a href="">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+        <span>Redmi Note系列
+        </span>
+      </a></li>
+      <li><a href="">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+        <span>Redmi Note系列
+        </span>
+      </a></li>
+    </ul>
+  </div>
+  <section class="cd-content">
+    <ul>
+      <li><img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c9550c95ee33a22dc8db677dada00f09.jpg?thumb=1&w=234&h=614&f=webp&q=90" alt=""></li>
+      <li>
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+        <h3>xiaom buds 4 por</h3>
+        <p>48dB智能动态降噪|骨声纹通话降噪</p>
+        <span>949元</span> <span>1099元</span>
+      </li>
+      <li>
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+        <h3>xiaom buds 4 por</h3>
+        <p>48dB智能动态降噪|骨声纹通话降噪</p>
+        <span>949元</span> <span>1099元</span>
+      </li>
+      <li>
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+        <h3>xiaom buds 4 por</h3>
+        <p>48dB智能动态降噪|骨声纹通话降噪</p>
+        <span>949元</span> <span>1099元</span>
+      </li>
+      <li>
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+        <h3>xiaom buds 4 por</h3>
+        <p>48dB智能动态降噪|骨声纹通话降噪</p>
+        <span>949元</span> <span>1099元</span>
+      </li>
+      <li>
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+        <h3>xiaom buds 4 por</h3>
+        <p>48dB智能动态降噪|骨声纹通话降噪</p>
+        <span>949元</span> <span>1099元</span>
+      </li>
+      <li>
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+        <h3>xiaom buds 4 por</h3>
+        <p>48dB智能动态降噪|骨声纹通话降噪</p>
+        <span>949元</span> <span>1099元</span>
+      </li>
+      <li>
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+        <h3>xiaom buds 4 por</h3>
+        <p>48dB智能动态降噪|骨声纹通话降噪</p>
+        <span>949元</span> <span>1099元</span>
+      </li>
+      <li>
+        <ul>
+          <li>11</li>
+          <li>22</li>
+        </ul>
+      </li>
+    </ul>
+
+  </section>
+  <main>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+      <li>21</li>
+      <li>22</li>
+      <li>23</li>
+      <li>24</li>
+      <li>25</li>
+      <li>26</li>
+      <li>27</li>
+
+
+    </ul>
+  </main>
+</body>
+</html>
