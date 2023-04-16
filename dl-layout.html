@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    dl{
+      width: 200px;
+      height: 200px;
+      background-color: #635e5e;
+      padding-left: 6em;
+    }
+    dt{
+      float: left;
+      margin-left: -6em;
+      margin-right: 1em;
+    }
+
+    dt::after{
+      content: ":";
+    }
+    dd + dt{
+      clear: both;
+    }
+    dd{
+      display: inline;
+      float: left;
+      margin: 0;
+      line-height: -lh;
+      letter-spacing: normal;
+    }
+    dd+dd::before{
+      content: ",";
+    }
+
+
+  </style>
+</head>
+<body>
+  <dl>
+    <dt>导演</dt>
+    <dd>张三</dd>
+    <dd>王五</dd>
+    <dd>高天</dd>
+    <dd>马六</dd>
+    <dt>主演</dt>
+    <dd>11</dd>
+    <dd>22</dd>
+    <dd>3rdgg3</dd>
+    <dd>4ddd4</dd>
+    <dt>特别出演</dt>
+    <dd>23</dd>
+    <dd>44</dd>
+    <dd>324fffddddsaf</dd>
+    <dd>44</dd><dd>3fff3</dd>
+    <dd>432</dd>
+  </dl>
+</body>
+</html>
