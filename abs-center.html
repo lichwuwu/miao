@@ -106,6 +106,34 @@
 
     }
 
+    .xl{
+      width: 500px;
+      height: 500px;
+      margin: 50px auto;
+      border: 3px solid;
+      padding: 100px;
+
+
+      >main{
+        transform-origin: 50px 100px;
+        >img{
+        width: 50px;
+        height: 50px;
+
+        }
+
+      }
+      &:hover main{
+        transform:rotate(360deg);
+        transition: 2s;
+      }
+      &:hover img{
+        transform:rotate(-360deg);
+        transition: 2s;
+      }
+    }
+
+
 
 
   </style>
@@ -125,6 +153,12 @@
   </div>
   <div class="transform">
     <main>555</main>
+  </div>
+
+  <div class="xl">
+    <main>
+    <img class="xz" src="https://ts1.cn.mm.bing.net/th/id/R-C.242dbf2ec4cdc4339904326d01958b8d?rik=qQWWDCO%2b6NnoLQ&riu=http%3a%2f%2fimg.xiazaizhijia.com%2fuploads%2f2016%2f1215%2f20161215093303297.jpg&ehk=VjReTsTz2f5qdlmjFE%2bAzhIA5kO1Vci2A7bvAIT5PBw%3d&risl=&pid=ImgRaw&r=0" alt="">
+  </main>
   </div>
 </body>
 </html>
