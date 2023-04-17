@@ -32,6 +32,18 @@
 .iocnfont-search::before{
   content: "\E63A";
 }
+.iocnfont-gift::before{
+  content: "\E905";
+}
+.iocnfont-sz::before{
+  content: "\E634";
+}
+.iocnfont-7::before{
+  content: "\E635";
+}
+.iocnfont-15::before{
+  content: "\E635";
+}
 /* @font-face {
   font-family: iconfont;
   src: ;

@@ -16,6 +16,12 @@
       margin: 0;
       min-width: 1230px;
     }
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+
+    }
     a{
       text-decoration: none;
       color: rgb(176,176,176);
@@ -104,7 +110,7 @@
         }
         .header-top-item{
         position: absolute;
-        top: 23px;
+        top: 35px;
         margin-left: 190px;
         padding: 0;
         height: 54px;
@@ -129,8 +135,12 @@
           top: 27px;
           right: 51px;
 
-          &:checked{
-            border:1px solid rgb(255,103,0);
+          outline: none;
+          &:focus{
+            border: 1px solid rgb(236,102,23);
+          }
+          &:focus + button{
+            border: 1px solid rgb(236,102,23);
           }
         }
         button{
@@ -776,9 +786,187 @@
         }
 
     }
+    .cbl{
+        .cbl-a1{
+          position: fixed;
+          width: 80px;
+          right: 0;
+          bottom: 50px;
+          list-style: none;
+
+
+          li{
+            width: 80px;
+            height: 90px;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(245,245,245);
 
 
 
+            a{
+              display: block;
+              text-align: center;
+              padding-top:20px ;
+              color:#000;
+
+              img{
+              width: 30px;
+              height: 30px;
+              display:block;
+              margin: 0 auto;
+
+
+
+              }
+            }
+
+          }
+          @media (max-width : 1460px) {
+
+            left: 50%;
+            right: auto;
+            margin-left: calc(1226px / 2);
+            li{
+              width: 35px;
+              height: 35px;
+
+              a{
+                padding-top: 2px;
+                img{
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+              span{
+                display: none;
+              }
+            }
+          }
+
+
+        }
+
+
+
+
+    }
+    .bottom-content{
+      margin-bottom: 30px;
+      overflow: hidden;
+
+      .bottom-content-header{
+        width: 1230px;
+        height: 80px;
+        margin: 0 auto;
+
+        ul{
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          height: 80px;
+          border-bottom: 1px solid rgb(224,224,224);
+          li{
+            padding:0 60px;
+
+            + li{
+              border-left: 1px solid rgb(224,224,224);
+            }
+            &::before{
+              font-size: 20px;
+              vertical-align: bottom;
+
+
+            }
+          }
+        }
+      }
+      .bottom-content-main{
+        width: 1230px;
+        margin: 0 auto 30px;
+        ul{
+          margin-top: 30px;
+          font-size:10px;
+          float: left ;
+          color: #757575;
+          &:first-child{
+            margin-left: 150px;
+
+          }
+          li:first-child{
+            font-size: 14px;
+            color: black;
+          }
+          li{
+            padding-top: 10px;
+          }
+          +ul{
+            margin-left: 100px;
+          }
+        }
+        div{
+          float: right;
+          width: 280px;
+          text-align: center;
+          margin-top: 30px;
+          border-left: 1px solid rgb(224,224,224);
+
+          h3,p{
+            margin: 0;
+            padding: 0;
+            margin-bottom:5px;
+          }
+          h3{
+            font-size: 22px;
+            color: #ff6700;
+          }
+          p{
+            font-size: 12px;
+
+          }
+          span{
+            font-size: 12px;
+            color: #ff6700;
+            border: 1px solid;
+            display:inline-block;
+            width: 100px;
+            padding:5px 10px;
+
+          }
+        }
+      }
+
+
+
+    }
+    .bm-ct{
+      clear: both;
+      overflow: hidden;
+      background-color: rgb(250,250,250);
+
+      .bm-ct-m{
+        width: 1230px;
+        margin: 20px auto;
+
+        .bm-iocn{
+          width: 56px;
+          height: 56px;
+          float: left;
+          margin-right: 20px;
+
+
+          img{
+            width: 56px;
+            height: 56px;
+          }
+        }
+        .bm-ct-float{
+          font-size: 10px;
+          float: left;
+        }
+      }
+
+
+    }
 
 
 
@@ -2595,13 +2783,148 @@
 
 
 
-    <header class="mian-content-header">
+    <header style="margin-bottom: 20px;" class="mian-content-header">
       <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8bfb50f1aa84b32bf2de165a72c2870e.jpg?thumb=1&w=1226&h=120&f=webp&q=90" alt="">
     </header>
-  </main>
-  <section class="bottom-content">
-    
-  </section>
 
+
+
+
+
+
+  </main>
+
+  <section class="bottom-content">
+    <div class="bottom-content-header">
+      <ul>
+        <li class="iocnfont-sz">预约维修服务</li>
+        <li class="iocnfont-7">7天无理由退货</li>
+        <li class="iocnfont-15">15天免费换货满</li>
+        <li class="iocnfont-gift">69元包邮</li>
+        <li class="iocnfont-fixed-position">1100余家售后网点</li>
+      </ul>
+    </div>
+    <div class="bottom-content-main">
+      <ul>
+        <li>选购指南</li>
+        <li>手机</li>
+        <li>电视</li>
+        <li>笔记本</li>
+        <li>平板</li>
+        <li>穿戴</li>
+        <li>耳机</li>
+        <li>家电</li>
+        <li>路由器</li>
+        <li>音箱</li>
+        <li>配件</li>
+      </ul>
+      <ul>
+        <li>服务中心</li>
+        <li>申请售后</li>
+        <li>售后政策</li>
+        <li>维修服务价格</li>
+        <li>订单查询</li>
+        <li>以旧换新</li>
+        <li>保障服务</li>
+        <li>防伪查询</li>
+        <li>F码通道</li>
+
+      </ul>
+      <ul>
+        <li>线下门店</li>
+        <li>小米之家</li>
+        <li>服务网点</li>
+        <li>权体验店/专区</li>
+
+      </ul>
+      <ul>
+        <li>关于小米</li>
+        <li>了解小米</li>
+        <li>加入小米</li>
+        <li>投资者关系</li>
+        <li>环境、社会及治理</li>
+        <li>廉洁举报</li>
+
+      </ul>
+      <ul>
+        <li>关注我们</li>
+        <li>新浪微博</li>
+        <li>官方微信</li>
+        <li>联系我们</li>
+        <li>公益基金会</li>
+
+      </ul>
+      <div >
+        <h3>400-100-5678</h3>
+        <p>8:00-18:00 （仅收市话费）</p>
+        <span>人工客服</span>
+      </div>
+    </div>
+
+  </section>
+  <section class="bm-ct">
+    <div class="bm-ct-m">
+      <div class="bm-iocn">
+        <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png" alt="">
+      </div>
+      <div class="bm-ct-float">
+        <p>小米商城 | MIUI | 米家 | 米聊 | 多看 | 游戏 | 音乐 | 政企服务 | 小米天猫店 | 小米集团隐私政策 | 小米公司儿童信息保护规则 | 小米商城隐私政策 | 小米商城用户协议 | 问题反馈 | Select Location <br>
+          北京互联网法院法律服务工作站 | 中国消费者协会 | 北京市消费者协会
+          <br>
+          © mi.com 京ICP证110507号 京ICP备10046444号 京公网安备11010802020134号 京网文[2023]0169-004号
+          <br>
+          （京）网械平台备字（2018）第00005号 互联网药品信息服务资格证 (京)-非经营性-2014-0090 营业执照 医疗器械质量公告
+          <br>
+          增值电信业务许可证 网络食品经营备案 京食药网食备202010048   食品经营许可证
+          <br>
+          违法和不良信息举报电话：171-5104-4404 知识产权侵权投诉 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+        </p>
+      </div>
+    </div>
+
+  </section>
+  <section class="cbl">
+      <ul class="cbl-a1">
+        <li>
+          <a href="">
+          <img src="https://i8.mifile.cn/b2c-mimall-media/98a23aae70f25798192693f21c4d4039.png" alt="">
+            <span>手机APP</span>
+        </a>
+        </li>
+        <li>
+          <a href="">
+          <img src="https://i8.mifile.cn/b2c-mimall-media/55cad219421bee03a801775e7309b920.png" alt="">
+            <span>个人中心</span>
+        </a>
+        </li>
+        <li>
+          <a href="">
+          <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/12eb0965ab33dc8e05870911b90f3f13.png" alt="">
+            <span>售后服务
+            </span>
+        </a>
+        </li>
+        <li>
+          <a href="">
+          <img src="https://i8.mifile.cn/b2c-mimall-media/4f036ae4d45002b2a6fb6756cedebf02.png" alt="">
+            <span>人工客服</span>
+        </a>
+        </li>
+        <li>
+          <a href="">
+          <img src="https://i8.mifile.cn/b2c-mimall-media/d7db56d1d850113f016c95e289e36efa.png" alt="">
+            <span>购物车</span>
+        </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="https://i1.mifile.cn/f/i/2018/home/totop.png" alt="">
+            <span>回到顶部</span>
+          </a>
+        </li>
+      </ul>
+    <div></div>
+
+  </section>
 </body>
 </html>
