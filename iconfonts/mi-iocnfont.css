@@ -44,6 +44,9 @@
 .iocnfont-15::before{
   content: "\E635";
 }
+.iocnfont-xleft::before{
+  content: "\E615";
+}
 /* @font-face {
   font-family: iconfont;
   src: ;
