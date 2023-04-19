@@ -991,6 +991,7 @@
               margin: 0;
               padding: 0;
               display: inline;
+
               font-weight:400;
             }
             span{
@@ -1044,6 +1045,7 @@
               margin: 0;
               display: inline-block;
               line-height: 58px;
+              font-weight:400;
             }
             .qh{
               display: inline;
@@ -1144,6 +1146,7 @@
         }
 
     }
+
     .cbl{
         .cbl-a1{
           position: fixed;
@@ -1151,7 +1154,7 @@
           right: 0;
           bottom: 50px;
           list-style: none;
-
+          z-index: 999999;
 
           li{
             width: 80px;
@@ -1162,8 +1165,6 @@
             &:last-child{
               margin-top: 20px;
             }
-
-
 
             a{
               display: block;
@@ -1176,26 +1177,22 @@
               height: 30px;
               display:block;
               margin: 0 auto;
-
-
-
               }
             }
 
           }
-          @media (max-width : 1460px) {
 
+          @media screen and (max-width : 1460px){
             left: 50%;
             right: auto;
-            margin-left: calc(1226px / 2);
+            margin-left: calc(1230px / 2) ;
+
             li{
               width: 35px;
               height: 35px;
-
               &:last-child{
               margin-top: 0;
             }
-
               a{
                 padding-top: 2px;
                 img{
@@ -1207,6 +1204,29 @@
                 display: none;
               }
             }
+          }
+          @media screen and (max-width : 1260px){
+            right: 0;
+            bottom: 50px;
+
+            li{
+              width: 35px;
+              height: 35px;
+              &:last-child{
+              margin-top: 0;
+            }
+              a{
+                padding-top: 2px;
+                img{
+                  width: 25px;
+                  height: 25px;
+                }
+              }
+              span{
+                display: none;
+              }
+            }
+
           }
 
 
@@ -1688,46 +1708,41 @@
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/827fae95d0f1d75f1535ef93e357b2af.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>数字系列  </span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/930ddc941c1e6c81042406440e88ac45.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>Xiaomi Civi系列 </span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0453934fca43f79d0472b28e382bd2be.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>Xiaomi 青春系列</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9ab5c6d195d2b3dde69683966891d5a9.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>Redmi K系列</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9ab5c6d195d2b3dde69683966891d5a9.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>Redmi Note系列</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/232c1ede1284125cc4dcee5c7565d8fe.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>Redmi 数字系列</span>
               </a>
             </li>
-            <li>
-              <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
-              </a>
-            </li>
+
 
 
           </ul>
@@ -1738,26 +1753,26 @@
           <ul>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/50194366cfebbc7c82489d0094c1f944.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>小米电视6 55” OLED</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>Redmi X65</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b656495821144d92bd932d91eedcf659.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span>Redmi X55</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecfbf9d01c8a2605f0a6938093b23ad8.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
-                <span>xiaomi MIX系列</span>
+                <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/50194366cfebbc7c82489d0094c1f944.png?thumb=1&w=40&h=40&f=webp&q=90" alt="">
+                <span> 小米电视6 65” OLED</span>
               </a>
             </li>
             <li>
@@ -3443,13 +3458,21 @@
             <ul class="ul-block">
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c1f1dbfa1f47c2a7d8a0fff6d9930c4a.jpg?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/35b5669b506219fe7252ac5fa9baa1b5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <h3>米家全能扫拖机器人</h3>
+                  <p>免洗集尘全自动，一机解放双手</p>
+                  <div><span>4599元</span> <span></span></div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/5ca7c7fcce9da361df977e162ca37452.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3457,7 +3480,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7826279526dcce1e5a8b2eff2fa49784.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3465,7 +3488,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/61074d24c93da07f76f756b0a160a99e.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3473,21 +3496,13 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
-                  <h3>xiaom buds 4 por</h3>
-                  <p>48dB智能动态降噪|骨声纹通话降噪</p>
-                  <div><span>949元</span> <span>1099元</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/92a420f42eda98f401d650ea9b52409e.jpg?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209091112_151f52c03184db9b7ae9d0c170558378.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3495,7 +3510,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208231740_b0cb6bb43716c377f5aceb21e9a1e60e.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3503,7 +3518,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/55686e19296e9150aa1c1d3b15e1c6ec.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3512,18 +3527,17 @@
               <li>
                 <div style="width: 234px ; height: 143px; background-color: white;">
                   <a href="">
-                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261427_67cd5fddb341f0e0fb0a2295e643b0d8.png?thumb=1&w=100&h=100&f=webp&q=90" alt="">
-                    <h3>Xiaomi降噪蓝牙耳机 <br> Necklace</h3>
-                    <p>399</p>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7acbaf884ce4295b856ce04a935a5717.jpg?thumb=1&w=100&h=100&f=webp&q=90" alt="">
+                    <h3>米家直流变频两季扇 </h3>
+                    <p>799元</p>
 
                   </a>
                 </div>
-                <div style="width: 234px ; height: 143px;  background-color: white;">
+                <div>
                   <a href="">
                     <span style="font-size: 50px; float: right;" class="iocnfont-xleft"></span>
-                    <h3 style="text-align: left; margin-right: 70px;
-                   font-size: 16px; color: #000; font-weight: 400;">浏览更多</h3>
-                    <p style="text-align: left;">耳机</p>
+                    <h3>浏览更多</h3>
+                    <p >耳机</p>
 
                   </a>
 
@@ -3818,13 +3832,13 @@
             <ul class="ul-block">
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d0a92bc19df74c4da59563206321320a.jpg?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209201443_41fb0bb47d46874e982822c1b6e14b07.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3832,7 +3846,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c4f05377a98e5b005e92703b943c4e03.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3840,7 +3854,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c5909c8e91f871efaf94e2159b6f85e.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3848,7 +3862,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6594e9856ed024575434d7d81d86e868.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3856,13 +3870,13 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/00c61477413eb05a67b1ec032a148121.png?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/dc7c9f2277e5181fc3d3ee2320246f26.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3870,7 +3884,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c4f05377a98e5b005e92703b943c4e03.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3878,7 +3892,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e79891260659fa51cac50f64c4e4147d.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -3887,9 +3901,9 @@
               <li>
                 <div style="width: 234px ; height: 143px; background-color: white;">
                   <a href="">
-                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261427_67cd5fddb341f0e0fb0a2295e643b0d8.png?thumb=1&w=100&h=100&f=webp&q=90" alt="">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f924ad94c8c598766a0d60bee5ca7006.jpg?thumb=1&w=100&h=100&f=webp&q=90" alt="">
                     <h3>Xiaomi降噪蓝牙耳机 <br> Necklace</h3>
-                    <p>399</p>
+                    <p>3999元</p>
 
                   </a>
                 </div>
@@ -3898,7 +3912,7 @@
                     <span style="font-size: 50px; float: right;" class="iocnfont-xleft"></span>
                     <h3 style="text-align: left; margin-right: 70px;
                    font-size: 16px; color: #000; font-weight: 400;">浏览更多</h3>
-                    <p style="text-align: left;">耳机</p>
+                    <p style="text-align: left;">净水器</p>
 
                   </a>
 
@@ -3932,7 +3946,7 @@
                   <div><span>949元</span> <span>1099元</span></div>
                 </a>
               </li>
-              <li>
+              <li style="">
                 <a href="">
                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
@@ -3940,7 +3954,7 @@
                   <div><span>949元</span> <span>1099元</span></div>
                 </a>
               </li>
-              <li>
+              <li style="">
                 <a href="">
                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
@@ -3954,7 +3968,23 @@
 
                 </a>
               </li>
-              <li>
+              <li style="display: none;">
+                <a href="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <h3>xiaom buds 4 por</h3>
+                  <p>48dB智能动态降噪|骨声纹通话降噪</p>
+                  <div><span>949元</span> <span>1099元</span></div>
+                </a>
+              </li>
+              <li style="display: none;">
+                <a href="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <h3>xiaom buds 4 por</h3>
+                  <p>48dB智能动态降噪|骨声纹通话降噪</p>
+                  <div><span>949元</span> <span>1099元</span></div>
+                </a>
+              </li>
+              <li style="display: none;">
                 <a href="">
                   <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
@@ -3963,23 +3993,7 @@
                 </a>
               </li>
               <li>
-                <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
-                  <h3>xiaom buds 4 por</h3>
-                  <p>48dB智能动态降噪|骨声纹通话降噪</p>
-                  <div><span>949元</span> <span>1099元</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
-                  <h3>xiaom buds 4 por</h3>
-                  <p>48dB智能动态降噪|骨声纹通话降噪</p>
-                  <div><span>949元</span> <span>1099元</span></div>
-                </a>
-              </li>
-              <li>
-                <div>
+                <div style="display: none;">
                   <a href="">
                     <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261427_67cd5fddb341f0e0fb0a2295e643b0d8.png?thumb=1&w=100&h=100&f=webp&q=90" alt="">
                     <h3>Xiaomi降噪蓝牙耳机 <br> Necklace</h3>
@@ -4187,19 +4201,27 @@
     </div>
     <div class="main-content-banner-shdq" >
       <div class="main-content-bt">
-        <h2>生活电气</h2>
+        <h2>智能家居</h2>
         <div class="qh">
           <span class="ej">小爱音箱
             <ul class="ul-block">
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ec383d223d9f38f442268df684c526f6.png?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/314df4955a5f305de306155078bb103d.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <h3>xiaom buds 4 por</h3>
+                  <p>48dB智能动态降噪|骨声纹通话降噪</p>
+                  <div><span>329元</span> <span>349元</span></div>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b11a222051f90dafb22b939cc5142e69.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4207,7 +4229,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c2af30d499323618f9abdaffd82b581b.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4215,7 +4237,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/33b734b0f427fd89ae293752ffaf4381.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4223,21 +4245,13 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
-                  <h3>xiaom buds 4 por</h3>
-                  <p>48dB智能动态降噪|骨声纹通话降噪</p>
-                  <div><span>949元</span> <span>1099元</span></div>
-                </a>
-              </li>
-              <li>
-                <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/bb9761c5b49e21b4d5aa03e7ddaf1a09.png?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/500a840ec69f9ce885345e9a9471a9f9.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4245,7 +4259,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07419ed5047471b60d0232c9d8a7d84f.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4253,7 +4267,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3c9787588ce1ae5876334a1b9296ad3f.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4262,7 +4276,7 @@
               <li>
                 <div style="width: 234px ; height: 143px; background-color: white;">
                   <a href="">
-                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261427_67cd5fddb341f0e0fb0a2295e643b0d8.png?thumb=1&w=100&h=100&f=webp&q=90" alt="">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11db80e3fcb3e186e5ea7078b0a1de5a.jpg?thumb=1&w=100&h=100&f=webp&q=90" alt="">
                     <h3>Xiaomi降噪蓝牙耳机 <br> Necklace</h3>
                     <p>399</p>
 
@@ -4562,19 +4576,19 @@
     </div>
     <div class="main-content-banner-shdq" >
       <div class="main-content-bt">
-        <h2>生活电气</h2>
+        <h2>运动出行</h2>
         <div class="qh">
           <span class="ej">平衡车/滑板车
             <ul class="ul-block">
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/84fef78042e4056ea589474196780d4e.jpg?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/T1r_x_BgLT1RXrhCrK.jpg?thumb=1&w=200&h=200" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4582,7 +4596,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/223f9f2c0f9765851adff89e43db65f0.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4590,7 +4604,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-miapp-a1/877d3ce8-68ab-7506-2a78-55a8c0fba946.png?thumb=1&w=200&h=200" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4598,7 +4612,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/3622a82de99a8a3ee1aeb2b2b7586209.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4606,13 +4620,13 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ecce1c0d981037e58cfa281a06122249.jpg?thumb=1&w=234&h=300&f=webp&q=90" alt="">
 
                 </a>
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aabf1a475043266cf4759ec58d0f679c.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4620,7 +4634,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/609d0a457c7f8ac27d76f953c8acb7fc.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4628,7 +4642,7 @@
               </li>
               <li>
                 <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202208111200_c1016839eae2c1f5bb79d5afde498e81.png?thumb=1&w=200&h=200&f=webp&q=90" alt="">
+                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fcc87477432d45a0e13a544cd5d7b2f5.jpg?thumb=1&w=200&h=200&f=webp&q=90" alt="">
                   <h3>xiaom buds 4 por</h3>
                   <p>48dB智能动态降噪|骨声纹通话降噪</p>
                   <div><span>949元</span> <span>1099元</span></div>
@@ -4637,7 +4651,7 @@
               <li>
                 <div style="width: 234px ; height: 143px; background-color: white;">
                   <a href="">
-                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/nr-pub/202209261427_67cd5fddb341f0e0fb0a2295e643b0d8.png?thumb=1&w=100&h=100&f=webp&q=90" alt="">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2f2099364403866dd2da71d43f2bc63c.png?thumb=1&w=100&h=100&f=webp&q=90" alt="">
                     <h3>Xiaomi降噪蓝牙耳机 <br> Necklace</h3>
                     <p>399</p>
 
