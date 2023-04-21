@@ -44,11 +44,64 @@
       position: absolute;
       left: 0;
 
+
       }
 
       .header-left li{
       display: inline-block;
       line-height: 40px;
+
+      &:nth-child(23){
+        position: relative;
+
+        &:hover span{
+              height: 135px;
+            }
+          span{
+
+
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            z-index: 999999;
+            text-align: center;
+            line-height: normal;
+            height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+
+
+            &::before{
+              content: "";
+
+              display: inline-block;
+              border-left:10px solid rgba(0,0,0,0);
+              border-right:10px solid rgba(0,0,0,0);
+              border-top:10px solid rgba(0,0,0,0);
+              border-bottom:10px solid white;
+            }
+            a{
+              position: relative;
+              display: block;
+              background-color: rgb(255, 255, 255);
+              width: 120px;
+              z-index: 999999;
+              height: 120px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-flow: column;
+              box-shadow: 0 15px 30px rgba(0,0,0,.1);
+              img{
+
+              width: 90px;
+              height: 90px;
+              }
+            }
+
+          }
+
+      }
 
       &:nth-child(2n+2){
       color: rgb(66,66,66);
@@ -129,85 +182,96 @@
       width: 100%;
       height: 102px;
       position: relative;
+
       .show{
+        display: flex;
+        align-items: center;
         width: 1230px;
         height: 102px;
         margin: 0 auto;
         font-size: 0;
-        position: relative;
+        display: flex;
+        transition:0.3s;
+        justify-content: space-between;
 
-        ul,input,button{
-        display: inline-block;
-        }
         .header-top-item{
-        position: absolute;
-        top: 35px;
-        margin-left: 190px;
-        padding: 0;
-        height: 54px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          ul{
+            height: 100%;
+            display: flex;
+            align-items: center;
 
-        li{
-          display: inline-block;
-          height: 88px;
-          &:hover{
-          color: rgb(255,103,0);
-          }
 
-          }
-        }
-        input{
-          width: 246px;
-          height: 50px;
-          border: 1px solid;
-          border-right: none;
-          vertical-align: middle;
-          box-sizing: border-box;
-          position: absolute;
-          top: 27px;
-          right: 51px;
+            li{
+            display: inline-block;
 
-          outline: none;
-          &:focus{
-            border: 1px solid rgb(236,102,23);
-          }
-          &:focus + button{
-            border: 1px solid rgb(236,102,23);
-          }
-          &:focus + .input-hidden{
-            display: block;
+            &:hover{
+            color: rgb(255,103,0);
+            }
+
+            }
           }
 
         }
-        .input-hidden{
-          position: absolute;
-          width: 247px;
-          height: 200px;
-          background-color: rgb(245,245,245);
-          border: 1px solid #ff6700;
-          border-top: none;
-          right: 50px;
-          top: 77px;
-          box-sizing: border-box;
-          z-index: 999999;
-          display: none;
-        }
-        button{
-          width: 51px;
-          height: 50px;
-          vertical-align: middle;
-          border: 1px solid;
 
-          box-sizing: border-box;
-          position: absolute;
-          color: rgb(97,97,97);
-          top: 27px;
-          right: 0;
-          background-color: white;
-          &:hover{
-            background-color: rgb(255,103,0);
-            color: rgb(255,255,255);
-          }
         }
+        .sousuo{
+          font-size: 0;
+
+          *{
+            font-size: 16px;
+          }
+          input{
+            width: 246px;
+            height: 50px;
+            border: 1px solid;
+            border-right: none;
+            vertical-align: middle;
+            box-sizing: border-box;
+            position: relative;
+
+            outline: none;
+            &:focus{
+              border-top: 1px solid rgb(236,102,23);
+              border-left: 1px solid rgb(236,102,23) ;
+              border-bottom: 1px solid rgb(236,102,23) ;
+
+            }
+            &:focus ~ button{
+              border: 1px solid rgb(236,102,23);
+            }
+            &:focus + .input-hidden{
+              display: block;
+            }
+
+          }
+          .input-hidden{
+            position: absolute;
+            width: 247px;
+            height: 200px;
+            background-color: rgb(245,245,245);
+            border: 1px solid #ff6700;
+            border-top: none;
+
+            box-sizing: border-box;
+            z-index: 999999;
+            display: none;
+          }
+          button{
+            width: 51px;
+            height: 50px;
+            vertical-align: middle;
+            border: 1px solid;
+            box-sizing: border-box;
+            color: rgb(97,97,97);
+            background-color: white;
+            &:hover{
+              background-color: rgb(255,103,0);
+              color: rgb(255,255,255);
+            }
+          }
       }
       *{
       font-size: 16px;
@@ -215,63 +279,77 @@
 
       .hidden{
         width: 100%;
-        position: fixed;
-        visibility: hidden;
+        position: absolute;
+        height: 0;
+        overflow: hidden;
         left: 0;
-        top: 142px;
-        height: 230px;
-        z-index: 9999999;
-        height: 230px;
+        top: 102px;
+        transition: 0.3s;
+        z-index: 888888;
+        box-sizing: border-box;
         background-color: rgb(255, 255, 255);
-        box-shadow: 0 2px 2px gray;
-        border-top: 1px solid rgb(224,224,224);
+
+        box-shadow: 0 3px 4px rgb(143 143 143 / 30%);
 
 
 
         .hidden-content{
           width: 1230px;
           height: 230px;
-          margin: 0 auto;
+          margin: auto;
+          inset:0 ;
+          position: absolute;
+          z-index: 12;
+
+
 
           .dropdown1{
-            margin: 0;
-            padding: 0;
-            list-style: none;
+
+
+
             li{
 
               display: inline-block;
               margin-top:20px;
 
+              div,p{
+
+                margin: 0 auto;
+                text-align: center;
+
+                font-size: 10px;
+                }
+                div{
+                color: black;
+                }
+                p{
+                  color: rgb(236,102,23);
+                }
+                img{
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 10px;
+
+                border-right:1px solid rgb(224,224,224);
+
+
+              }
+
             }
-
-
-            div,p{
-
-              margin: 0 auto;
-              text-align: center;
-
-              font-size: 10px;
-            }
-            div{
-              color: black;
-            }
-            img{
-              padding-left: 20px;
-              padding-right: 20px;
-              margin-top: 10px;
-
-              border-right:1px solid rgb(224,224,224);
-
-
-            }
-
           }
           }
       }
 
     }
-    .header-top li:hover .hidden{
-      visibility: visible;
+    .header-top .header-top-item ul:first-child:hover .hidden{
+      height: 230px;
+      border-top: 1px solid rgb(224,224,224);
+
+    }
+    .header-top .header-top-item ul:first-child > li:hover  .hidden{
+      z-index: 9999999;
+
+
 
     }
     .navber{
@@ -608,7 +686,9 @@
         flex-grow: 0;
         transition: 0.3s;
         &:hover{
-          box-shadow: 0 2px 10px ;
+
+          box-shadow:0 15px 30px rgba(0,0,0,.1) ;
+
         }
       }
     }
@@ -721,6 +801,29 @@
             >li{
               font-size: 0.5em;
               text-align: center;
+              transition:box-shadow 0.3s,transform 0.3s;
+
+
+              &:hover{
+                transform: translateY(-2px);
+                box-shadow: 0 15px 30px rgba(0,0,0,.1);
+                transition:box-shadow 0.3s,transform 0.3s;
+              }
+              &:last-child{
+                div{
+                  transition:box-shadow 0.3s,transform 0.3s;
+                  &:hover{
+                    transform: translateY(-2px);
+                    box-shadow: 0 15px 30px rgba(0,0,0,.1);
+                    transition:box-shadow 0.3s,transform 0.3s;
+                  }
+                }
+                &:hover{
+                transform: none;
+                box-shadow: none;
+                transition:none;
+                }
+              }
               h3,p,div{
                 line-height: normal;
               }
@@ -843,7 +946,7 @@
 
               li{
                 display: inline-block;
-                transition: 0.6s;
+                transition: 0.3s;
 
                 &:first-child{
                 width: 234px;
@@ -851,8 +954,9 @@
                 float: left;
                 }
                 &:hover{
-                  box-shadow: 20px 20px 20px 5px rgb(231,231,231), -20px -20px 20px -5px rgb(231,231,231);
-                }
+                transform: translateY(-2px);
+                box-shadow: 0 15px 30px rgba(0,0,0,.1);
+              }
                 &:nth-child(n+2){
                   width: 234px;
                   height: 300px;
@@ -900,10 +1004,10 @@
                   transition: 0s 999999s;
                   color: black;
                   margin-left: 10px;
-                  border-bottom:none;
+                  border-bottom: 0px solid;
 
                   &:first-child {
-                    color: red;
+                    color: #ff6700;
                     transition: 0s 99999s;
                     ul{
                       visibility: visible ;
@@ -959,7 +1063,7 @@
                     }
                 }
                 >span:hover{
-                    color: red;
+                    color: #ff6700;
                     transition: none;
                     border-bottom: #ff6700 3px solid;
 
@@ -1058,10 +1162,10 @@
                   transition: 0s 999999s;
                   color: black;
                   margin-left: 10px;
-                  border-bottom:none;
+                  border-bottom: 0px solid;
 
                   &:first-child {
-                    color: red;
+                    color: #ff6700;
                     transition: 0s 99999s;
                     ul{
                       visibility: visible ;
@@ -1129,7 +1233,7 @@
                     }
                 }
                 >span:hover{
-                    color: red;
+                    color: #ff6700;
                     transition: none;
                     border-bottom: #ff6700 3px solid;
 
@@ -1271,7 +1375,7 @@
         margin: 0 auto 30px;
         ul{
           margin-top: 30px;
-          font-size:10px;
+          font-size:13px;
           float: left ;
           color: #757575;
           &:first-child{
@@ -1281,6 +1385,7 @@
           li:first-child{
             font-size: 14px;
             color: black;
+            margin-bottom: 25px;
           }
           li{
             padding-top: 10px;
@@ -1327,17 +1432,20 @@
     .bm-ct{
       clear: both;
       overflow: hidden;
+
       background-color: rgb(250,250,250);
 
       .bm-ct-m{
+        overflow: hidden;
         width: 1230px;
-        margin: 20px auto;
+        margin: 30px auto;
 
         .bm-iocn{
           width: 56px;
           height: 56px;
           float: left;
           margin-right: 20px;
+
 
 
           img{
@@ -1348,8 +1456,26 @@
         .bm-ct-float{
           font-size: 10px;
           float: left;
+          color:rgb(188,188,188);
+          overflow: hidden;
+          span{
+            img{
+              width: 85px;
+              height: 28px;
+            }
+          }
         }
+
       }
+      .yj{
+          margin: 30px auto 0;
+          clear: both;
+          height: 19px;
+          background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/staticsfile/global/slogan2020.png);
+          background-position: center;
+          background-repeat: no-repeat;
+          margin-bottom: 30px;
+        }
 
 
     }
@@ -1385,7 +1511,11 @@
         <li>&nbsp;|&nbsp;</li>
         <li><a href="">协议规则</a></li>
         <li>&nbsp;|&nbsp;</li>
-        <li><a href="">下载app</a></li>
+        <li><a href="">下载app</a>
+            <span><a href=""><img src="https://i1.mifile.cn/f/i/17/appdownload/download.png?1" alt="">
+              小米商城
+            </a></span>
+        </li>
         <li>&nbsp;|&nbsp;</li>
         <li> <a href="">Select Location</a></li>
       </ul>
@@ -1409,290 +1539,299 @@
   </header>
   <section class="header-top">
     <div class="show">
-      <img style="width: 54px; height: 54px;margin-top: 24px;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png" alt="">
-      <ul class="header-top-item">
-        <li>Xiaomi手机&nbsp;
-          <div class="hidden">
-            <div class="hidden-content">
-              <ul class="dropdown1">
-                <li>
-                  <a href="">
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </a>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13pro</div>
-                  <p>4999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/581f3a690e6803add02e4c9fde98cb78.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>Xiaomi MIX Fold 2</div>
-                  <p>8999元起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4ef3713521fb9d7f114aa8bb152e220d.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>Xiaomi Civi 2</div>
-                  <p>2299元起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fea69fb5990da9dfc909aa8279aaea7e.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>Xiaomi 11 青春活力版</div>
-                  <p>1399元起</p>
-                </li>
-                <li>
-                  <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9c06f92c3216c90a566916e719935018.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>Xiaomi 13 限量定制色</div>
-                  <p>4999元</p>
-                </li>
-              </ul>
+      <img style="width: 54px; height: 54px;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi.com-assets/shop/img/logo-mi2.png" alt="">
+      <div class="header-top-item">
+        <ul>
+          <li>Xiaomi手机&nbsp;
+            <div class="hidden">
+              <div class="hidden-content">
+                <ul class="dropdown1">
+                  <li>
+                    <a href="">
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </a>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13pro</div>
+                    <p>4999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/581f3a690e6803add02e4c9fde98cb78.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>Xiaomi MIX Fold 2</div>
+                    <p>8999元起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4ef3713521fb9d7f114aa8bb152e220d.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>Xiaomi Civi 2</div>
+                    <p>2299元起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/fea69fb5990da9dfc909aa8279aaea7e.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>Xiaomi 11 青春活力版</div>
+                    <p>1399元起</p>
+                  </li>
+                  <li>
+                    <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/9c06f92c3216c90a566916e719935018.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>Xiaomi 13 限量定制色</div>
+                    <p>4999元</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </li>
-        <li>Redmi手机&nbsp;
-          <div class="hidden">
-            <div class="hidden-content">
-              <ul class="dropdown1">
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c98a369cd511f4bab30e6f4d73438f5d.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
+          </li>
+          <li>Redmi手机&nbsp;
+            <div class="hidden">
+              <div class="hidden-content">
+                <ul class="dropdown1">
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c98a369cd511f4bab30e6f4d73438f5d.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
 
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8d5c2622cf50cf3d1a00c3753a2bf070.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/482a5df88357219be7f8f6a1a06ce20a.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/040746283de6bbdf554fe879f842747c.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c6cf6ba252d5db186016c3b044f600f.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/570184de014d26516f4c334f7132878a.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-              </ul>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8d5c2622cf50cf3d1a00c3753a2bf070.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/482a5df88357219be7f8f6a1a06ce20a.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/040746283de6bbdf554fe879f842747c.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c6cf6ba252d5db186016c3b044f600f.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/570184de014d26516f4c334f7132878a.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>电视&nbsp;
-          <div class="hidden">
+          </li>
+          <li>电视&nbsp;
+            <div class="hidden">
+              <div class="hidden-content">
+                <ul class="dropdown1">
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6511d77270e94146c0b1f96b66d8cc58.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
 
-            <div class="hidden-content">
-              <ul class="dropdown1">
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6511d77270e94146c0b1f96b66d8cc58.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6511d77270e94146c0b1f96b66d8cc58.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8871821795310769c1d3896c99b12381.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0a1ae5341d2dae66cd42566c60d2d666.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/932b583c6eccd8aabfa0771f8a854940.jpg?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea3390a20547c7298a258528e4aa69ad.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-              </ul>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6511d77270e94146c0b1f96b66d8cc58.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8871821795310769c1d3896c99b12381.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0a1ae5341d2dae66cd42566c60d2d666.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/932b583c6eccd8aabfa0771f8a854940.jpg?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/ea3390a20547c7298a258528e4aa69ad.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </li>
-        <li>笔记本&nbsp;
-          <div class="hidden">
+            </li>
+          <li>笔记本&nbsp;
+            <div class="hidden">
+              <div class="hidden-content">
+                <ul class="dropdown1">
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c921506c8a7cd4841b29b941685d57e.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
 
-            <div class="hidden-content">
-              <ul class="dropdown1">
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/1c921506c8a7cd4841b29b941685d57e.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/55c17a67fff345d161ae55b9fb0d6f6a.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c86a7877e4ed76f50e204875e7372428.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c86a7877e4ed76f50e204875e7372428.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c926842a23c7316b17792e075be9d055.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c86a7877e4ed76f50e204875e7372428.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-              </ul>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/55c17a67fff345d161ae55b9fb0d6f6a.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c86a7877e4ed76f50e204875e7372428.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c86a7877e4ed76f50e204875e7372428.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c926842a23c7316b17792e075be9d055.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c86a7877e4ed76f50e204875e7372428.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                </ul>
             </div>
-        </li>
-        <li>平板&nbsp;
-          <div class="hidden">
+          </li>
+          <li>平板&nbsp;
+            <div class="hidden">
 
-            <div class="hidden-content">
-              <ul class="dropdown1">
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
+              <div class="hidden-content">
+                <ul class="dropdown1">
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
 
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <!-- <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li> -->
-                <li>
-                  <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-              </ul>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <!-- <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li> -->
+                  <li>
+                    <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                </ul>
+              </div>
+          </li>
+          <li>家电&nbsp;
+            <div class="hidden">
+
+              <div class="hidden-content">
+                <ul class="dropdown1">
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </li>
-        <li>家电&nbsp;
-          <div class="hidden">
+            </li>
+          <li>路由器&nbsp;
+            <div class="hidden">
 
-            <div class="hidden-content">
-              <ul class="dropdown1">
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
+              <div class="hidden-content">
+                <ul class="dropdown1">
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
 
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-              </ul>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                  <li>
+                    <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
+                    <div>xiaomi 13</div>
+                    <p>3999起</p>
+                  </li>
+                </ul>
+              </div>
             </div>
-        </li>
-        <li>路由器&nbsp;
-          <div class="hidden">
+          </li>
+        </ul>
 
-            <div class="hidden-content">
-              <ul class="dropdown1">
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/c758eb7e0dce4307c62c47155519bc80.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
+        <ul>
+          <li>服务中心&nbsp;</li>
+          <li>社区</li>
+        </ul>
 
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-                <li>
-                  <img style="border: none;" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/11e28a0a7c6a2ca07f0dc2044d3858c2.png?thumb=1&w=160&h=110&f=webp&q=90" alt="">
-                  <div>xiaomi 13</div>
-                  <p>3999起</p>
-                </li>
-              </ul>
-            </div>
-        </li>
-        <li>服务中心&nbsp;</li>
-        <li>社区</li>
-      </ul>
-      <input type="text"  placeholder="显示器" >
-      <div class="input-hidden">
-        1122343213
       </div>
-
-      <button style="font-size: 30px; font-weight: 900;" class="iocnfont-search"></button>
+      <div class="sousuo">
+        <input type="text"  placeholder="显示器" >
+        <div class="input-hidden">
+          1122343213
+        </div>
+       <button style="font-size: 30px; font-weight: 900;" class="iocnfont-search"></button>
+     </div>
     </div>
   </section>
   <section class="navber">
@@ -3176,7 +3315,7 @@
     <div class="main-content-banner-sj">
       <div class="main-content-bt">
         <h2>笔记本 | 平板</h2>
-        <span>热门</span>
+        <span> <b style="border-bottom: 3px solid ; color: #ff6700;">热门</b></span>
       </div>
       <div class="main-content-banner">
         <div>
@@ -4955,7 +5094,7 @@
 
 
 
-    <header style="margin-bottom: 20px;" class="mian-content-header">
+    <header style="margin-bottom: 35px;" class="mian-content-header">
       <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8bfb50f1aa84b32bf2de165a72c2870e.jpg?thumb=1&w=1226&h=120&f=webp&q=90" alt="">
     </header>
 
@@ -5050,9 +5189,17 @@
           增值电信业务许可证 网络食品经营备案 京食药网食备202010048   食品经营许可证
           <br>
           违法和不良信息举报电话：171-5104-4404 知识产权侵权投诉 本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+          <br>
+          <span><img src="https://i1.mifile.cn/f/i/17/site/truste.png" alt=""></span>
+          <span><img src="https://s01.mifile.cn/i/v-logo-2.png" alt=""></span>
+          <span><img src="https://xyt.xinchacha.com/img/icon/icon3.png"></span>
+          <span><img src="https://i8.mifile.cn/b2c-mimall-media/ba10428a4f9495ac310fd0b5e0cf8370.png" alt=""></span>
+          <span><img src="https://cnbj1.fds.api.xiaomi.com/b2c-misite-activity/da50f0d91f1ee6fe04ff1e0f4fe56eb5.png" alt=""></span>
         </p>
       </div>
+
     </div>
+    <div class="yj"></div>
 
   </section>
   <section class="cbl">
