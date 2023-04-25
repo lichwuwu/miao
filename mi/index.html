@@ -986,6 +986,7 @@
           .main-content-bt{
             width: 1230px;
             height: 58px;
+            overflow: hidden;
             margin: 0 auto;
 
             h2{
@@ -1085,7 +1086,7 @@
           margin: 20px auto 0;
 
           .main-content-bt{
-
+            overflow: hidden;
             width: 1230px;
             height: 58px;
             line-height: 58px;
@@ -1140,25 +1141,29 @@
           height: 688px;
 
 
+
           .main-content-bt{
             width: 1230px;
             height: 58px;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
             h2{
               margin: 0;
-              display: inline-block;
-              line-height: 58px;
               font-weight:400;
+              line-height: 58px;
             }
             .qh{
-              display: inline;
 
               height: 0;
-              float: right;
-              line-height: 58px;
+
+
+
 
                 >span{
+                  overflow: hidden;
                   transition: 0s 999999s;
                   color: black;
                   margin-left: 10px;

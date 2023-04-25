@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script id="ch0103/01">
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = a + b
+    console.log(c);
+  </script>
+  <script id="ch0103/02">
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = +prompt("")
+    var d = (a + b) * c
+    console.log(d)
+  </script>
+  <script id="ch0103/03">
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = +prompt("")
+    var d =  (a + b) / c
+    console.log(d);
+  </script>
+  <script id="ch0103/04">
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = a / b
+    var d = a % b
+    console.log(c.toFixed(0) , d)
+  </script>
+  <script id="ch0103/05">
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = a / b
+
+    console.log(+c.toFixed(9))
+  </script>
+  <script id="ch0103/06">
+    var a = + prompt("感染人数")
+    var b = + prompt("死亡人数")
+    var c = b / a * 100
+    console.log(c.toFixed(3) + "%")
+  </script>
+  <script id="ch0103/07">
+    var x = +prompt("")
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = +prompt("")
+    var d = +prompt("")
+    var fx = a * (x **3) + b * (x ** 2) + c * x + d
+    console.log(fx.toFixed(7));
+  </script>
+  <script id="ch0103/08">
+    var f = +prompt("")
+    var c = 5 * (f - 32) / 9
+    console.log(c.toFixed(5))
+  </script>
+  <script id="ch0103/09">
+    var pi = 3.14159
+    var r = +prompt("")
+    var l = 2 * r
+    var c = 2 * pi * r
+    var s =  pi * r * r
+    console.log(l.toFixed(4) + " " +c.toFixed(4) + " " + s.toFixed(4))
+  </script>
+  <script id="ch0103/10">
+    var r1 = +prompt("")
+    var r2 = +prompt("")
+    var R = 1/(1 / r1 + 1 / r2)
+    console.log(R.toFixed(2))
+  </script>
+  <script id="ch0103/11">
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = a % b
+    console.log(c)
+  </script>
+  <script id="ch0103/12">
+    var pi = 3.14
+    var r = +prompt("")
+    var v = 4/3 * pi * (r ** 3)
+    console.log(v.toFixed(2));
+  </script>
+  <script id="ch0103/13">
+    var n = +prompt("")
+    var a = n % 10
+    var b = (n % 100 - n % 10) / 10
+    var c = (n % 1000 - n % 100) /100
+    var e = a + "" + b + "" +c
+    console.log(e)
+  </script>
+  <script id="ch0103/14">
+    var pi = 3.14
+    var h = +prompt("")
+    var r = +prompt("")
+    var v = pi * r * r * h
+    var c = 20 / (v / 1000)
+    console.log(Math.ceil(c));
+  </script>
+  <script  id="ch0103/15">
+    var n = +prompt("几箱")
+    var x = +prompt("几小时吃一个")
+    var y = +prompt("经过几小时")
+    var c = n - y / x
+    console.log(Math.floor(c));
+  </script>
+  <script  id="ch0103/16">
+    var xa = +prompt("")
+    var ya = +prompt("")
+    var xb = +prompt("")
+    var yb = +prompt("")
+    var l = xb - xa
+    var h = yb - ya
+    var c = l *l + h*h
+    console.log(Math.sqrt(c).toFixed(3))
+  </script>
+  <script  id="ch0103/17">
+    var x1 = +prompt("")
+    var y1 = +prompt("")
+    var x2 = +prompt("")
+    var y2 = +prompt("")
+    var x3 = +prompt("")
+    var y3 = +prompt("")
+    var a = x2 - x1
+    var b = y3 - y2
+    var l = a * a + b * b
+    var c = Math.sqrt(l)
+    var p = (a + b + c)/2
+    var s = Math.sqrt(p*(p - a)*(p - b)*(p -c))
+    console.log(s.toFixed(2))
+  </script>
+  <script  id="ch0103/18" >
+    var a1 = +prompt("")
+    var a2 = +prompt("")
+    var n = +prompt("")
+    var d = a2 -a1
+    var an = a1 + (n -1)*d
+    console.log(an)
+  </script>
+  <script  id="ch0103/19">
+    var a = +prompt("")
+    var b = +prompt("")
+    var c = a * b
+    console.log(c)
+  </script>
+  <script  id="ch0103/20" >
+    var n = +prompt("")
+    var c = 2 ** n
+    console.log(c)
+  </script>
+</body>
+</html>
