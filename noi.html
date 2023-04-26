@@ -396,5 +396,21 @@
 
   console.log(Math.max(a));
 </script>
+<script id="ch0105/06">
+  var n = +prompt("")
+  var max = 0
+  var min = 1000
+  for (i = 1; i <= n ; i++){
+    var a = +prompt("")
+    if (a > max){
+      max = a
+    }
+    if (a <=  min){
+      min = a
+    }
+  }
+  var k = max - min
+  console.log(k);
+</script>
 </body>
 </html>
