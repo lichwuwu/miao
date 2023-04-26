@@ -218,9 +218,13 @@
     }
   </script>
   <script id="ch0104/10">
-    var cg = +prompt("")
+   var cg = +prompt("")
     var mg = +prompt("")
-    console.log(cg >= 60 && mg >= 60 ? 1 : 0)
+    if (cg < 60 || mg < 60){
+      close.log(1)
+    }else{
+      console.log(0)
+    }
   </script>
   <script id="ch0104/11">
     var n = +prompt("")
