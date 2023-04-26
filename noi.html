@@ -373,7 +373,7 @@
   var p = y / n
   console.log(p.toFixed(4))
 </script>
-<script id="ch0105/04">
+<script id="ch0105/04" >
   var n = +prompt("")
   var b = 0
   for (i = 1 ; i <= n; i++){
@@ -382,6 +382,19 @@
   }
   var p = (b / n).toFixed(5)
   console.log(b , p );
+</script>
+<script id="ch0105/05">
+  debugger
+  var a = 0
+  var n = prompt("")
+  for (i = 1 ; i <= n; i++){
+    var y = +prompt("")
+    if (y > a){
+      a = y
+    }
+  }
+
+  console.log(Math.max(a));
 </script>
 </body>
 </html>
