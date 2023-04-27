@@ -26,6 +26,7 @@
     var c = +prompt("")
     var d =  (a + b) / c
     console.log(Math.trunc(d));
+    //token: a, =, +, prompt(),consle, . , log;  Math.trunc()保留整数部分
   </script>
   <script id="ch0103/04">
     var a = +prompt("")
@@ -38,8 +39,8 @@
     var a = +prompt("")
     var b = +prompt("")
     var c = a / b
-
     console.log(+c.toFixed(9))
+    //toFixed()保留几位小数；
   </script>
   <script id="ch0103/06">
     var a = + prompt("感染人数")
@@ -197,7 +198,7 @@
     var n = +prompt("")
     console.log(n % 3 == 0 && n % 5 == 0 ? 'YES' : 'NO')
   </script>
-  <script id="ch0104/09">
+  <!-- <script id="ch0104/09">
     var n = +prompt("")
     if (n % 3 == 0 && n % 5 == 0 && n % 7 == 0){
       console.log("3 5 7")
@@ -216,6 +217,22 @@
     }else{
       console.log("n")
     }
+  </script> -->
+  <script id="ch0104/09">
+    var n = +prompt("")
+    if (n % 3 == 0){
+      console.log(3)
+    }
+    if (n % 5 == 0) {
+      console.log(5)
+    }
+    if (n % 7 == 0) {
+      console.log(7)
+    }
+    if (n % 3 !== 0 && n % 5 !== 0 && n % 7 !== 0){
+      console.log("n")
+    }
+
   </script>
   <script id="ch0104/10">
    var cg = +prompt("")
