@@ -580,5 +580,29 @@
 
 
 </script>
+<script id="ch0105/18">
+  var n = +prompt("")
+  var a = +prompt("")
+  var b = +prompt("")
+  var c = b / a
+  var x1 = 0 , x2 = 0
+  var d = 0
+  for(var i = 1; i < n ; i++){
+    x1 = +prompt("")
+    x2 = +prompt("")
+    d = x2 / x1
+    if (c - d > 0.05){
+      console.log('worse')
+    }
+
+    if(d - c > 0.05){
+      console.log('better')
+    }
+    if(!(d - c > 0.05) && !(c - d > 0.05)){
+      console.log('same')
+    }
+
+  }
+</script>
 </body>
 </html>
