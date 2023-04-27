@@ -541,5 +541,26 @@
   }
   console.log(m.toFixed(0));
 </script>
+<script id="ch0105/16">
+  var n = +prompt("")
+  var k = +prompt("")
+  var v = 0
+  var z = 200
+  var l = k / 100
+  for (var m = 2; ; m++){
+    v = n * m
+    z += z * l
+    if (m <= 20 && v >= z) {
+      console.log(m)
+      break
+    }
+    if(m > 20){
+      console.log("Impossible")
+      break
+    }
+    console.log(v , z);
+
+  }
+</script>
 </body>
 </html>
