@@ -621,5 +621,70 @@
   sj = (c / 50) * 2 + (1 * d) + (d * 0.5)
   console.log(Math.ceil(sj))
 </script>
+<script id="ch0105/20">
+    var h = +prompt('')
+    var fh = h / 2
+    var jl = 0
+    for (var i = 0; i < 10 ;i++){
+      fh = h / 2
+      jl += h + fh
+      h = fh
+    }
+    jl = jl - h
+    console.log(jl , h)
+  </script>
+  <script id="ch0105/23">
+    var m =+prompt("")
+    var n =+prompt("")
+    var count = 0
+
+    for(var i= 1 ; i<= n ; i++){
+      var qz =+prompt("")
+      if (m <= qz){
+        count = count + 1
+        continue
+      }
+      m = m - qz
+    }
+    console.log(count);
+  </script>
+  <script id="ch0105/24">
+     var n =+prompt("")
+     var count = 0
+     var max = 0
+     for (var i = 0; i < n ; i++){
+      var a = +prompt("")
+      var b = +prompt("")
+        if ((a <= 140 && a >= 90) && (b <= 90 && b >= 60)){
+
+          count = count + 1
+          if(count > max){
+            max = count
+          }
+        }else{
+          count = 0
+
+
+        }
+     }
+     console.log(max)
+  </script>
+  <script id="ch0105/25">
+    debugger
+    for (var n = 248;n < 343; n++){
+      var a1 = n % 7
+      var a2 = (n - a1) / 7 % 7
+      var a3 = (n - a2 * 7 - a1) / 7 /7 % 7
+
+      var b1 = n % 9
+      var b2 = (n - b1) /9 % 9
+      var b3 = (n - b2 * 9 - b1) / 9 / 9 % 7
+      if (a1 == b3 && a2 == b2 && a3 == b1){
+
+        console.log(n,""+ a3 + a2 + a1 ,""+ b3 + b2 + b1)
+        break
+      }
+    }
+  </script>
 </body>
 </html>
