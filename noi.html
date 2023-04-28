@@ -633,6 +633,43 @@
     jl = jl - h
     console.log(jl.toFixed(4) , h.toFixed(7))
   </script>
+  <script id="ch0105/21" >
+    var n = +prompt("")
+    while ( 1 < n ){
+       if(n % 2 == 0){
+          n = n / 2
+          console.log(n * 2 + "/2=" + n);
+        }else{
+
+          console.log(n + "*3+1=" + (n*3+1))
+          n = n * 3 + 1
+
+        }
+    }
+    console.log("End")
+
+  </script>
+  <script id="ch0105/22">
+    var money = 0
+    var c = 0
+    var a =false
+    for(var i = 1; i<= 12; i++){
+      var ys = +prompt("")
+      money += 300 - ys
+      if ( money < 0){
+        console.log(-i);
+        a = true
+        break
+      }
+      if(money >= 100){
+        c += money - money % 100
+        money = money % 100
+      }
+    }
+    if(a == false){
+      console.log(c * 1.2 + money)
+    }
+  </script>
   <script id="ch0105/23">
     var m =+prompt("")
     var n =+prompt("")
