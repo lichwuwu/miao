@@ -1016,6 +1016,21 @@
       }
       console.log(sum);
     </script>
-
+  <script id="narcissistic">
+    var n =+prompt("")
+    var v = 0
+    var x = n
+    var s = 0
+    while(x > 0){
+      v = x % 10
+      s += v ** 3
+      x = (x - v) /10
+    }
+    if(s == n){
+      console.log("YES");
+    }else{
+      console.log("NO");
+    }
+  </script>
 </body>
 </html>
