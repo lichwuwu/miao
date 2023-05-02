@@ -809,7 +809,7 @@
   <script id="ch0105/31" type="">
     var n = +prompt("")
     var m = +prompt("")
-    console.log(1);
+    var v = ""
     for(i= 2 ;i <= n ;i++ ){
       var c = 0
       for (var j = 1; j <= m ; ++j){
@@ -819,10 +819,11 @@
 
       }
       if(c % 2 == 1){
-        console.log(i);
+        v += ','+ i
       }
 
     }
+    console.log(1+v);
   </script>
   <script id="ch0105/32" type="">
     var n = +prompt("")
@@ -915,7 +916,7 @@
       }
       v = i * i
       a += v
-      
+
     }
     console.log(a);
   </script>
