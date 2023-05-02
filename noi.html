@@ -902,78 +902,94 @@
     }
     console.log(n)
   </script>
-  <script type="fdsa">
-    var n =+prompt("")
-
-  </script>
-  <script id="ch0105/39" type="">
-    var a = 0
-    var v = 0
-    var n = +prompt('')
-    for (var i = 0; i <= n;i++){
-      if(i % 7 == 0 || (i - (i % 10)) / 10 % 10 == 7 || i % 10 == 7 ){
-        continue
-      }
-      v = i * i
-      a += v
-
-    }
-    console.log(a);
-  </script>
-  <script id="ch0105/40" type="">
+  <script id="ch0105/38">
     var n = +prompt("")
-    var c =0
-    for(var i = 1 ; i<= n;i++){
-      if( (i-i%10) /10 %10 ==1){
-        c++
+    var c
+    for(var i = 1 ;i<= n; i++){
+
+      var a = +prompt("")
+      if ( a == 0){
+        c = 0
+        console.log(c);
+      }
+      for(var j = a;j >= 0;j--){
+        var b = +prompt("")
+        if (j != 0){
+           c = b * j
+           console.log(c);
+        }
+      }
+
+    }
+  </script>
+    <script id="ch0105/39" type="">
+      var a = 0
+      var v = 0
+      var n = +prompt('')
+      for (var i = 0; i <= n;i++){
+        if(i % 7 == 0 || (i - (i % 10)) / 10 % 10 == 7 || i % 10 == 7 ){
+          continue
+        }
+        v = i * i
+        a += v
 
       }
-      if(i % 10 == 1){
-          c ++
-        }
-    }
-    console.log(c);
-  </script>
-  <script id="ch0105/41" type="">
-    var l = +prompt("")
-    var r = +prompt("")
-    var c = 0
-    for(l;l <= r ; l++){
-      if( (l-l%10) /10 %10 ==2){
-        c++
+      console.log(a);
+    </script>
+    <script id="ch0105/40" type="">
+      var n = +prompt("")
+      var c =0
+      for(var i = 1 ; i<= n;i++){
+        if( (i-i%10) /10 %10 ==1){
+          c++
 
-      }
-      if(l % 10 == 2){
-          c ++
         }
-    }
-    console.log(c);
-  </script>
-  <script id="ch0105/42" type="">
-    var a = +prompt("")
-    var b = +prompt("")
-    var fh =prompt("")
-    var sx = +prompt("")
-    var k = ""
-    var v = ""
-    var c = 0
-    for (var i = 1; i <= a; i++){
-      k += fh
-    }
-    console.log(k);
-    for(var i2 = 1; i2<= b-2;i2++){
-      v = ""
-      for(var j = 1; j <= a -2; j++){
-      if (sx == 0){
-        c = " "
-      }else{
-        c = fh
+        if(i % 10 == 1){
+            c ++
+          }
       }
-        v += c
+      console.log(c);
+    </script>
+    <script id="ch0105/41" type="">
+      var l = +prompt("")
+      var r = +prompt("")
+      var c = 0
+      for(l;l <= r ; l++){
+        if( (l-l%10) /10 %10 ==2){
+          c++
+
+        }
+        if(l % 10 == 2){
+            c ++
+          }
       }
-      console.log(fh + v +fh);
-    }
-    console.log(k);
+      console.log(c);
+    </script>
+    <script id="ch0105/42" type="">
+      var a = +prompt("")
+      var b = +prompt("")
+      var fh =prompt("")
+      var sx = +prompt("")
+      var k = ""
+      var v = ""
+      var c = 0
+      for (var i = 1; i <= a; i++){
+        k += fh
+      }
+      console.log(k);
+      for(var i2 = 1; i2<= b-2;i2++){
+        v = ""
+        for(var j = 1; j <= a -2; j++){
+        if (sx == 0){
+          c = " "
+        }else{
+          c = fh
+        }
+          v += c
+        }
+        console.log(fh + v +fh);
+      }
+      console.log(k);
     </script>
     <script id="ch0105/43" type="dsg">
       var p =+prompt('')
@@ -985,22 +1001,31 @@
       }
       console.log(a);
     </script>
-    <script type="gsd">
-      var v =false
-      var c = 0
+    <script id="ch0105/44">
       var n = +prompt("")
-      for(var x = 2; x <= n;x++){
-        if(x == 2 || x == 3 || x == 5 || x == 7 && x != 1 || x % 2 !== 0 && x % 3 !== 0 && x % 5 !== 0 && x % 7 !== 0 ){
-          v = true
-        }else{
-          v = false
+      var c = 0
+      function isPrime(n){
+        if(n == 1){
+          return false
         }
-        if(v = true){
-          console.log(x);
-
+        sqn = Math.sqrt(n)
+        for(var i = 2; i <= sqn;i++){
+          if(n % i == 0){
+            return false
+          }
+        }
+        return true
+      }
+      for(var i = 1; ; i++){
+        if(isPrime(i)){
+          c++
+        }
+        if (n == c){
+          console.log(i);
+          break
         }
       }
-      console.log(c);
+
     </script>
     <script id="ch0105/45" type="">
       var n = +prompt('')
@@ -1031,6 +1056,22 @@
     }else{
       console.log("NO");
     }
+  </script>
+  <script>
+    var v = 0
+    var x = n
+    var s = 0
+    for(var i = 0; i<=1000; i++){
+      while(i > 0){
+      v = i % 10
+      s += v ** 3
+      i = (i - v) /10
+      }
+      if(s == i){
+        console.log(s);
+      }
+    }
+
   </script>
 </body>
 </html>
