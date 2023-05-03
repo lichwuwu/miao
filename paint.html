@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="1000" height="1000"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.trunc(x)
+    y = Math.trunc(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+  /**
+   * 你的任务：通过调用dot函数，实现：
+   * 需要注意，dot函数不能接收浮点数，如果参数为浮点数，会被转换为整数后绘制
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条水平实线，粗细为一个像素
+      * 画一条垂直实线，粗细为一个像素
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴的夹角呈30度）
+      * 画一条60度的斜线（与x轴的夹角呈60度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个空心的圆，圆心在画布中心：
+        * 一个半径为50像素
+        *
+        *
+        *
+        *
+        *
+        *
+        *
+
+        *
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小位置都合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+      * 如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变换后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+
+  //在 坐标 (42, 42) 画出一个点
+  dot(42,42,"red")
+
+  //画一条水平实线，粗细为一个像素
+  for(var x = 0;x <= 1000;x++){
+    dot(x,500)
+  }
+ //画一条垂直实线，粗细为一个像素
+ for(var y = 0;y <= 1000;y++){
+    dot(500,y)
+  }
+ //   画一条一个实点一个空点的虚线
+  for(var x = 50;x<=200; x += 2){
+    dot(x,55)
+  }
+
+ // * 画一条两个实点两个空点的虚线
+ for(var x=50;x<=200;x+=4){
+  dot(x,59)
+  dot(x+1,59)
+ }
+
+ // * 画一条三个实点两个空点的虚线
+ for(var x=50;x<=200;x+=5){
+  dot(x,  65,"rgb(255,45,36)")
+  dot(x+1,65,"rgb(255,45,36)")
+  dot(x+2,65,"rgb(255,45,36)")
+ }
+
+  // * 画一条45度的斜线
+  for(var x = 0 ;x <= 300;x++){
+    dot(x+500,x)
+  }
+      // * 画一条30度的斜线（与x轴的夹角呈30度）
+      function line (x1,y1,x2,y2,color){
+
+        var dx = x2 - x1
+        var dy = y2 - y1
+        var y = y1
+        var ty = 0
+        for(var x = x1 ;x <= x2 ; x++){
+          dot(x,y,color)
+          ty += dy
+          if(ty >= dy){
+            y++
+            ty -= dx
+          }
+        }
+
+
+
+      }
+      line(500,500,1000,600)
+      // * 画一条60度的斜线（与x轴的夹角呈60度）
+      function liney (x1,y1,x2,y2,color){
+
+        var dx = x2 - x1
+        var dy = y2 - y1
+        var x = x1
+        var tx = 0
+        for(var y = y1 ;y <= y2 ; y++){
+          dot(x,y,color)
+          tx += dx
+          if(tx >= dx){
+            x++
+            tx -= dy
+          }
+        }
+
+      }
+      liney(500,500,600,1000,"red")
+      // * 画一条跨越画布左上角和右下角的对角线
+      for(var i=0;i<=1000;i++){
+        dot(i,i,"rgb(32,143,75)")
+      }
+      // * 画一个空心矩形
+
+      for(var i = 0 ; i<= 50;i++){
+      dot(10+i,20)
+    }
+    for(var i = 0 ; i<= 30;i++){
+      dot(10,20+i)
+    }
+    for(var i = 0 ; i<= 50;i++){
+      dot(10+i,50)
+    }
+    for(var i = 0 ; i<= 30;i++){
+      dot(60,20+i)
+    }
+
+      // * 画一个实心矩形
+
+      for(var i =0; i<= 50; i++){
+      for(var j = 0 ;j <=30 ;j++){
+
+        dot(100+i,150+j)
+      }
+    }
+    // * 画两个空心的圆，圆心在画布中心：
+    //   * 一个半径为50像素
+      function circle (cx,cy,r,color){
+        var start = Math.ceil(r * Math.SQRT1_2)
+        for(var x = 0;x <= start;x++){
+          var y = Math.sqrt(r * r - x * x)
+          dot(x + cx ,y + cy,color)
+          dot(-x + cx ,y + cy,color)
+          dot(-x + cx ,-y + cy,color)
+          dot(x + cx ,-y + cy,color)
+          dot(-y + cx ,x + cy,color)
+          dot(y + cx ,-x + cy,color)
+          dot(y + cx ,x + cy,color)
+          dot(-y + cx ,-x + cy,color)
+        }
+      }
+      circle(500,500,50,"red")
+
+      //一个半径为200像素
+      circle(500,500,200,"red")
+      //画一个【大小位置都合适】的sin(x)的图像
+      for(var x = 0; x<=200;x++){
+        var y = Math.sin(x/10)*10
+        dot(x,y+100,"red")
+      }
+
+
+
+
+      function sckj (x,y){
+
+      for(var i =0; i<= 255; i++){
+          for(var j = 0 ;j <=256 ;j++){
+            dot(x+i,y+j,"rgb("+i+","+j+",255)")
+          }
+        }
+      }
+    sckj(700,700)
+
+
+  // for(var i = 0;i<=500; i++){
+  //   dot(i,250)
+
+  // }
+  // for(var i=0;i<=500;i++){
+  //   dot(250,i)
+  // }
+  // for(var i=0;i<=500;i++){
+  //   if(i % 2 == 0){
+  //     dot(i,115)
+  //   }
+  // }
+  // for(var i=0;i<=500;i++){
+
+
+  //   dot(i,120)
+  //   dot(i+1,120)
+  //   i = i + 3
+  // }
+  // for(var i=0;i<=500;i++){
+
+
+  //   dot(i,130)
+  //   dot(i+1,130)
+  //   dot(i+2,130)
+  //   i = i + 4
+  //   }
+
+  //   for(var i = 0;i<=500; i++){
+  //     dot(i,i)
+  //   }
+
+  //   v = 0
+  //   for(var i = 0;i<=500; i++){
+  //     v++
+  //     dot(i++,v)
+
+  //   }
+  //   for(var i = 0;i<=500; i++){
+  //     v++
+  //     dot(i++,1)
+
+  //   }
+
+  //   var y = 0, r = 50
+  // for (var x = -50; x <= r; x++) {
+  //   y = Math.sqrt(r ** 2 - x ** 2)
+  //   console.log(dot(x + 250, y + 250))
+  //   console.log(dot(-x + 250, -y + 250))
+  // }
+  // var y = 0, r = 200
+  // for(var i = -200;i <= r ; i++){
+  //   y = Math.sqrt(r * r  - i * i)
+  //   console.log(dot(i+250,y+250));
+  //   console.log(dot(-i+250,-y+250));
+  // }
+
+  // var y = 0, x = 0, r = 100
+  // for (var x = -100; x <= r; x++) {
+  //   for (var y = -100; y <= r; y++)
+  //     if (y ** 2 <= r ** 2 - x ** 2) {
+  //       console.log(dot(x + 250, y + 250,"rgba(255,255,0,0.6)"))
+  //     }
+  // }
+
+</script>
+</html>
