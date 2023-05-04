@@ -1073,5 +1073,20 @@
     }
 
   </script>
+  <script id="palindrom">
+    var n = +prompt("")
+    var i = n
+    var c = 0
+    while( i > 0){
+      x = i % 10
+      c = (x + c)*10
+      i = ( i - x )/10
+    }
+    if(n == c / 10){
+      console.log('YES');
+    }else{
+      console.log('NO');
+    }
+  </script>
 </body>
 </html>
