@@ -1172,7 +1172,24 @@
   </script>
   <script id="itob">
     var n = +prompt("")
-    console.log(String.fromCharCode(n+48));
+    var z = ""
+    var a = true
+    if(n <0){
+      n = -n
+      a = false
+    }
+    while(n != 0){
+      g = n % 10
+      z = String.fromCharCode(g+48) + z
+      n = (n - g) /10
+    }
+    if(a == true){
+
+      console.log(z);
+    }else{
+      console.log(-z);
+    }
+
   </script>
 </body>
 </html>
