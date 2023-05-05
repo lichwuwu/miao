@@ -1110,6 +1110,25 @@
       return s == n
     }
   </script>
-  
+  <script id="complete-numbers">
+      for(var n = 1;n<=1000;n++){
+        var z = Math.sqrt(n)
+        var s =0
+        for (var i = 1 ;i < z; i++){
+          if(n % i==0){
+            s += i + n / i
+          }
+        }
+        if(Number.isInteger(z)){
+          s += z
+        }
+        s = s - n
+        if(s == n){
+          console.log(n)
+        }
+      }
+
+
+  </script>
 </body>
 </html>
