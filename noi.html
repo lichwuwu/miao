@@ -1133,20 +1133,41 @@
       if(n==2||n==3){
         return true
       }
-      var a = Math.sqrt(n)
-      for(var i = 2;i <= a; i++){
-        if(n%i == 0){
+
+      for(var i = 2;i < n; i++){
+        if(n % i == 0){
           return false
-        }else{
-          return true
         }
       }
+      return true
     }
     var n =+prompt("")
     if (prime(n)==true){
       console.log("YES")
     }else{
       console.log("NO");
+    }
+  </script>
+  <script id="primes">
+    function prime(n){
+      if(n==2||n==3){
+        return true
+      }
+      if(n==1){
+        return false
+      }
+      for(var i = 2;i < n; i++){
+        if(n % i == 0){
+          return false
+        }
+      }
+      return true
+    }
+    var c = 0
+    for(var i =1;i<=100;i++){
+      if(prime(i)==true){
+        console.log(i);
+      }
     }
   </script>
   <script id="itob">
