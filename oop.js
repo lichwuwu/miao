@@ -42,7 +42,7 @@ class Stack{
     }
   }
   pop(){
-    if(head == null){
+    if(this.head == null){
       return undefined
     }
     this.nodeCount--
