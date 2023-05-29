@@ -18,12 +18,6 @@ class Vector {
   }
 
 }
-class LinkedList{
-  constructor(...initVals){
-    this.head = null
-    this.tail = nulle
-  }
-}
 class Stack{
   constructor(){
     this.head = null
