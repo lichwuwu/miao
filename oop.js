@@ -102,7 +102,7 @@ class LinkedList{
     }
     return p.val
   }
-  get length(){
+  get size(){
     var p = this.head
     var l = 0
     while(p) {
