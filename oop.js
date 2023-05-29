@@ -54,6 +54,20 @@ class Stack{
     return this.nodeCount
   }
 }
+class Queue{
+  constructor(){
+    this._vals = []
+  }
+  add(val){
+    this._vals.push(val)
+  }
+  pop(){
+    return this._vals.shift()
+  }
+  get size(){
+    return this._vals.length
+  }
+}
 
 class MyMap {
   constructor (){
