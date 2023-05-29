@@ -24,6 +24,36 @@ class LinkedList{
     this.tail = nulle
   }
 }
+class Stack{
+  constructor(){
+    this.head = null
+    this.nodeCount = 0
+  }
+  push(val){
+    var node = {
+      val : val ,next: null
+    }
+    this.nodeCount++
+    if(this.head == null){
+      this.head = node
+    }else{
+      node.next = this.head
+      this.head = node
+    }
+  }
+  pop(){
+    if(head == null){
+      return undefined
+    }
+    this.nodeCount--
+    var result = this.head.val
+    this.head = this.head.next
+    return result
+  }
+  get size(){
+    return this.nodeCount
+  }
+}
 
 class MyMap {
   constructor (){
