@@ -68,7 +68,56 @@ class Queue{
     return this._vals.length
   }
 }
-
+class LinkedList{
+  constructor(...initVals){
+    this.head = null
+    this.tail = null
+  }
+  append(val){
+    var node = {
+      val , next : null
+    }
+    if(this.head == null){
+      this.head = this.tail = node
+      return
+    }else{
+      this.tail.next = node
+      this.tail = node
+      return
+    }
+  }
+  prepend(val){
+    var node = {
+      val, next: null
+    }
+    if (this.head == null) {
+      this.head = this.tail = node
+      return
+    } else {
+      node.next = this.head
+      this.head = node
+      return
+    }
+  }
+  at(idx){
+    var p = this.head
+    var count = 0
+    while (count < idx) {
+      p = p.next
+      count++
+    }
+    return p.val
+  }
+  get length(){
+    var p = this.head
+    var l = 0
+    while(p) {
+      l++
+      p = p.next
+    }
+    return l
+    }
+}
 class MyMap {
   constructor (){
     this._capacity = 16
