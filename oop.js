@@ -1,17 +1,17 @@
-class vector {
+class Vector {
   constructor (x,y){
     this.x = x
     this.y = y
   }
-  plus(vector){
-    var x = this.x + vector.x
-    var y = this.y + vector.y
-    return new vector.constructor(x,y)
+  plus(Vector){
+    var x = this.x + Vector.x
+    var y = this.y + Vector.y
+    return new Vector.constructor(x,y)
   }
-  minus(vector){
-    var x = this.x - vector.x
-    var y = this.y - vector.y
-    return new vector.constructor(x,y)
+  minus(Vector){
+    var x = this.x - Vector.x
+    var y = this.y - Vector.y
+    return new Vector.constructor(x,y)
   }
   get length (){
     return Math.sqrt(this.x * this.x + this.y * this.y)
