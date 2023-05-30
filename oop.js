@@ -256,7 +256,7 @@ class MySet{
       this._elements.push(val)
     }
   }
-  remove (val) {
+  delete (val) {
     if (this.has(val)) {
       var idx = this._elements.indexOf(val)
       this._elements.splice(idx, 1)
