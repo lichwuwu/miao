@@ -239,7 +239,7 @@ class Complex {
     return new Complex.constructor(real, imag)
   }
   div(c) {
-    var helper = new Complex(c.real, -c.imag)
+    var helper = new Complex.constructor(c.real, -c.imag)
     var up = this.mul(helper)
     var down = c.mul(helper) // down的虚部应该是0
     var real = up.real / down.real
