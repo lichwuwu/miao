@@ -247,6 +247,7 @@ class Complex {
     return new Complex.constructor(real, imag)
   }
 }
+
 class MySet{
   constructor(){
     this._elements = []
