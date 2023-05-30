@@ -192,7 +192,7 @@ class MyMap {
     return false
   }
   get size(){
-    this._size
+    return this._size
   }
   缩容(){
     if(this._capacity === 16 ){
