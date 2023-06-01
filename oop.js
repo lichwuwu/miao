@@ -270,7 +270,104 @@ class MySet{
     return this._elements.length
   }
 }
+function heapify(array){
+  var start = (array.length - 1) >> 1
+  for(var i= start ;i >= 0 ;i--){
+    heapDown(array,i)
+  }
+  return array
+}
+class PriorityQueue{
+  constructor(initials = [], predicate = it => it){
+    if(typeof predicate !== 'function'){
+      throw new TypeError('predicate must be a function, got: ' + predicate)
+    }
+    this._elements = []
+    this._predicate = predicate
+    for(var val of initials){
+      this.push(val)
+    }
+  }
+  heapUp( pos){
+    if(pos == 0){
+      return
+    }
+    var predicate = this._predicate
+    var parentPos = (pos - 1) >> 1
+    if(predicate(this._elements[pos]) > predicate(this._elements[parentPos])){
+      swap(this._elements,pos,parentPos)
+      this.heapUp(parentPos)
+    }
 
+  }
+  heapDown(pos){
+    var leftPos = 2 * pos + 1
+    var rightPos = 2 * pos + 2
+    var maxIndex = pos
+    var predicate = this._predicate
+    if(leftPos < this._elements.length && predicate(this._elements[leftPos]) > predicate(this._elements[maxIndex])){
+      maxIndex = leftPos
+    }
+    if(rightPos < this._elements.length && predicate(this._elements[rightPos]) > predicate(this._elements[maxIndex])){
+      maxIndex = rightPos
+    }
+    if(maxIndex != pos){
+      swap(this._elements,maxIndex,pos)
+      this.heapDown(maxIndex)
+    }
+  }
+  pop(){
+    if(this._elements.length == 0){
+      return undefined
+    }
+    if(this._elements.length == 1){
+      return this._elements.pop()
+    }
 
+    var last = this._elements.pop()
+    var result = this._elements[0]
+    this._elements[0] = last
+    this.heapDown(0)
+    return result
+  }
+  push(val){
+    this._elements.push(val)
+    this.heapUp(this._elements.length -1)
+    return this
+  }
+  get size (){
+   return this._elements.length
+  }
+}
+function heapSort(array){
+  var start = (array.length - 1) >> 1
+  for(var i= start ;i >= 0 ;i--){
+    heapDown(array,i)
+  }
 
-
+  for(var i = array.length -1;i>0;i--){
+    swap(array,i,0)
+    heapDown(array,0,i)
+  }
+  return array
+}
+function heapDown(heap,pos,stop = heap.length){
+  var leftPos = 2 * pos + 1
+  var rightPos = 2 * pos + 2
+  var maxIndex = pos
+  if(leftPos < stop && heap[leftPos] > heap[maxIndex]){
+    maxIndex = leftPos
+  }
+  if(rightPos < stop && heap[rightPos] > heap[maxIndex]){
+    maxIndex = rightPos
+  }
+  if(maxIndex != pos){
+    swap(heap,maxIndex,pos)
+    heapDown(heap,maxIndex,stop)
+  }
+}
+function swap(array,i,j){
+  var t = array[i]
+  array[i] = array[j]
+  array[j] = t
+}
