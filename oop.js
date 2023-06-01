@@ -335,6 +335,9 @@ class PriorityQueue{
     this.heapUp(this._elements.length -1)
     return this
   }
+  peek(){
+    return this._elements[0]
+  }
   get size (){
    return this._elements.length
   }
