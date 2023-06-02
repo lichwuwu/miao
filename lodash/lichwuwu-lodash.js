@@ -29,4 +29,13 @@ var lichwuwu = {
     }
     return result
   },
+  difference : function (array,val){
+
+  },
+  drop : function(array,n = 1){
+    for(var i = 0;i< n;i++){
+      array.shift()
+    }
+    return array
+  }
 }
