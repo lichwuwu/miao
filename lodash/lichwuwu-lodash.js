@@ -43,5 +43,18 @@ var lichwuwu = {
       array[start] = val
     }
     return array
-  }
+  },
+  flatten: function(array){
+    var result = []
+    for(var item of array){
+      if(Array.isArray(item)){
+        for(var i = 0 ;i<item.length;i++){
+          result.push(item[i])
+        }
+      }else{
+        result.push(item)
+      }
+    }
+    return result
+  },
 }
