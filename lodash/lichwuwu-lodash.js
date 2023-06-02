@@ -18,11 +18,15 @@ var lichwuwu = {
   },
   concat : function (array,...val){
     var result = array
-    if(Array.isArray(val)){
-      val.flat()
+    for(var i = 0;i<val.length;i++){
+      if(Array.isArray(val[i])){
+        for(var j = 0;j<val[i].length;j++){
+          result.push(val[i][j])
+        }
+      }else{
+        result.push(val[i])
+      }
     }
-    result.push(...val)
-
     return result
   },
 }
