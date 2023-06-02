@@ -37,5 +37,11 @@ var lichwuwu = {
       array.shift()
     }
     return array
+  },
+  fill : function(array,val,start = 0,end = array.length){
+    for(start;start<end;start++){
+      array[start] = val
+    }
+    return array
   }
 }
