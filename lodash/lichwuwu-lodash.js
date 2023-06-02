@@ -15,5 +15,14 @@ var lichwuwu = {
       }
     }
     return result
-  }
+  },
+  concat : function (array,...val){
+    var result = array
+    if(Array.isArray(val)){
+      val.flat()
+    }
+    result.push(...val)
+
+    return result
+  },
 }
