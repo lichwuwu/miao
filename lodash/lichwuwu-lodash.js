@@ -61,7 +61,24 @@ var lichwuwu = {
     var result=[]
     for(var item of array){
       if(Array.isArray(item)){
-        var flattenItem = c(item)
+        var flattenItem = flattenDeep(item)
+        for(var key of flattenItem){
+          result.push(key)
+        }
+      }else{
+        result.push(item)
+      }
+    }
+    return result
+  },
+  flattenDepth : function(array,depth = 1){
+    if(depth == 0){
+      return array.slice()
+    }
+    var result=[]
+    for(var item of array){
+      if(Array.isArray(item)){
+        var flattenItem = flattenDepth(item ,depth -1)
         for(var key of flattenItem){
           result.push(key)
         }
