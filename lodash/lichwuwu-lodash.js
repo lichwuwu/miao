@@ -57,11 +57,11 @@ var lichwuwu = {
     }
     return result
   },
-  flattenDeep : function(array){
+  flattenDeep : function a(array){
     var result=[]
     for(var item of array){
       if(Array.isArray(item)){
-        var flattenItem = flattenDeep(item)
+        var flattenItem = a(item)
         for(var key of flattenItem){
           result.push(key)
         }
@@ -71,14 +71,14 @@ var lichwuwu = {
     }
     return result
   },
-  flattenDepth : function(array,depth = 1){
+  flattenDepth : function b(array,depth = 1){
     if(depth == 0){
       return array.slice()
     }
     var result=[]
     for(var item of array){
       if(Array.isArray(item)){
-        var flattenItem = flattenDepth(item ,depth -1)
+        var flattenItem = b(item ,depth -1)
         for(var key of flattenItem){
           result.push(key)
         }
@@ -88,5 +88,5 @@ var lichwuwu = {
     }
     return result
   }
-  
+
 }
