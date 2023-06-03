@@ -87,6 +87,20 @@ var lichwuwu = {
       }
     }
     return result
-  }
+  },
+  indexOf : function(array,value, fromIndex = 0){
+    for(var i=0;i < array.length;i++){
+      if(fromIndex == 0 || fromIndex > array.length -1){
+        if(array[i] == value){
+          return i
+        }
+      }
+      if(array[i] == value){
+            return array[i] + array[fromIndex]
+
+        }
+    }
+    return -1
+  },
 
 }
