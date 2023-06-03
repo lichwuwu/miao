@@ -30,6 +30,7 @@ var lichwuwu = {
     return result
   },
   difference : function (array,...val){
+    val = this.flattenDeep(val)
     for(var i=0;i<val.length ;i++){
       var a = array.filter(it => it !== val[i])
       array = a
