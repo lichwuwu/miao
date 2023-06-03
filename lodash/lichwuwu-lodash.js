@@ -128,7 +128,9 @@ var lichwuwu = {
     return -1
   },
   initial : function (array){
-    return array.pop()
+     array.pop()
+     return array
+
   },
 
 
