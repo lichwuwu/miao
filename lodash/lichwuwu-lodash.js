@@ -29,7 +29,7 @@ var lichwuwu = {
     }
     return result
   },
-  difference : function (array,val){
+  difference : function (array,...val){
     for(var i=0;i<val.length ;i++){
       var a = array.filter(it => it !== val[i])
       array = a
