@@ -43,6 +43,12 @@ var lichwuwu = {
     }
     return array
   },
+  dropRight : function(array,n =1){
+    for(var i = 0;i< n;i++){
+      array.pop()
+    }
+    return array
+  },
   fill : function(array,val,start = 0,end = array.length){
     for(start;start<end;start++){
       array[start] = val
