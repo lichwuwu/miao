@@ -91,6 +91,14 @@ var lichwuwu = {
   head : function(array){
     return array[0]
   },
+  fromPairs : function(array){
+    var map = {}
+    for(var i= 0;i<array.length;i++){
+
+        map[array[i][0]] = array[i][1]
+    }
+    return map
+  },
   indexOf : function(array,value, fromIndex = 0){
     for(var i=0;i < array.length;i++){
       if(fromIndex <= 0 || fromIndex > array.length -1){
