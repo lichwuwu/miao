@@ -88,6 +88,9 @@ var lichwuwu = {
     }
     return result
   },
+  head : function(array){
+    return array[0]
+  },
   indexOf : function(array,value, fromIndex = 0){
     for(var i=0;i < array.length;i++){
       if(fromIndex == 0 || fromIndex > array.length -1){
@@ -102,5 +105,6 @@ var lichwuwu = {
     }
     return -1
   },
+
 
 }
