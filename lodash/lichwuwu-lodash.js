@@ -55,6 +55,9 @@ var lichwuwu = {
     }
     return array
   },
+  findIndex : function(array,){
+
+  },
   flatten: function(array){
     var result = []
     for(var item of array){
@@ -123,6 +126,9 @@ var lichwuwu = {
         }
     }
     return -1
+  },
+  initial : function (array){
+    return array.pop()
   },
 
 
