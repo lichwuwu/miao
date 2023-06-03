@@ -30,7 +30,11 @@ var lichwuwu = {
     return result
   },
   difference : function (array,val){
-
+    for(var i=0;i<val.length ;i++){
+      var a = array.filter(it => it !== val[i])
+      array = a
+    }
+     return a
   },
   drop : function(array,n = 1){
     for(var i = 0;i< n;i++){
