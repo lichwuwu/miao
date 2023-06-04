@@ -198,6 +198,37 @@ var lichwuwu = {
       }
     }
     return array
+  },
+  reverse : function(array){
+    var left = 0
+    var right = array.length -1
+    while(left !== right){
+      this.swap(array,left,right)
+      left++
+      right--
+    }
+    return array
+
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  swap : function(array,i,j){
+    var t = array[i]
+    array[i] = array[j]
+    array[j] = t
   }
 
 }
