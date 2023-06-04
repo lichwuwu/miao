@@ -244,6 +244,16 @@ var lichwuwu = {
     }
     return result
   },
+  pullAllBy : function(array, values, iteratee = this.identity(iteratee)){
+    for(var i = 0; i< values.length; i++){
+      for(var j = 0 ;j< array.length;j++){
+        if(values[iteratee] === array[j][iteratee]){
+          array.splice(j,1)
+        }
+      }
+    }
+    return array
+  },
   reverse : function(array){
     var left = 0
     var right = array.length -1
@@ -284,7 +294,9 @@ var lichwuwu = {
 
 
 
-
+  identity : function(value){
+    return value
+  },
   swap : function(array,i,j){
     var t = array[i]
     array[i] = array[j]
