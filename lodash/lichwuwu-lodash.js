@@ -171,6 +171,13 @@ var lichwuwu = {
     }
     return sum
 
+  },
+  nth : function(array,n=0){
+    if(n < 0){
+      return array[array.length + n]
+    }else{
+     return array[n]
+    }
   }
 
 }
