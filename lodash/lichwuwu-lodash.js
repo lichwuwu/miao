@@ -132,6 +132,22 @@ var lichwuwu = {
      return array
 
   },
+  intersection : function (...arrays){
+    var result = []
+    var map = {}
+
+    for(var array in arrays){
+
+    }
+  },
+  join : function(array,separator =','){
+    var result = ''
+    for(var i = 0;i<array.length;i++){
+      result += array[i]
+      result += separator
+    }
+    return result.slice(0,result.length -1)
+  },
 
 
 }
