@@ -199,6 +199,16 @@ var lichwuwu = {
     }
     return array
   },
+  remove : function(array,predicate){
+    var result = []
+    for(var i = 0;i<array.length;i++){
+      if(predicate(array[i])){
+        result.push(array[i])
+        array.splice(i,1)
+      }
+    }
+    return result
+  },
   reverse : function(array){
     var left = 0
     var right = array.length -1
