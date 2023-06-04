@@ -37,6 +37,28 @@ var lichwuwu = {
     }
      return a
   },
+  differenceBy : function(array, values, iteratee = this.identity(iteratee)){
+    if(typeof iteratee == 'function'){
+      for(var i = 0;i<array.length;i++){
+        array[i] = iteratee(array[i])
+      }
+      for(var i = 0;i<values.length;i++){
+        values[i] = iteratee(values[i])
+      }
+       return this.difference(array,values)
+    }
+    if(typeof iteratee == 'string'){
+      var a = array
+      for(var i =0;i<values.length;i++){
+        for(var j =0 ;j< array.length;j++){
+          if(values[i][iteratee] == array[j][iteratee] ){
+            a.splice(j,1)
+          }
+        }
+      }
+      return a
+    }
+  },
   drop : function(array,n = 1){
     for(var i = 0;i< n;i++){
       array.shift()
