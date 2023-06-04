@@ -178,6 +178,16 @@ var lichwuwu = {
     }else{
      return array[n]
     }
-  }
+  },
+  pull : function(array,...val){
+    for(var i = 0;i<val.length;i++){
+      for(var j = 0;j<array.length;j++){
+        if(val[i] == array[j]){
+          array.splice(j,1)
+        }
+      }
+    }
+    return array
+  },
 
 }
