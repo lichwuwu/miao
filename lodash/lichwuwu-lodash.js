@@ -58,6 +58,7 @@ var lichwuwu = {
       }
       return a
     }
+    return this.difference(array,values)
 
   },
   drop : function(array,n = 1){
