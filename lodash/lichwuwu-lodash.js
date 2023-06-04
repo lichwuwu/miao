@@ -319,7 +319,41 @@ var lichwuwu = {
 
 
 
+  isEqual : function(o1, o2) {
+    if(o1 === o2 ){
+        return true
+    }
+    if(o1 && o2 && typeof o1 === 'object' && typeof o2 === 'object'){
+        if(Array.isArray(o1) === Array.isArray(o2)){
+            if(!Array.isArray(o1)){
+                var size = 0
+                for(var key in o1){
+                    size++
+                }
+                for(var key in o2){
+                    size--
+                }
+                if(size !== 0){
+                    return false
+                }
+            }else{
+                if(o1.length !== o2.length){
+                    return false
+                }
+            }
+            for(var key in o1){
+                if(!this.isEqual(o1[key],o2[key])){
+                    return false
+                }
+            }
+            return true
+        }else{
+            return false
+        }
+    }
 
+    return o1 === o2
+  },
   identity : function(value){
     return value
   },
