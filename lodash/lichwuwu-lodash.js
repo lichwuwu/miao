@@ -40,10 +40,10 @@ var lichwuwu = {
   differenceBy : function(array, ...values){
     if(typeof values[values.length-1] == 'function'){
       for(var i = 0;i<array.length;i++){
-        array[i] = iteratee(array[i])
+        array[i] = values[values.length-1](array[i])
       }
       for(var i = 0;i<values.length;i++){
-        values[i] = iteratee(values[i])
+        values[i] = values[values.length-1](values[i])
       }
        return this.difference(array,values)
     }
@@ -51,14 +51,14 @@ var lichwuwu = {
       var a = array
       for(var i =0;i<values.length;i++){
         for(var j =0 ;j< array.length;j++){
-          if(values[i][iteratee] == array[j][iteratee] ){
+          if(values[i][values[values.length-1]] == array[j][values[values.length-1]] ){
             a.splice(j,1)
           }
         }
       }
       return a
     }
-    
+
   },
   drop : function(array,n = 1){
     for(var i = 0;i< n;i++){
