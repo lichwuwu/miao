@@ -38,6 +38,7 @@ var lichwuwu = {
      return a
   },
   differenceBy : function(array, ...values){
+    values = this.flattenDepth(values)
     if(typeof values[values.length-1] == 'function'){
       for(var i = 0;i<array.length;i++){
         array[i] = values[values.length-1](array[i])
@@ -45,12 +46,13 @@ var lichwuwu = {
       for(var i = 0;i<values.length -1;i++){
         values[i] = values[values.length-1](values[i])
       }
+      values.pop()
        return this.difference(array,values)
     }
     if(typeof values[values.length-1] == 'string'){
       var a = array
-      for(var i =0;i<values.length;i++){
-        for(var j =0 ;j< array.length-1;j++){
+      for(var i =0;i<values.length -1;i++){
+        for(var j =0 ;j< array.length;j++){
           if(values[i][values[values.length-1]] == array[j][values[values.length-1]] ){
             a.splice(j,1)
           }
