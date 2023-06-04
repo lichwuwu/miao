@@ -148,6 +148,29 @@ var lichwuwu = {
     }
     return result.slice(0,result.length -1)
   },
+  last : function(array){
+    return array[array.length-1]
+  },
+  lastIndexOf : function(array,value,fromIndex = array.length-1){
+    if(value > array.length){
+      return -1
+    }
+    if(value < 0 || fromIndex < 0){
+      return -1
+    }
+    if(value == fromIndex){
+      return array[array.length - value]
+    }
+    var val = array.length - value
+    var sum = 0
+    if(fromIndex != array.length -1){
+      fromIndex = array.length - fromIndex
+    }
+    for(;val <= fromIndex ;val++){
+      sum += array[val]
+    }
+    return sum
 
+  }
 
 }
