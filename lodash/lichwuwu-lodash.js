@@ -55,8 +55,43 @@ var lichwuwu = {
     }
     return array
   },
-  findIndex : function(array,){
+  findIndex : function(array,predicate,fromIndex = 0){
+    for(;fromIndex<array.length;fromIndex++){
+      if(typeof predicate == 'function'){
+        for(var key in array[fromIndex]){
+          if(predicate(array[fromIndex])){
+            return fromIndex
+          }
+        }
+      }
+      if(typeof predicate == 'object'){
+        if(Array.isArray(predicate)){
+          for(var key in array[fromIndex]){
+            if(key == predicate[0] && array[fromIndex][key] == predicate[1]){
+              return fromIndex
+            }
+          }
+        }else{
+          var a = true
+          for(var key in array[fromIndex]){
 
+            if(array[fromIndex][key] !== predicate[key]){
+              a = false
+            }
+          }
+          if(a == true){
+            return fromIndex
+          }
+        }
+      }
+      if(typeof predicate == 'string'){
+          if(predicate in array[fromIndex] && array[fromIndex][predicate] == true){
+            return fromIndex
+          }
+        }
+
+    }
+    return -1
   },
   flatten: function(array){
     var result = []
