@@ -63,6 +63,20 @@ var lichwuwu = {
     return this.difference(array,values)
 
   },
+  differenceWith : function(array, values, comparator){
+    var result = []
+    for(var i = 0;i<array.length;i++){
+      result.push(array[i])
+    }
+    for(var i = 0 ;i<values.length;i++){
+      for(var j = 0 ;j<result.length;j++){
+        if(comparator(values[i],result[j])){
+          result.splice(j,1)
+        }
+      }
+    }
+    return result
+  },
   drop : function(array,n = 1){
     for(var i = 0;i< n;i++){
       array.shift()
