@@ -37,8 +37,8 @@ var lichwuwu = {
     }
      return a
   },
-  differenceBy : function(array, values, iteratee = this.identity(iteratee)){
-    if(typeof iteratee == 'function'){
+  differenceBy : function(array, ...values){
+    if(typeof values[values.length-1] == 'function'){
       for(var i = 0;i<array.length;i++){
         array[i] = iteratee(array[i])
       }
@@ -47,7 +47,7 @@ var lichwuwu = {
       }
        return this.difference(array,values)
     }
-    if(typeof iteratee == 'string'){
+    if(typeof values[values.length-1] == 'string'){
       var a = array
       for(var i =0;i<values.length;i++){
         for(var j =0 ;j< array.length;j++){
@@ -58,6 +58,7 @@ var lichwuwu = {
       }
       return a
     }
+    
   },
   drop : function(array,n = 1){
     for(var i = 0;i< n;i++){
