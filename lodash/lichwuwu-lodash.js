@@ -220,6 +220,21 @@ var lichwuwu = {
     return array
 
   },
+  slice : function(array, start =0 ,end = array.length){
+    var result = []
+    for(;start < end;start++){
+      result.push(array[start])
+    }
+    return result
+  },
+  sortedIndex : function(array, value){
+    for(var i =0 ;i<array.length;i++){
+      if(value <= array[i]){
+        return i
+      }
+    }
+    return i
+  },
 
 
 
