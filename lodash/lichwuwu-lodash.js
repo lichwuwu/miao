@@ -42,7 +42,7 @@ var lichwuwu = {
       for(var i = 0;i<array.length;i++){
         array[i] = values[values.length-1](array[i])
       }
-      for(var i = 0;i<values.length;i++){
+      for(var i = 0;i<values.length -1;i++){
         values[i] = values[values.length-1](values[i])
       }
        return this.difference(array,values)
@@ -50,7 +50,7 @@ var lichwuwu = {
     if(typeof values[values.length-1] == 'string'){
       var a = array
       for(var i =0;i<values.length;i++){
-        for(var j =0 ;j< array.length;j++){
+        for(var j =0 ;j< array.length-1;j++){
           if(values[i][values[values.length-1]] == array[j][values[values.length-1]] ){
             a.splice(j,1)
           }
