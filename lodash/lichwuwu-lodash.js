@@ -189,5 +189,15 @@ var lichwuwu = {
     }
     return array
   },
+  pullAll : function(array,values){
+    for(var i = 0;i<values.length;i++){
+      for(var j = 0;j<array.length;j++){
+        if(values[i] == array[j]){
+          array.splice(j,1)
+        }
+      }
+    }
+    return array
+  }
 
 }
