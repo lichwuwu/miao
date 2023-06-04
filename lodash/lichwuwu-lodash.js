@@ -247,7 +247,7 @@ var lichwuwu = {
   pullAllBy : function(array, values, iteratee = this.identity(iteratee)){
     for(var i = 0; i< values.length; i++){
       for(var j = 0 ;j< array.length;j++){
-        if(values[iteratee] === array[j][iteratee]){
+        if(values[i][iteratee] === array[j][iteratee]){
           array.splice(j,1)
         }
       }
