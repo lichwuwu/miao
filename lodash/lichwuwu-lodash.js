@@ -89,6 +89,16 @@ var lichwuwu = {
     }
     return array
   },
+  dropRightWhile : function(array, predicate = this.identity(predicate)){
+    var result = []
+    for(var i = 0 ;i<array.length;i++){
+      if(typeof predicate == 'function'){
+        if(!predicate(array[i])){
+
+        }
+      }
+    }
+  },
   fill : function(array,val,start = 0,end = array.length){
     for(start;start<end;start++){
       array[start] = val
@@ -130,6 +140,46 @@ var lichwuwu = {
           }
         }
 
+    }
+    return -1
+  },
+  findLastIndex :function(array, predicate = this.identity(predicate), fromIndex=array.length-1){
+    var c = 0
+    var j = fromIndex
+    for(;fromIndex >=0;fromIndex--){
+      if(typeof predicate == 'function'){
+        for(var key in array[fromIndex]){
+          if(predicate(array[fromIndex])){
+            return j - c
+          }
+        }
+      }
+      if(typeof predicate == 'object'){
+        if(Array.isArray(predicate)){
+          for(var key in array[fromIndex]){
+            if(key == predicate[0] && array[fromIndex][key] == predicate[1]){
+              return j - c
+            }
+          }
+        }else{
+          var a = true
+          for(var key in array[fromIndex]){
+
+            if(array[fromIndex][key] !== predicate[key]){
+              a = false
+            }
+          }
+          if(a == true){
+            return j - c
+          }
+        }
+      }
+      if(typeof predicate == 'string'){
+          if(predicate in array[fromIndex] && array[fromIndex][predicate] == true){
+            return j - c
+          }
+        }
+        c++
     }
     return -1
   },
