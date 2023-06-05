@@ -460,6 +460,9 @@ var lichwuwu = {
     return augend + addend
   },
   max : function(array){
+    if(array.length == 0){
+      return array
+    }
     var max = -Infinity
     for(var i = 0;i<array.length;i++){
       if(array[i] > max){
