@@ -461,7 +461,7 @@ var lichwuwu = {
   },
   max : function(array){
     if(array.length == 0){
-      return array
+      return undefined
     }
     var max = -Infinity
     for(var i = 0;i<array.length;i++){
