@@ -448,10 +448,6 @@ var lichwuwu = {
 
 
 
-
-
-
-
   isEqual : function(o1, o2) {
     if(o1 === o2 ){
         return true
