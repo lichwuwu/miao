@@ -400,6 +400,14 @@ var lichwuwu = {
     }
     return -1
   },
+  sortedLastIndex : function(array, value){
+    var index = array.length -1
+    for(var i =array.length -1;i >= 0;i++){
+      if(value <= array[i]){
+        return i
+      }
+    }
+  },
 
 
 
