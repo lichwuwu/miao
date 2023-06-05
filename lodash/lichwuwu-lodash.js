@@ -456,7 +456,18 @@ var lichwuwu = {
 
 
 
-
+  add : function(augend, addend){
+    return augend + addend
+  },
+  max : function(array){
+    var max = -Infinity
+    for(var i = 0;i<array.length;i++){
+      if(array[i] > max){
+        max = array[i]
+      }
+    }
+    return max
+  },
   isEqual : function(o1, o2) {
     if(o1 === o2 ){
         return true
