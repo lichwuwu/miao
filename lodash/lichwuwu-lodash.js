@@ -378,6 +378,20 @@ var lichwuwu = {
     }
     return i
   },
+  sortedIndexBy : function(array, value, iteratee=this.identity(iteratee)){
+    for(var i = 0;i<array.length; i++){
+      if(typeof iteratee == 'function'){
+        if(iteratee(value) <= iteratee(array[i])){
+          return i
+        }
+      }
+      if(typeof iteratee == 'string'){
+        if(value[iteratee] <= array[i][iteratee]){
+          return i
+        }
+      }
+    }
+  },
 
 
 
