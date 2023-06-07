@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input, textarea, label, pre {
+    font-family: consolas;
+  }
+    pre{
+      >b:nth-child(odd){
+        background-color:rgb(213,235,255) ;
+      }
+      > b:nth-child(even) {
+        background-color: #9fcfff;
+      }
+    }
+    .result{
+      width: 400px;
+      height: 300px;
+      position: relative;
+      overflow: auto;
+      >textarea,>pre{
+        box-sizing: border-box;
+        font-size: 24px;
+        overflow: auto;
+        line-height: 30px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        border: 2px solid;
+        border-radius: 2px;
+        word-break: break-all;
+        white-space: break-spaces;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <p>输入正则表达式</p>
+    <input id="reInput" type="text" value="foo"  onkeyup="run()"><button onclick="run()">Run</button>
+    <br>
+    <label><input oninput="run()" id="flagsI" type="checkbox">i</label>
+    <label><input oninput="run()" id="flagsG" type="checkbox" checked>g</label>
+    <label><input oninput="run()" id="flagsM" type="checkbox">m</label>
+    <label><input oninput="run()" id="flagsS" type="checkbox">s</label>
+    <label><input oninput="run()" id="flagsU" type="checkbox">u</label>
+    <label><input oninput="run()" id="flagsY" type="checkbox">y</label>
+    <br>
+
+
+  </div>
+  <p>输入字符串</p>
+    <div class="result">
+      <pre id="output"></pre>
+      <textarea id="StringInput" oninput="run()" id="" cols="30" rows="10">foobar</textarea>
+    </div>
+  <script>
+    function getFlags(){
+      var result = ''
+      if(flagsI.checked){
+        result += 'i'
+      }
+      if(flagsG.checked){
+        result += 'g'
+      }
+      if(flagsM.cheecked){
+        result += 'm'
+      }
+      if(flagsS.checked){
+        result += 's'
+      }
+      if(flagsU.checked){
+        result += 'u'
+      }
+      if(flagsY.checked){
+        result += 'y'
+      }
+      return result
+    }
+    function run(){
+      var reSource = reInput.value
+      var flags = getFlags()
+      var re = new RegExp(reSource,flags)
+      var string = StringInput.value
+      var match
+      var lastLastindex = 0
+      var html = ``
+      while(match = re.exec(string)){
+        html += string.slice(lastLastindex,match.index)
+        html += `<b>${match[0]}</b>`
+        lastLastindex = re.lastIndex
+        if(!re.global){
+          lastLastindex = match.index + match[0].length
+          break
+        }
+      }
+      html += string.slice(lastLastindex)
+      output.innerHTML = html
+    }
+    run()
+  </script>
+</body>
+</html>
