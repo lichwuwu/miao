@@ -374,3 +374,35 @@ function swap(array,i,j){
   array[i] = array[j]
   array[j] = t
 }
+String.prototype.mysearch = function mysearch(re){
+  re = new RegExp(re)
+  if(re.exec(this) != null){
+    return  re.exec(this).index
+  }
+  return -1
+}
+String.prototype.mymatch = function mymatch(re){
+  var result = []
+  var m
+  if(!re){
+    return result = /^/.exec(this)
+  }
+  if(typeof re == 'string'){
+    re = new RegExp(re)
+  }
+  while(m = re.exec(this)){
+    if(!re.global){
+      result = m
+      break
+    }
+    result.push(m[0])
+  }
+  return result
+}
+RegExp.prototype.mytest = function mytest(str){
+  if(this.exec(str) != null){
+    return true
+  }else{
+    return false
+  }
+}
