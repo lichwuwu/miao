@@ -406,3 +406,32 @@ RegExp.prototype.mytest = function mytest(str){
     return false
   }
 }
+String.prototype.myreplace = function(regexp , replace){
+  regexp.lastIndex = 0
+  var result = ''
+  var match
+  var lastLastindex = 0
+  while(match = regexp.exec(this)){
+    result += this.slice(lastLastindex,match.index)
+    if(typeof replace == 'function'){
+      result += replace(...match,match.index,match.input)
+    }else{
+      var replacement = replace.myreplace(/\$([1-9\&])/g, (_,idx) =>{
+        if(idx == '&'){
+          return match[0]
+        }else{
+          return match[idx]
+        }
+      })
+      result +=replacement
+    }
+    lastLastindex = regexp.lastIndex
+    if(!re.global){
+      lastLastindex = match.index + match[0].length
+      break
+    }
+  }
+  result += this.slice(lastLastindex)
+  return result
+
+}
