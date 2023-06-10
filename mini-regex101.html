@@ -9,12 +9,45 @@
     input, textarea, label, pre {
     font-family: consolas;
   }
+  pre i {
+    font-style: normal;
+  }
+  pre i[data-group="1"] {
+    background-color: #9fcba1;
+  }
+  pre i[data-group="2"] {
+    background-color: #e0bf8b;
+  }
+  pre i[data-group="3"] {
+    background-color: #acadfc;
+  }
+  pre i[data-group="4"] {
+    background-color: #e1abf5;
+  }
+  pre i[data-group="5"] {
+    background-color: #ef9b95;
+  }
     pre{
       >b:nth-child(odd){
         background-color:rgb(213,235,255) ;
       }
       > b:nth-child(even) {
         background-color: #9fcfff;
+      }
+      > em{
+        border-left: 4px dotted violet;
+        position: relative;
+        display: inline-block;
+        margin-left: -2px;
+        margin-right: -2px ;
+        z-index: 2;
+        height: 1em;
+        vertical-align: middle;
+        filter: blur(.5px);
+        &:hover{
+          background-color: magenta;
+          box-shadow: 0 0 5px gray;
+        }
       }
     }
     .result{
@@ -46,6 +79,7 @@
   <div>
     <p>输入正则表达式</p>
     <input id="reInput" type="text" value="foo"  onkeyup="run()"><button onclick="run()">Run</button>
+    <p id="reInputError"></p>
     <br>
     <label><input oninput="run()" id="flagsI" type="checkbox">i</label>
     <label><input oninput="run()" id="flagsG" type="checkbox" checked>g</label>
@@ -86,17 +120,37 @@
       return result
     }
     function run(){
+      output.innerHTML = ''
       var reSource = reInput.value
+      if(reSource == ''){
+        return
+      }
       var flags = getFlags()
-      var re = new RegExp(reSource,flags)
+      try{
+
+        var re = new RegExp(reSource,flags +'d')
+
+        reInputError.innerHTML = ''
+      }catch(e){
+        reInputError.innerHTML = e
+      }
+
       var string = StringInput.value
       var match
       var lastLastindex = 0
       var html = ``
       while(match = re.exec(string)){
         html += string.slice(lastLastindex,match.index)
-        html += `<b>${match[0]}</b>`
+
+        if (match[0] == '') {
+          html += '<em></em>'
+        } else {
+          html += wrapOneMatch(match)
+        }
         lastLastindex = re.lastIndex
+        if (match[0] == '') {
+          re.lastIndex++
+        }
         if(!re.global){
           lastLastindex = match.index + match[0].length
           break
@@ -105,6 +159,30 @@
       html += string.slice(lastLastindex)
       output.innerHTML = html
     }
+
+    function wrapOneMatch(match) {
+    // 先把每个捕获分组的范围转换为相对于这次的匹配的范围
+    var indices = match.indices.map(([start, end]) => {
+      return [start - match.index, end - match.index]
+    })
+    var fullMatch = match[0]
+    var chars = fullMatch.split('')
+    var tags = Array(chars.length + 1).fill('')
+
+    for (var i = 1; i < indices.length; i++) {
+      var [start, end] = indices[i]
+      tags[start] += `<i data-group="${i}">`
+      tags[end] += '</i>'
+    }
+
+    var result = ''
+    for (var i = 0; i < chars.length; i++) {
+      result += tags[i] + chars[i]
+    }
+    result += tags[i]
+
+    return '<b>' + result + '</b>'
+  }
     run()
   </script>
 </body>

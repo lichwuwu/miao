@@ -426,7 +426,7 @@ String.prototype.myreplace = function(regexp , replace){
       result +=replacement
     }
     lastLastindex = regexp.lastIndex
-    if(!re.global){
+    if(!regexp.global){
       lastLastindex = match.index + match[0].length
       break
     }
