@@ -435,3 +435,23 @@ String.prototype.myreplace = function(regexp , replace){
   return result
 
 }
+String.prototype.mysplit = function (re){
+  var result = []
+   if(typeof re == 'string'){
+    re = new RegExp(re,'g')
+   }else{
+    if(!re.global){
+      re = new RegExp(re.source,'g' +re.flags)
+    }
+  }
+  re.lastindex = 0
+  var match
+  var lastLastindex = 0
+  while(match = re.exec(this)){
+    result.push(this.slice(lastLastindex,match.index))
+    result.push(...match.slice(1))
+    lastLastindex =re.lastIndex
+  }
+  result.push(this.slice(lastLastindex))
+  return result
+}
