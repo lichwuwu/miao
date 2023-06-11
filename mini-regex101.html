@@ -7,62 +7,95 @@
   <title>Document</title>
   <style>
     input, textarea, label, pre {
-    font-family: consolas;
-  }
-  pre i {
-    font-style: normal;
-  }
-  pre i[data-group="1"] {
-    background-color: #9fcba1;
-  }
-  pre i[data-group="2"] {
-    background-color: #e0bf8b;
-  }
-  pre i[data-group="3"] {
-    background-color: #acadfc;
-  }
-  pre i[data-group="4"] {
-    background-color: #e1abf5;
-  }
-  pre i[data-group="5"] {
-    background-color: #ef9b95;
-  }
+      font-family: consolas;
+    }
+    pre > b:nth-of-type(odd) {
+      background-color: #d5ebff;
+    }
+    pre > b:nth-of-type(even) {
+      background-color: #9fcfff;
+    }
+    pre > b{
+      [data-group="1"]{
+        --group-color: #9fcba1;
+      }
+      [data-group="2"]{
+        --group-color: #e0bf8b;
+      }
+      [data-group="3"]{
+        --group-color: #acadfc;
+      }
+      [data-group="4"]{
+        --group-color: #e1abf5;
+      }
+      [data-group="5"]{
+        --group-color: #ef9b95;
+      }
+    }
+    pre > b:nth-of-type(odd) b{
+      background-color: color-mix(in srgb, var(--group-color) 80% ,white);
+    }
+    pre > b:nth-of-type(even) b{
+      background-color: var(--group-color);
+    }
+    pre b {
+      font-style: normal;
+    }
+    pre b:hover:not(:has(:hover))::before{
+      content: 'Match ' attr(data-match) '\A-------\AGroup ' attr(data-group) ': ' attr(data-group-content) '\A' 'Pos: ' attr(data-group-start-index) '-' attr(data-group-end-index);
+      position: absolute;
+      z-index: 99;
+      bottom: 100%;
+      left: 50%;
+      transform: translate(-50%);
+      white-space: pre;
+      background-color: black;
+      border-radius: 5px;
+      color: white;
+      font-size: 12px;
+      padding: 0.5em;
+      font-weight: normal;
+    }
     pre{
-      >b:nth-child(odd){
-        background-color:rgb(213,235,255) ;
-      }
-      > b:nth-child(even) {
-        background-color: #9fcfff;
-      }
       > em{
         border-left: 4px dotted violet;
+        margin-left: -2px;
+        margin-right: -2px;
+        z-index: 2;
         position: relative;
         display: inline-block;
-        margin-left: -2px;
-        margin-right: -2px ;
-        z-index: 2;
         height: 1em;
         vertical-align: middle;
         filter: blur(.5px);
+        transition: .5s;
         &:hover{
+
           background-color: magenta;
-          box-shadow: 0 0 5px gray;
         }
       }
+    }
+    b:hover:not(:has(:hover)){
+      position: relative;
+      z-index: 8;
+      box-shadow: 0 0 2px grey,0 0 2px grey,0 0 2px grey,0 0 2px grey,
+                      inset 0 0 2px grey, inset 0 0 2px grey, inset 0 0 2px grey, inset 0 0 2px grey;
+    }
+    b:hover:not(:has(:hover)) b{
+      background-color: transparent;
     }
     .result{
       width: 400px;
       height: 300px;
       position: relative;
-      overflow: auto;
+
       >textarea,>pre{
         box-sizing: border-box;
         font-size: 24px;
-        overflow: auto;
+
         line-height: 30px;
         margin: 0;
         padding: 0;
-        position: absolute;
+        xposition: absolute;
         background-color: transparent;
         width: 100%;
         height: 100%;
@@ -127,28 +160,28 @@
       }
       var flags = getFlags()
       try{
-
-        var re = new RegExp(reSource,flags +'d')
-
-        reInputError.innerHTML = ''
+        var re = new RegExp(reSource,flags+'d')
+        reInputError.innerHTML= ''
       }catch(e){
         reInputError.innerHTML = e
+        return
       }
-
       var string = StringInput.value
       var match
       var lastLastindex = 0
       var html = ``
+      var matchIndex = 1
       while(match = re.exec(string)){
         html += string.slice(lastLastindex,match.index)
-
-        if (match[0] == '') {
+        if(match[0] == ''){
           html += '<em></em>'
-        } else {
-          html += wrapOneMatch(match)
+        }else{
+          html += wrapOneMatch(match,matchIndex++)
         }
+
         lastLastindex = re.lastIndex
-        if (match[0] == '') {
+        if(match[0].length == 0){
+
           re.lastIndex++
         }
         if(!re.global){
@@ -159,30 +192,57 @@
       html += string.slice(lastLastindex)
       output.innerHTML = html
     }
-
-    function wrapOneMatch(match) {
-    // 先把每个捕获分组的范围转换为相对于这次的匹配的范围
-    var indices = match.indices.map(([start, end]) => {
-      return [start - match.index, end - match.index]
-    })
-    var fullMatch = match[0]
-    var chars = fullMatch.split('')
-    var tags = Array(chars.length + 1).fill('')
-
-    for (var i = 1; i < indices.length; i++) {
-      var [start, end] = indices[i]
-      tags[start] += `<i data-group="${i}">`
-      tags[end] += '</i>'
+    function wrapOneMatch2(match){
+      var result = ''
+      var indices = match.indices.map(([start,end]) =>{
+        return [start - match.index,end - match.index]
+      })
+      var preEnd = 0
+      for(var i = 1;i<match.indices.length;i++){
+        var index = indices[i]
+        var [start,end] = index
+        result += match[0].slice(preEnd,start)
+        result += '<i>' + match[0].slice(start,end) + '</i>'
+        preEnd = end
+      }
+      result += match[0].slice(preEnd)
+      return '<b>' + result + '</b>'
     }
+    function wrapOneMatch1(match){
+      var indices = match.indices.map(([start,end]) =>{
+        return [start - match.index,end - match.index]
+      })
 
-    var result = ''
-    for (var i = 0; i < chars.length; i++) {
-      result += tags[i] + chars[i]
+      var fillMatch = match[0]
+      var chars = fillMatch.split("")
+
+      for(var i = 1; i< indices.length;i++){
+        var [start,end] = indices[i]
+        chars[start] = `<i data-group=${i}>` + chars[start]
+        chars[end -1] = chars[end -1] + '</i>'
+      }
+      return '<b>' +chars.join("") + '</b>'
     }
-    result += tags[i]
+    function wrapOneMatch(match,matchIndex){
+      var indices = match.indices.map(([start,end]) =>{
+        return [start - match.index,end - match.index]
+      })
 
-    return '<b>' + result + '</b>'
-  }
+      var fillMatch = match[0]
+      var chars = fillMatch.split("")
+      var tags = Array(chars.length +1).fill("")
+      for(var i = 1; i< indices.length;i++){
+        var [start,end] = indices[i]
+        tags[start] += `<b data-match="${matchIndex}" data-group="${i}" data-group-content="${match[i]}" data-group-start-index="${match.indices[i][0]}" data-group-end-index="${match.indices[i][1]}">`
+        tags[end] += '</b>'
+      }
+      var result = ''
+      for(var i = 0;i< chars.length;i++){
+        result += tags[i] + chars[i]
+      }
+      result += tags[i]
+      return `<b data-match="${matchIndex}" data-group="0" data-group-content="${match[0]}" data-group-start-index="${match.indices[0][0]}" data-group-end-index="${match.indices[0][1]}">` + result+ '</b>'
+    }
     run()
   </script>
 </body>
