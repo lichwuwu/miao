@@ -111,7 +111,7 @@
 <body>
   <div>
     <p>输入正则表达式</p>
-    <input id="reInput" type="text" value="foo"  onkeyup="run()"><button onclick="run()">Run</button>
+    <input id="reInput" type="text" value="(f).(.(.)(..)(..))"  onkeyup="run()"><button onclick="run()">Run</button>
     <p id="reInputError"></p>
     <br>
     <label><input oninput="run()" id="flagsI" type="checkbox">i</label>
@@ -127,7 +127,7 @@
   <p>输入字符串</p>
     <div class="result">
       <pre id="output"></pre>
-      <textarea id="StringInput" oninput="run()" id="" cols="30" rows="10">foobar</textarea>
+      <textarea id="StringInput" oninput="run()" id="" cols="30" rows="10">foo barbaz baa foobaa foobaa</textarea>
     </div>
   <script>
     function getFlags(){
