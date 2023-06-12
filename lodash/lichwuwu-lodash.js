@@ -467,6 +467,9 @@ var lichwuwu = {
       if(str[i] === 'f'){
         return parseFalse()
       }
+      if(str[i] === 'n'){
+        return parseNull
+      }
       return parseNumber()
     }
     function parseObject(){
@@ -536,6 +539,14 @@ var lichwuwu = {
       }
 
       return Number(str.slice(start,i))
+    }
+    function parseNull(){
+      if(str.slice(i,i+4) == 'null'){
+        i += 4
+        return true
+      }else{
+        throw new TypeError("aa")
+      }
     }
   },
 
