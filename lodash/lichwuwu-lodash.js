@@ -468,7 +468,7 @@ var lichwuwu = {
         return parseFalse()
       }
       if(str[i] === 'n'){
-        return parseNull
+        return parseNull()
       }
       return parseNumber()
     }
@@ -543,7 +543,7 @@ var lichwuwu = {
     function parseNull(){
       if(str.slice(i,i+4) == 'null'){
         i += 4
-        return true
+        return null
       }else{
         throw new TypeError("aa")
       }
