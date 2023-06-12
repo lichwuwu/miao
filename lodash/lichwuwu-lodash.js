@@ -448,6 +448,96 @@ var lichwuwu = {
     }
     return result
   },
+  parseJSON : function(str){
+    var i = 0
+    return parseValue()
+    function parseValue(){
+      if(str[i] ==='{'){
+        return parseObject()
+      }
+      if(str[i] === '['){
+        return parseArray()
+      }
+      if(str[i] === '"'){
+        return parseString()
+      }
+      if(str[i] === 't'){
+        return parseTrue()
+      }
+      if(str[i] === 'f'){
+        return parseFalse()
+      }
+      return parseNumber()
+    }
+    function parseObject(){
+      var result ={}
+      i++
+      while(i < str.length){
+        var key = parseString()
+        i++
+        var val = parseValue()
+        result[key] = val
+        if(str[i] === ','){
+          i++
+          continue
+        }
+        if(str[i] === '}'){
+          i++
+          break
+        }
+      }
+      return result
+    }
+    function parseArray(){
+      i++
+      var result =[]
+      while(str[i] != "]"){
+        result.push(parseValue())
+        if(str[i] === ","){
+          i++
+        }
+      }
+      i++
+      return result
+    }
+    function parseString(){
+      i++
+      var start = i
+      while(str[i] !== '"'){
+        i++
+      }
+      var end = i
+      i++
+      return str.slice(start,end)
+    }
+    function parseTrue(){
+
+      if(str.slice(i,i+4) == 'true'){
+        i += 4
+        return true
+
+      }else{
+        throw new TypeError("aa")
+      }
+    }
+    function parseFalse(){
+      if(str.slice(i,i+5) == 'false'){
+        i += 5
+        return true
+
+      }else{
+        throw new TypeError("aa")
+      }
+    }
+    function parseNumber(){
+      var start = i
+      while(str[i] >0 &&str[i] < 9){
+        i++
+      }
+
+      return Number(str.slice(start,i))
+    }
+  },
 
 
 
