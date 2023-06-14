@@ -7,18 +7,18 @@
   <style>
     div{
       position: relative;
-
       width: 500px;
       height: 500px;
       margin: 150px auto;
       border: 2px solid;
     }
     p{
-      background-color: red;
+      background-color: rgb(253, 56, 49);
       width: 80px;
       height: 80px;
       border-radius:999px ;
       position: absolute;
+      box-shadow: 10px 0px 10px rgb(251, 134, 123),0px 10px 10px rgb(251, 134, 123),-10px 0px 10px rgb(251, 134, 123),0px -10px 10px rgb(251, 134, 123) ;
       top: 0;
       bottom: 0;
       left: 0;
@@ -80,7 +80,7 @@
     var angle = 0
     var lastTime = null;
     function animate(time) {
-      time = Date.now() - 1000
+      time = Date.now() - 10
       if (lastTime != null)
         angle += (time - lastTime) * 0.001;
 
@@ -108,7 +108,7 @@
       setTimeout(animate2, 1);
     }
 
-    setTimeout(animate2, 1);
+    setTimeout(animate2, );
 
   </script>
 </body>
