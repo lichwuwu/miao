@@ -80,7 +80,7 @@
     var angle = 0
     var lastTime = null;
     function animate(time) {
-      time = Date.now() - 10
+      time = Date.now()
       if (lastTime != null)
         angle += (time - lastTime) * 0.001;
 
@@ -88,27 +88,27 @@
 
       dq.style.top = (Math.sin(angle) * 300) + "px";
       dq.style.left = (Math.cos(angle) * 300) + "px";
-      setTimeout(animate, 20);
+      setTimeout(animate, 14);
     }
-    setTimeout(animate, 20);
+    setTimeout(animate, 14);
 
     var yq = document.querySelector("em");
-    var angle = 0
+    var angle2 = 0
     var lastTime = null;
     function animate2(time) {
       time = Date.now()
       if (lastTime != null)
-        angle += (time - lastTime) * 0.001;
+        angle2 += (time - lastTime) * 0.002;
 
       lastTime = time;
 
-      yq.style.top = (Math.sin(angle) * 80) + "px";
-      yq.style.left = (Math.cos(angle) * 80) + "px";
+      yq.style.top = (Math.sin(angle2) * 80) + "px";
+      yq.style.left = (Math.cos(angle2) * 80) + "px";
 
-      setTimeout(animate2, 1);
+      setTimeout(animate2, 7);
     }
 
-    setTimeout(animate2, );
+    setTimeout(animate2, 7);
 
   </script>
 </body>
