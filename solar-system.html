@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      position: relative;
+
+      width: 500px;
+      height: 500px;
+      margin: 150px auto;
+      border: 2px solid;
+    }
+    p{
+      background-color: red;
+      width: 80px;
+      height: 80px;
+      border-radius:999px ;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+    span{
+      display: block;
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      >b{
+        display: block;
+        position: absolute;
+        background-color: rgb(29, 57, 240);
+        width: 30px;
+        height: 30px;
+        border-radius:999px ;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+      }
+      >em{
+        display: block;
+        background-color: rgb(128, 130, 146);
+        width: 20px;
+        height: 22px;
+        border-radius:999px ;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <p></p>
+    <span>
+      <b></b>
+      <em></em>
+    </span>
+
+  </div>
+  <script >
+
+    var dq = document.querySelector("span");
+    var angle = 0
+    var lastTime = null;
+    function animate(time) {
+      time = Date.now() - 1000
+      if (lastTime != null)
+        angle += (time - lastTime) * 0.001;
+
+      lastTime = time;
+
+      dq.style.top = (Math.sin(angle) * 300) + "px";
+      dq.style.left = (Math.cos(angle) * 300) + "px";
+      setTimeout(animate, 20);
+    }
+    setTimeout(animate, 20);
+
+    var yq = document.querySelector("em");
+    var angle = 0
+    var lastTime = null;
+    function animate2(time) {
+      time = Date.now()
+      if (lastTime != null)
+        angle += (time - lastTime) * 0.001;
+
+      lastTime = time;
+
+      yq.style.top = (Math.sin(angle) * 80) + "px";
+      yq.style.left = (Math.cos(angle) * 80) + "px";
+
+      setTimeout(animate2, 1);
+    }
+
+    setTimeout(animate2, 1);
+
+  </script>
+</body>
+</html>
