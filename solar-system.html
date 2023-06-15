@@ -5,111 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    div{
-      position: relative;
-      width: 500px;
-      height: 500px;
-      margin: 150px auto;
-      border: 2px solid;
+    #sun{
+      width: 100px;
+      height: 100px;
+      background-color: gold;
+      margin-left: -50px;
+      margin-top: -50px;
     }
-    p{
-      background-color: rgb(253, 56, 49);
-      width: 80px;
-      height: 80px;
-      border-radius:999px ;
-      position: absolute;
-      box-shadow: 10px 0px 10px rgb(251, 134, 123),0px 10px 10px rgb(251, 134, 123),-10px 0px 10px rgb(251, 134, 123),0px -10px 10px rgb(251, 134, 123) ;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
+    #eart{
+      width: 50px;
+      height: 50px;
+      background-color: blue;
+      margin-left: -25px;
+      margin-top: -25px;
     }
-    span{
-      display: block;
-      width: 80px;
-      height: 80px;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      >b{
-        display: block;
-        position: absolute;
-        background-color: rgb(29, 57, 240);
-        width: 30px;
-        height: 30px;
-        border-radius:999px ;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
-      }
-      >em{
-        display: block;
-        background-color: rgb(128, 130, 146);
-        width: 20px;
-        height: 22px;
-        border-radius:999px ;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        margin: auto;
+    #moon{
+      width: 20px;
+      height: 20px;
+      margin-left: -10px;
+      margin-top: -10px;
+      background-color: #716b6b;
     }
+    #sun,#eart,#moon{
+      border-radius: 999px;
+      position: fixed;
+
     }
 
   </style>
 </head>
 <body>
-  <div>
-    <p></p>
-    <span>
-      <b></b>
-      <em></em>
-    </span>
+  <section>
+    <p id="sun"></p>
+    <p id="eart"></p>
+    <p id="moon"></p>
+  </section>
+  <script>
 
-  </div>
-  <script >
+    var sun = document.querySelector("#sun")
+    var eart = document.querySelector("#eart")
+    var moon = document.querySelector("#moon")
+    requestAnimationFrame(function  animate(time){
+      var sunAngle = time /2000
+      var sunx = Math.cos(sunAngle) * 130 + window.innerWidth / 2 + 'px'
+      var suny = Math.sin(sunAngle) * 130 + window.innerHeight / 2 + 'px'
+      sun.style.left = sunx
+      sun.style.top = suny
 
-    var dq = document.querySelector("span");
-    var angle = 0
-    var lastTime = null;
-    function animate(time) {
-      time = Date.now()
-      if (lastTime != null)
-        angle += (time - lastTime) * 0.001;
+      var eartAngle = time /1000
+      var eartx = parseFloat(sunx) + Math.cos(eartAngle) * 380 +  'px'
+      var earty = parseFloat(suny) + Math.sin(eartAngle) * 380 +  'px'
+      eart.style.left = eartx
+      eart.style.top = earty
 
-      lastTime = time;
+      var moonAngle = time /500
+      var moonx =parseFloat(eartx) +  Math.cos(moonAngle) * 60 +  'px'
+      var moony =parseFloat(earty) +  Math.sin(moonAngle) * 60 +  'px'
+      moon.style.left = moonx
+      moon.style.top = moony
 
-      dq.style.top = (Math.sin(angle) * 300) + "px";
-      dq.style.left = (Math.cos(angle) * 300) + "px";
-      setTimeout(animate, 14);
-    }
-    setTimeout(animate, 14);
-
-    var yq = document.querySelector("em");
-    var angle2 = 0
-    var lastTime = null;
-    function animate2(time) {
-      time = Date.now()
-      if (lastTime != null)
-        angle2 += (time - lastTime) * 0.002;
-
-      lastTime = time;
-
-      yq.style.top = (Math.sin(angle2) * 80) + "px";
-      yq.style.left = (Math.cos(angle2) * 80) + "px";
-
-      setTimeout(animate2, 7);
-    }
-
-    setTimeout(animate2, 7);
-
+      requestAnimationFrame(animate)
+    })
   </script>
 </body>
 </html>

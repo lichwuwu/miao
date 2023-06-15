@@ -10,6 +10,9 @@
       padding: 0;
       min-width: 600px;
     }
+    html{
+      overflow-y: scroll;
+    }
     section{
       display: flex;
       align-items: flex-start;
@@ -21,8 +24,12 @@
       flex: 1;
     }
     img{
+      position: relative;
       display: block;
       margin-bottom: 10px;
+      transition: 0.3;
+
+
     }
   </style>
 </head>
@@ -357,32 +364,78 @@
         "height": 1170
       }
     ]
+    cats = [...cats, ...cats]
+    cats = [...cats, ...cats]
+    cats = [...cats, ...cats]
+    cats = [...cats, ...cats]
+    cats = [...cats, ...cats]
+    cats = [...cats, ...cats]
+    cats = [...cats, ...cats]
+    cats = [...cats, ...cats]
+    var section = document.querySelector('section')
+    var prevWidth = 0
     function run(){
-      var  column = Math.floor(((window.innerWidth > 600 ? window.innerWidth : 600)-60)  / 180)
-      var section = document.querySelector('section')
-      section.style.width = column * 180 +'px'
+
+      if(window.innerWidth == prevWidth){
+        return
+      }else{
+        prevWidth = window.innerWidth
+      }
+      var  column = Math.floor(window.innerWidth / 180)
       section.innerHTML = ''
       for(var i = 0;i<column;i++){
         section.append(document.createElement('div'))
       }
       var divs = [...section.querySelectorAll("div")]
+      var columnWidth = divs[0].offsetWidth
+      var divHeight = Array(column).fill(0)
+      var divImgs = Array(column).fill(0).map(it => [])
+
       for(var cat of cats){
-       var div = divs.reduce((min,div)=>{
-        if(div.offsetHeight < min.offsetHeight){
-          return div
-        }else{
-          return min
-        }
-       })
+      var minDivHeight = Math.min(...divHeight)
+      var minIdx = divHeight.indexOf(minDivHeight)
+      var div = divs[minIdx]
        var img = document.createElement('img')
        img.src = cat.fullUrl
-       img.width = div.offsetWidth
-       img.height = div.offsetWidth * cat.height / cat.width
-       div.append(img)
+       img.width = columnWidth
+       img.height = columnWidth * cat.height / cat.width
+
+       divHeight[minIdx] += img.height + 10
+       divImgs[minIdx].push(img)
+
       }
+      divImgs.forEach((imgs,idx)=>{
+       divs[idx].append(...imgs)
+      })
     }
     run()
     window.onresize = run
+
+    var  section = document.querySelector("section")
+    var z = 1
+    section.addEventListener("click" , function(e){
+      if(e.target.matches("img")){
+
+        var img = e.target
+        if(img.style.transform == ''){
+          var box = img.getBoundingClientRect()
+          var cx = box.left + box.width / 2
+          var cy = box.top + box.height / 2
+          var vx = window.innerWidth / 2
+          var vy = window.innerHeight / 2
+          var movex = vx - cx
+          var movey = vy - cy
+          var zoomx = window.innerWidth / box.width
+          var zommy = window.innerHeight / box.height
+          img.style.zIndex = z++
+          img.style.transform = `translate(${movex}px, ${movey}px) scale(${Math.min(zoomx,zommy)})`
+          img.style.boxShadow = '0 0 0 9999px black'
+        }else{
+          img.style.transform = ''
+          img.style.boxShadow = ''
+        }
+      }
+    })
   </script>
 </body>
 </html>
