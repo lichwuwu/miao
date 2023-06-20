@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>窗口拖拽</title>
+  <style>
+    .draggable{
+
+      background-color: red;
+      position: fixed;
+
+    }
+    h1{
+      height: 20px;
+      background-color: rgba(255,255,255,.8);
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+    }
+    .rightBottom{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 5px;
+      height: 5px;
+      z-index: 2;
+      &:hover{
+        cursor: nwse-resize;
+      }
+    }
+    .right{
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 5px;
+      height: 100%;
+
+
+      &:hover{
+        cursor: w-resize;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="draggable" style="left: 0; top: 0; background-color: red; width: 100px;height: 120px;">
+      <h1>窗口1</h1>
+      <span class="rightBottom"></span>
+      <span class="right"></span >
+    </div>
+    <div class="draggable" style="left: 0; top: 0; background-color: rgb(13, 161, 166); width: 100px;height: 120px;">
+      <h1>窗口2</h1>
+      <span class="rightBottom"></span>
+      <span class="right"></span >
+    </div>
+    <div class="draggable" style="left: 0; top: 0; background-color: rgb(36, 198, 14); width: 100px;height: 120px;">
+      <h1>窗口3</h1>
+      <span class="rightBottom"></span>
+      <span class="right"></span >
+    </div>
+    <script>
+      var startX = 0
+      var startY = 0
+      var el = null
+      var elStartX = 0
+      var elStartY = 0
+      var elStartWidth = 0
+      var elStartHeight = 0
+      var elLastHeight = elStartHeight
+      var z = 1
+      var a = false
+      window.addEventListener("mousedown",e=>{
+        if(e.target.matches("div,div *")){
+          e.target.closest('div').style.zIndex = z++
+        }
+        if(e.target.matches("h1")){
+          e.preventDefault()
+          el = e.target.closest("div")
+          startX = e.clientX
+          startY = e.clientY
+          elStartX = parseFloat(el.style.left)
+          elStartY = parseFloat(el.style.top)
+          window.addEventListener("mousemove",onMove)
+        }
+        if(e.target.matches("span")){
+          e.preventDefault()
+          el = e.target.closest('div')
+          console.log(e.target,e.target.matches(".right"));
+          if(e.target.matches(".right")){
+           a = true
+          }else{
+            a = false
+            elStartHeight = parseFloat(el.style.height)
+          }
+          elStartWidth = parseFloat(el.style.width)
+
+          startX = e.clientX
+          startY = e.clientY
+
+          window.addEventListener("mousemove",onResize)
+
+        }
+      })
+
+      function onMove(e){
+        if(e.which == 0 || e.buttons == 0){
+          window.removeEventListener("mousemove", onMove)
+        }else{
+          var moveX = e.clientX - startX
+          var moveY = e.clientY - startY
+          var left = moveX + elStartX
+          var top = moveY + elStartY
+          if(left < 30){
+            left = 0
+          }
+          if(left > window.innerWidth - el.offsetWidth -30){
+            left = window.innerWidth - el.offsetWidth
+          }
+          if(top <30 ){
+            top = 0
+          }
+          if(top > window.innerHeight - el.offsetHeight - 30){
+            top = window.innerHeight - el.offsetHeight
+          }
+          el.style.left = left +"px"
+          el.style.top = top + "px"
+        }
+      }
+      function onResize(e){
+        if(e.which == 0 || e.buttons == 0){
+          window.removeEventListener("mousemove", onResize)
+        }else{
+          var moveX = e.clientX - startX
+          var moveY = e.clientY - startY
+
+          var width = elStartWidth + moveX
+          var height = elStartHeight + moveY
+          if(width < 100){
+            width = 100
+          }
+          if(height < 120){
+            height = 120
+          }
+
+          if(a == true){
+            el.style.width = width + 'px'
+          }else{
+            el.style.width = width + 'px'
+            el.style.height = height + "px"
+
+          }
+
+        }
+      }
+    </script>
+</body>
+</html>
