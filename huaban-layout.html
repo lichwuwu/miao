@@ -5,29 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    html,body{
-      margin: 0;
-      padding: 0;
-      min-width: 600px;
-    }
+
     html{
       overflow-y: scroll;
     }
-    section{
-      display: flex;
-      align-items: flex-start;
-      margin: auto;
-      gap: 10px;
-
+    body {
+      margin: 10px;
     }
-    div{
-      flex: 1;
+    section{
+      margin: auto;
+      position: relative;
     }
     img{
-      position: relative;
       display: block;
-      margin-bottom: 10px;
       transition: 0.3;
+      position: absolute;
 
 
     }
@@ -37,6 +29,7 @@
   <section>
 
   </section>
+  <script src="https://unpkg.com/lodash"></script>
   <script>
     var cats = [
       {
@@ -364,16 +357,14 @@
         "height": 1170
       }
     ]
-    cats = [...cats, ...cats]
-    cats = [...cats, ...cats]
-    cats = [...cats, ...cats]
-    cats = [...cats, ...cats]
-    cats = [...cats, ...cats]
-    cats = [...cats, ...cats]
-    cats = [...cats, ...cats]
-    cats = [...cats, ...cats]
+    cats = [..._.cloneDeep(cats),..._.cloneDeep(cats),..._.cloneDeep(cats)]
+    cats = [..._.cloneDeep(cats),..._.cloneDeep(cats),..._.cloneDeep(cats)]
+    cats = [..._.cloneDeep(cats),..._.cloneDeep(cats),..._.cloneDeep(cats)]
+    cats = [..._.cloneDeep(cats),..._.cloneDeep(cats),..._.cloneDeep(cats)]
     var section = document.querySelector('section')
     var prevWidth = 0
+    var prevCloums = 0
+    var 余量 = 200
     function run(){
 
       if(window.innerWidth == prevWidth){
@@ -381,41 +372,96 @@
       }else{
         prevWidth = window.innerWidth
       }
-      var  column = Math.floor(window.innerWidth / 180)
-      section.innerHTML = ''
-      for(var i = 0;i<column;i++){
-        section.append(document.createElement('div'))
+
+      var colWidth = 180
+      var gap = 10
+      var  columns = Math.floor((window.innerWidth - 30 )/ colWidth)
+
+      if(columns == prevCloums){
+        return
+      }else{
+        prevCloums = columns
       }
-      var divs = [...section.querySelectorAll("div")]
-      var columnWidth = divs[0].offsetWidth
-      var divHeight = Array(column).fill(0)
-      var divImgs = Array(column).fill(0).map(it => [])
+      section.innerHTML = ""
+      var containerWidth = columns * colWidth + (columns -1) * gap
+      section.style.width = containerWidth + "px"
+
+
+      var colHeights = Array(columns).fill(0)
 
       for(var cat of cats){
-      var minDivHeight = Math.min(...divHeight)
-      var minIdx = divHeight.indexOf(minDivHeight)
-      var div = divs[minIdx]
-       var img = document.createElement('img')
-       img.src = cat.fullUrl
-       img.width = columnWidth
-       img.height = columnWidth * cat.height / cat.width
-
-       divHeight[minIdx] += img.height + 10
-       divImgs[minIdx].push(img)
-
+        var minColHeight = Math.min(...colHeights)
+        var minColIdx = colHeights.indexOf(minColHeight)
+        cat.left = minColIdx * (colWidth + gap)
+        cat.top = minColHeight
+        cat.displayWidth = colWidth
+        cat.displayHeight = colWidth * cat.height / cat.width
+        colHeights[minColIdx] += cat.displayHeight + gap
       }
-      divImgs.forEach((imgs,idx)=>{
-       divs[idx].append(...imgs)
+      section.style.height = Math.max(...colHeights) + "px"
+      cats.filter(cat =>{
+        return cat.top +cat.displayHeight +10 > window.pageYOffset -余量   &&
+               cat.top <= window.pageYOffset + window.innerHeight + 余量
+
+      }).forEach(cat =>{
+        cat.show = true
+        var img = document.createElement('img')
+        img.src = cat.fullUrl
+        img.style.width = cat.displayWidth + "px"
+        img.style.height = cat.displayHeight + "px"
+        img.style.transform = `translate(${cat.left}px, ${cat.top}px)`
+        section.append(img)
       })
+
     }
     run()
     window.onresize = run
+    var prevPageYOffset = 0
+    window.onscroll = (e) =>{
+
+      var imgs = document.querySelectorAll("img")
+      imgs.forEach(img =>{
+        var box = img.getBoundingClientRect()
+        if(window.pageYOffset > prevPageYOffset){
+          if(box.bottom < -余量){
+            section.removeChild(img)
+          }
+        }
+        if(window.pageYOffset < prevPageYOffset){
+          if(box.top >  window.innerHeight + 余量){
+            section.removeChild(img)
+          }
+
+        }
+      })
+      var shownCats = cats.filter(cat => cat.show == true)
+      var toBeShow =  cats.filter(cat =>{
+        return cat.top +cat.displayHeight > window.pageYOffset -余量  &&
+        cat.top < window.pageYOffset + window.innerHeight + 余量
+      })
+      var leaveCats = _.difference(shownCats,toBeShow)
+      leaveCats.forEach(it => {
+        it.show = false
+      })
+      var newCats = _.difference(toBeShow,shownCats)
+      newCats.forEach(cat =>{
+
+        var img = document.createElement('img')
+        img.src = cat.fullUrl
+        img.style.width = cat.displayWidth + "px"
+        img.style.height = cat.displayHeight + "px"
+        img.style.transform = `translate(${cat.left}px, ${cat.top}px)`
+        section.append(img)
+      })
+
+      prevPageYOffset = window.pageYOffset
+    }
+
 
     var  section = document.querySelector("section")
     var z = 1
     section.addEventListener("click" , function(e){
       if(e.target.matches("img")){
-
         var img = e.target
         if(img.style.transform == ''){
           var box = img.getBoundingClientRect()
