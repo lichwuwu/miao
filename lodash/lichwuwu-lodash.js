@@ -552,13 +552,15 @@ var lichwuwu = {
 
 
 
-
-
-
-
-
   add : function(augend, addend){
     return augend + addend
+  },
+  sum : function(arr){
+    var result = 0
+    for(var i = 0;i<arr.length;i++ ){
+      result += arr[i]
+    }
+    return result
   },
   max : function(array){
     if(array.length == 0){
