@@ -629,7 +629,7 @@ var lichwuwu = {
     }
     return func
   },
-  filter : function(collection, predicate=lichwuwu.identity){
+  filter : function(array, predicate=lichwuwu.identity){
     var func = lichwuwu.iteratee(predicate)
     var result = []
     for(var i = 0 ;i < array.length;i++){
