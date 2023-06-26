@@ -587,7 +587,7 @@ var lichwuwu = {
   },
   matches : function(source){
     return function(object){
-      return lichwuwu.bind(lichwuwu.isMatch,null,undefined,source)
+      return lichwuwu.isMatch(object,source)
     }
   },
   bind :function(f,thisArgs,...fixedArgs){
