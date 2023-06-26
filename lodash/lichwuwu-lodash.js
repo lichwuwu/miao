@@ -562,6 +562,30 @@ var lichwuwu = {
     }
     return result
   },
+  property :function(name){
+    return function(obj){
+      return obj[name]
+    }
+  },
+  matchesProperty : function(path, srcValue){
+    return function(object){
+      return lichwuwu.isMatch(object[path],srcValue)
+    }
+  },
+  isMatch : function(object, source){
+    for(var key in source){
+      if(typeof source[key] == "object"){
+        if(!this.isMatch(object[key],source[key])){
+          return false
+        }
+      }else{
+        if(object[key] !== source[key]){
+          return false
+        }
+      }
+    }
+    return true
+  },
   max : function(array){
     if(array.length == 0){
       return undefined
