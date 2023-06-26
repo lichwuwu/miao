@@ -587,7 +587,21 @@ var lichwuwu = {
   },
   matches : function(source){
     return function(object){
-      return lichwuwu.isMatch(object,source)
+      return lichwuwu.bind(lichwuwu.isMatch,null,undefined,source)
+    }
+  },
+  bind :function(f,thisArgs,...fixedArgs){
+    return function(...args){
+      var copy = fixedArgs.slice()
+      for(var i = 0 ,j =0 ;i<copy.length;i++){
+        if(copy[i] == undefined){
+          copy[i] = args[j++]
+        }
+      }
+      while(j<args.length){
+        copy.push(args[j++])
+      }
+      return f.call(thisArgs,...copy)
     }
   },
   isMatch : function(object, source){
@@ -603,6 +617,27 @@ var lichwuwu = {
       }
     }
     return true
+  },
+  iteratee :function(predicate){
+    var func = predicate
+    if(typeof func == "string"){
+      func = lichwuwu.property(predicate)
+    }else if(Array.isArray(predicate)){
+      func = lichwuwu.matchesProperty(predicate)
+    }else if (typeof predicate == "object"){
+      func = lichwuwu.matches(predicate)
+    }
+    return func
+  },
+  filter : function(collection, predicate=lichwuwu.identity){
+    var func = lichwuwu.iteratee(predicate)
+    var result = []
+    for(var i = 0 ;i < array.length;i++){
+      if(func(array[i],i,array)){
+        result.push(array[i])
+      }
+    }
+    return result
   },
   max : function(array){
     if(array.length == 0){
