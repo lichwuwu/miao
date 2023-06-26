@@ -565,11 +565,11 @@ var lichwuwu = {
   sumBy : function(array, iteratee = lichwuwu.identity){
     var result = 0
     if(typeof iteratee == "string"){
-      for(var i = 0;i<arr.length;i++ ){
+      for(var i = 0;i<array.length;i++ ){
         result += array[i][iteratee]
       }
     }else{
-      for(var i = 0;i<arr.length;i++ ){
+      for(var i = 0;i<array.length;i++ ){
         result += iteratee(array[i])
       }
     }
