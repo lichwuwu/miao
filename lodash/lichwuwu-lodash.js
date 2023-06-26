@@ -562,6 +562,19 @@ var lichwuwu = {
     }
     return result
   },
+  sumBy : function(array, iteratee = lichwuwu.identity){
+    var result = 0
+    if(typeof iteratee == "string"){
+      for(var i = 0;i<arr.length;i++ ){
+        result += array[i][iteratee]
+      }
+    }else{
+      for(var i = 0;i<arr.length;i++ ){
+        result += iteratee(array[i])
+      }
+    }
+    return result
+  },
   property :function(name){
     return function(obj){
       return obj[name]
@@ -570,6 +583,11 @@ var lichwuwu = {
   matchesProperty : function(path, srcValue){
     return function(object){
       return lichwuwu.isMatch(object[path],srcValue)
+    }
+  },
+  matches : function(source){
+    return function(object){
+      return lichwuwu.isMatch(object,source)
     }
   },
   isMatch : function(object, source){
