@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Mini_regex101</title>
   <style>
     input, textarea, label, pre {
       font-family: consolas;
@@ -95,7 +95,7 @@
         line-height: 30px;
         margin: 0;
         padding: 0;
-        xposition: absolute;
+
         background-color: transparent;
         width: 100%;
         height: 100%;
@@ -105,30 +105,35 @@
         white-space: break-spaces;
       }
     }
+    
 
   </style>
 </head>
 <body>
-  <div>
-    <p>输入正则表达式</p>
-    <input id="reInput" type="text" value="(f).(.(.)(..)(..))"  onkeyup="run()"><button onclick="run()">Run</button>
-    <p id="reInputError"></p>
-    <br>
-    <label><input oninput="run()" id="flagsI" type="checkbox">i</label>
-    <label><input oninput="run()" id="flagsG" type="checkbox" checked>g</label>
-    <label><input oninput="run()" id="flagsM" type="checkbox">m</label>
-    <label><input oninput="run()" id="flagsS" type="checkbox">s</label>
-    <label><input oninput="run()" id="flagsU" type="checkbox">u</label>
-    <label><input oninput="run()" id="flagsY" type="checkbox">y</label>
-    <br>
+  <section class="aaa">
 
-
-  </div>
-  <p>输入字符串</p>
-    <div class="result">
-      <pre id="output"></pre>
-      <textarea id="StringInput" oninput="run()" id="" cols="30" rows="10">foo barbaz baa foobaa foobaa</textarea>
+    <div>
+      <p>输入正则表达式</p>
+      <input id="reInput" type="text" value="([01]+)+b"  onkeyup="run()"><button onclick="run()">Run</button><span id="timing"></span>
+      <p id="reInputError"></p>
+      <br>
+      <label><input oninput="run()" id="flagsI" type="checkbox">i</label>
+      <label><input oninput="run()" id="flagsG" type="checkbox" checked>g</label>
+      <label><input oninput="run()" id="flagsM" type="checkbox">m</label>
+      <label><input oninput="run()" id="flagsS" type="checkbox">s</label>
+      <label><input oninput="run()" id="flagsU" type="checkbox">u</label>
+      <label><input oninput="run()" id="flagsY" type="checkbox">y</label>
+      <br>
     </div>
+    <p>输入字符串</p>
+    <div class="result">
+      <pre id="output" contenteditable="true" oninput="run()">100100101b</pre>
+      <!-- <textarea id="StringInput" oninput="run()" id="" cols="30" rows="10">10010010100010000100110001</textarea> -->
+      <input type="text" id="replacement" oninput="run()">
+      <pre id="replaceOutput" ></pre>
+    </div>
+    <div id="hoverCard"></div>
+  </section>
   <script>
     function getFlags(){
       var result = ''
@@ -153,7 +158,8 @@
       return result
     }
     function run(){
-      output.innerHTML = ''
+      var cursorPosition = getCursorPosition(output)
+      // output.innerHTML = ''
       var reSource = reInput.value
       if(reSource == ''){
         return
@@ -163,66 +169,121 @@
         var re = new RegExp(reSource,flags+'d')
         reInputError.innerHTML= ''
       }catch(e){
+        timing.textContent = '正则表达式错误'
         reInputError.innerHTML = e
         return
       }
-      var string = StringInput.value
+      var string = output.textContent
       var match
       var lastLastindex = 0
       var html = ``
+      var startTime = Date.now()
       var matchIndex = 1
-      while(match = re.exec(string)){
-        html += string.slice(lastLastindex,match.index)
-        if(match[0] == ''){
-          html += '<em></em>'
+      timing.textContent = '匹配中...'
+      getAllMatch(re,string,(err,matches)=>{
+        if(err){
+          timing.textContent = '匹配超时'
         }else{
-          html += wrapOneMatch(match,matchIndex++)
+          timing.textContent = `${matches.length}个匹配(${Date.now() - startTime}ms)`
+          for(var match of matches){
+            html += string.slice(lastLastindex,match.index)
+            if(match[0] == ''){
+              html += '<em></em>'
+            }else{
+              html += wrapOneMatch(match,matchIndex++)
+            }
+            lastLastindex = match.index + match[0].length
+          }
+          html += string.slice(lastLastindex)
+          output.innerHTML = html
+          restoreCursorPosition(output, cursorPosition)
+          replaceOutput.innerHTML = string.replace(re, replacement.value)
         }
-
-        lastLastindex = re.lastIndex
-        if(match[0].length == 0){
-
-          re.lastIndex++
-        }
-        if(!re.global){
-          lastLastindex = match.index + match[0].length
-          break
-        }
-      }
-      html += string.slice(lastLastindex)
-      output.innerHTML = html
-    }
-    function wrapOneMatch2(match){
-      var result = ''
-      var indices = match.indices.map(([start,end]) =>{
-        return [start - match.index,end - match.index]
       })
-      var preEnd = 0
-      for(var i = 1;i<match.indices.length;i++){
-        var index = indices[i]
-        var [start,end] = index
-        result += match[0].slice(preEnd,start)
-        result += '<i>' + match[0].slice(start,end) + '</i>'
-        preEnd = end
-      }
-      result += match[0].slice(preEnd)
-      return '<b>' + result + '</b>'
     }
-    function wrapOneMatch1(match){
-      var indices = match.indices.map(([start,end]) =>{
-        return [start - match.index,end - match.index]
+
+    // output.addEventListener('mouseover', e => {
+    //   if (e.target.matches('[data-group]')) {
+    //     var target = e.target
+    //     target.classList.add('hover-target')
+    //     // var box = target.getBoundingClientRect()
+    //     var boxes = target.getClientRects() // 获取到元素生成的多个矩形区域
+
+    //     // 鼠标在视口中的位置
+    //     var x = e.clientX
+    //     var y = e.clientY
+    //     console.log(x, y, boxes)
+
+    //     // 计算出鼠标在元素生成的哪个盒子里
+    //     var box = [...boxes].filter(box => {
+    //       return x >= Math.floor(box.left) && x <= Math.ceil(box.right) && y >= Math.floor(box.top) && y <= Math.ceil(box.bottom)
+    //     }).at(0)
+
+    //     // console.log(box)
+
+    //     hoverCard.style.display = 'block'
+    //     hoverCard.textContent = target.textContent
+    //     hoverCard.style.top = box.top + 'px'
+    //     hoverCard.style.left = box.left + box.width / 2 + 'px'
+    //   }
+    // })
+    // output.addEventListener('mouseout', e => {
+    //   if (e.target.matches('[data-group]')) {
+    //     var target = e.target
+    //     target.classList.remove('hover-target')
+    //     hoverCard.style.display = 'none'
+    //   }
+    // })
+
+    // 还原光标在node结点中的位置
+    function restoreCursorPosition(node, position) {
+      var selection = window.getSelection()
+
+      traverseTextNode(node, textNode => {
+        if (position > textNode.nodeValue.length) {
+          position -= textNode.nodeValue.length
+        } else {
+          selection.setPosition(textNode, position)
+          return false
+        }
       })
 
-      var fillMatch = match[0]
-      var chars = fillMatch.split("")
-
-      for(var i = 1; i< indices.length;i++){
-        var [start,end] = indices[i]
-        chars[start] = `<i data-group=${i}>` + chars[start]
-        chars[end -1] = chars[end -1] + '</i>'
-      }
-      return '<b>' +chars.join("") + '</b>'
     }
+    function getCursorPosition(pre) {
+      var selection = window.getSelection()
+      var pos = 0
+
+      traverseTextNode(pre, textNode => {
+        if (textNode === selection.anchorNode) {
+          pos += selection.anchorOffset
+          return false
+        } else {
+          pos += textNode.nodeValue.length
+        }
+      })
+
+      return pos
+    }
+
+    // 遍历node中的所有文本结点,如果action函数返回false
+    // 则停止遍历
+    function traverseTextNode(node, action) {
+      if (node.nodeType === document.TEXT_NODE) {
+        if (action(node) === false) {
+          return false
+        }
+      } else if (node.nodeType === document.ELEMENT_NODE) {
+        // 这里不能用node.children,因为它不包含文本结点
+        // 而我们正是要遍历文本结点
+        for (var child of node.childNodes) {
+          if (traverseTextNode(child, action) === false) {
+            return false
+          }
+        }
+      }
+    }
+
+
     function wrapOneMatch(match,matchIndex){
       var indices = match.indices.map(([start,end]) =>{
         return [start - match.index,end - match.index]
@@ -244,6 +305,49 @@
       return `<b data-match="${matchIndex}" data-group="0" data-group-content="${match[0]}" data-group-start-index="${match.indices[0][0]}" data-group-end-index="${match.indices[0][1]}">` + result+ '</b>'
     }
     run()
+    var cursorPosition = getCursorPosition(output)
+
+    function getAllMatch(re,string,callback){
+      var blob = new Blob([`
+        addEventListener('message',e=>{
+          var {re,string} = e.data
+          var matches = []
+          var match = null
+
+          while(match = re.exec(string)){
+            matches.push(match)
+            if(re.global == false){
+              break
+            }
+            if(match[0] == ""){
+              re.lastIndex++
+            }
+          }
+          postMessage(matches)
+        })
+      `],{
+        type : "application/javascript"
+      })
+      var workerUrl =  URL.createObjectURL(blob)
+      var worker = new Worker(workerUrl)
+      var ret = false
+      worker.addEventListener("message",e=>{
+        ret = true
+        var matches = e.data
+        worker.terminate()
+        callback(null,matches)
+      })
+      worker.postMessage({
+        re,string
+      })
+      setTimeout(()=>{
+        if(ret === false){
+          worker.terminate()
+          callback(new Error("xxxxx"),null)
+        }
+      },2000)
+    }
+
   </script>
 </body>
 </html>
