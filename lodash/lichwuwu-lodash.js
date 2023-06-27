@@ -627,13 +627,21 @@ var lichwuwu = {
     }
     return func
   },
-  filter : function(array, predicate=lichwuwu.identity){
+  filter : function(array, predicate = lichwuwu.identity){
     var func = lichwuwu.iteratee(predicate)
     var result = []
     for(var i = 0 ;i < array.length;i++){
       if(func(array[i],i,array)){
         result.push(array[i])
       }
+    }
+    return result
+  },
+  map : function(array, predicate = lichwuwu.identity) {
+    var func = iteratee(predicate)
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      result.push(func(array[i], i, array))
     }
     return result
   },
