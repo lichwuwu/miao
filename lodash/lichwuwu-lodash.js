@@ -638,7 +638,7 @@ var lichwuwu = {
     return result
   },
   map : function(array, predicate = lichwuwu.identity) {
-    var func = iteratee(predicate)
+    var func = lichwuwu.iteratee(predicate)
     var result = []
     for (var i = 0; i < array.length; i++) {
       result.push(func(array[i], i, array))
