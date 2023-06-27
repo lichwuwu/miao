@@ -659,6 +659,30 @@ var lichwuwu = {
     }
     return max
   },
+  toPath : function(pathString) {
+    if (typeof pathString == 'string') {
+      var result = pathString.split(/\.|\[|\]\.|\]\[|\]/)
+      if (result.at(-1) == '') {
+        result.pop()
+      }
+      if (result.at(0) == '') {
+        result.shift()
+      }
+      return result
+    }
+    return pathString
+  },
+  get : function(object, path, defaultValue){
+    path = lichwuwu.toPath(path)
+    for(var key of path ){
+      if(object != undefined){
+        object = object[key]
+      }else{
+        return defaultValue
+      }
+    }
+    return object ?? defaultValue
+  },
   isEqual : function(o1, o2) {
     if(o1 === o2 ){
         return true
