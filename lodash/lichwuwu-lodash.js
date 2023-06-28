@@ -703,6 +703,14 @@ var lichwuwu = {
     }
     return map
   },
+  every : function(collection, predicate = lichwuwu.identity){
+    for(var item of collection){
+      if(!lichwuwu.iteratee(predicate)(item)){
+        return false
+      }
+    }
+    return true
+  },
   max : function(array){
     if(array.length == 0){
       return undefined
