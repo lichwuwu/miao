@@ -664,6 +664,22 @@ var lichwuwu = {
     return result
 
   },
+  uniqWith : function(array, comparator){
+    var result = []
+    for(var item of array){
+      var keep = true
+      for(var seen of result){
+        if(comparator(item,seen)){
+          keep = false
+          break
+        }
+      }
+      if(keep){
+        result.push(item)
+      }
+    }
+    return result
+  },
   max : function(array){
     if(array.length == 0){
       return undefined
@@ -723,7 +739,7 @@ var lichwuwu = {
                 }
             }
             for(var key in o1){
-                if(!this.isEqual(o1[key],o2[key])){
+                if(!lichwuwu.isEqual(o1[key],o2[key])){
                     return false
                 }
             }
