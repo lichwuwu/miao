@@ -551,7 +551,7 @@ var lichwuwu = {
   },
 
 
-  
+
   add : function(augend, addend){
     return augend + addend
   },
@@ -646,6 +646,33 @@ var lichwuwu = {
       result.push(func(array[i], i, array))
     }
     return result
+  },
+  uniq : function(array){
+    return Array.from(new Set(array))
+  },
+  uniqBy : function(array, iteratee = lichwuwu.identity){
+    var result = []
+    var set = new Set()
+    if(typeof iteratee == "function"){
+      for(var item of array){
+        var key = iteratee(item)
+        if(!set.has(key)){
+          result.push(item)
+          set.add(key)
+        }
+      }
+    }else{
+      for(var item of array){
+        var key = item[iteratee]
+        if(!set.has(key)){
+          result.push(item)
+          set.add(key)
+        }
+      }
+    }
+
+    return result
+
   },
   max : function(array){
     if(array.length == 0){
