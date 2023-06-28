@@ -680,6 +680,29 @@ var lichwuwu = {
     }
     return result
   },
+  countBy : function(collection, iteratee = lichwuwu.identity){
+    var map = {}
+    if(typeof iteratee == "function"){
+      for(var key of collection){
+        if(map[iteratee(key)]){
+          map[iteratee(key)]++
+        }else{
+          map[iteratee(key)] = 1
+        }
+
+      }
+    }else{
+      for(var key of collection){
+        if(map[key.length]){
+          map[key.length]++
+        }else{
+          map[key.length] = 1
+        }
+
+      }
+    }
+    return map
+  },
   max : function(array){
     if(array.length == 0){
       return undefined
