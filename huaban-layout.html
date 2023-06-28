@@ -8,6 +8,8 @@
 
     html{
       overflow-y: scroll;
+      background-color: black;
+
     }
     body {
       margin: 10px;
@@ -17,6 +19,8 @@
       position: relative;
     }
     img{
+      box-sizing: border-box;
+      border: 1px solid;
       display: block;
       transition: 0.3;
       position: absolute;
@@ -375,7 +379,7 @@
 
       var colWidth = 180
       var gap = 10
-      var  columns = Math.floor((window.innerWidth - 30 )/ colWidth)
+      var  columns = Math.floor((window.innerWidth - 30 )/ (colWidth + gap))
 
       if(columns == prevCloums){
         return
@@ -410,12 +414,43 @@
         img.style.width = cat.displayWidth + "px"
         img.style.height = cat.displayHeight + "px"
         img.style.transform = `translate(${cat.left}px, ${cat.top}px)`
+        img.style.opacity = '0'
+        img.onload = () =>{
+          img.style.opacity = '1'
+        }
         section.append(img)
       })
 
     }
     run()
-    window.onresize = run
+    window.onresize = throttle(run,300)
+
+    function debounce(f, time) {
+      var taskId
+
+      return function(...args) {
+        clearTimeout(taskId)
+        taskId = setTimeout(() => {
+          f.call(this, ...args)
+        }, time)
+      }
+    }
+
+    function throttle(f, time) {
+      var scheduled = false, lastArgs
+      return function(...args) {
+        lastArgs = args
+        if (!scheduled) {
+          scheduled = true
+          setTimeout(() => {
+            scheduled = false
+            f.call(...lastArgs)
+          }, time)
+        }
+      }
+    }
+
+
     var prevPageYOffset = 0
     window.onscroll = (e) =>{
 
@@ -451,6 +486,10 @@
         img.style.width = cat.displayWidth + "px"
         img.style.height = cat.displayHeight + "px"
         img.style.transform = `translate(${cat.left}px, ${cat.top}px)`
+        img.style.opacity = '0'
+        img.onload = () =>{
+          img.style.opacity = '1'
+        }
         section.append(img)
       })
 
@@ -463,25 +502,41 @@
     section.addEventListener("click" , function(e){
       if(e.target.matches("img")){
         var img = e.target
-        if(img.style.transform == ''){
+        var imgW = img.width
+        var imgH = img.height
+
+
+        if(img.style. position !== 'fixed'){
           var box = img.getBoundingClientRect()
-          var cx = box.left + box.width / 2
-          var cy = box.top + box.height / 2
+          var cx =  box.width
+          var cy =  box.height
           var vx = window.innerWidth / 2
           var vy = window.innerHeight / 2
+          console.log(vx,vy);
           var movex = vx - cx
           var movey = vy - cy
           var zoomx = window.innerWidth / box.width
-          var zommy = window.innerHeight / box.height
+          var zoomy = window.innerHeight / box.height
+          var bs = Math.min(zoomx,zoomy)
           img.style.zIndex = z++
-          img.style.transform = `translate(${movex}px, ${movey}px) scale(${Math.min(zoomx,zommy)})`
+          img.style.position = "fixed"
+          img.style.top = movey + "px"
+          img.style.left = movex + "px"
+          img.style.transform = ""
           img.style.boxShadow = '0 0 0 9999px black'
+          img.style.width = imgW * 2 + "px"
+          img.style.height = imgH * 2 + "px"
         }else{
-          img.style.transform = ''
+          img.style.position = "absolute"
           img.style.boxShadow = ''
+          img.style.top = ""
+          img.style.left = ""
+          img.style.width = imgW / 2 + "px"
+          img.style.height = imgH / 2 + "px"
         }
       }
     })
+
   </script>
 </body>
 </html>
