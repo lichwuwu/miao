@@ -28,10 +28,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: calc(100% - 42px);
+      margin: 20px;
+      background-color: #fff;
       padding: 20px;
       >svg{
-        background-color: #fff;
+        margin: auto;
+
       }
     }
     #hz{
@@ -44,9 +46,10 @@
       width:calc(100%);
       border: none;
       height: 50px;
+      outline: none;
       &:focus{
         background-color: pink;
-        border: pink;
+        border: none;
       }
       &:hover{
         background-color: pink;
@@ -66,9 +69,10 @@
 <body>
   <div class="top">
     <h1>正则表达式可视化</h1>
+    <p>“Some people, when confronted with a problem, think ‘I know, I’ll use regular expressions.’ Now they have two problems.” —Jamie Zawinski</p>
   </div>
   <div class="content">
-    <textarea name=""  id="regularExpressionInput" >(foo+|aaaa)*b(a[abz049_-]){2,}?(baz|baa)+|baaaa</textarea>  <br>
+    <textarea name="" oninput="a = true; zz()"  id="regularExpressionInput" >(foo+|aaaa)*b(a[abz049_-]){2,}?(baz|baa)+|baaaa</textarea>  <br>
     <button id="hz" onclick="draw()">draw</button>
     <button onclick="download()">Download Graph</button>
     <br>
@@ -94,6 +98,7 @@
     }
     function draw() {
       svg.innerHTML = ''
+
       var node = parseRegularExpression(regularExpressionInput.value)
 
       var graph = drawRegularExpression(node)
@@ -396,6 +401,7 @@
         var g = svgElt("g")
         g.appendChild(rect)
         g.appendChild(text)
+        
         return g
       }
       function drawCharacterClassGraph(node){
@@ -435,14 +441,16 @@
         })
         var g = svgElt("g")
         g.appendChild(rect)
-        var line = svgElt("line",{
-            x1: 0,
-            y1: height / 2,
-            x2: width,
-            y2: height / 2,
-            stroke: 'black',
+        var path = svgElt("path",{
+            d:`M 0 ${ height / 2}
+               L ${graphPadding} ${height /2}
+               M ${width} ${ height / 2}
+               L ${width - graphPadding} ${height /2}
+
+            `  ,
+            stroke : 'black'
         })
-        g.appendChild(line)
+        g.appendChild(path)
         var x = graphPadding
         graphs.forEach((graph,idx) => {
           graph.setAttribute("transform",`translate(${x},${(height - boxes[idx].height)/2})`)
@@ -483,6 +491,7 @@
           g.appendChild(graph)
           g.appendChild(line)
           y += boxes[idx].height + graphPadding
+
         });
         return g
 
@@ -520,6 +529,7 @@
         })
         label.textContent = `Graph # ${node.groupIndex}`
         g.appendChild(label)
+
         return g
 
       }
@@ -579,7 +589,6 @@
 
         targetGraph.setAttribute('transform', `translate(${2 * graphPadding}, ${(height - box.height) / 2})`)
         g.appendChild(targetGraph)
-
         return g
       }
       function drawRegularExpressionGraph(node){
@@ -657,9 +666,17 @@
         return a + b
       }
     }
-    window.onbeforeunload = e =>{
-      return '真的要关闭吗'
+    var textarea = document.querySelector("#regularExpressionInput")
+    var a = false
+    function zz(){
+      if(a == true){
+        window.onbeforeunload = e =>{
+          return '真的要关闭吗'
+        }
+        console.log(1);
+      }
     }
+
 
 
   </script>
