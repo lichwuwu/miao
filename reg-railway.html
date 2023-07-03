@@ -24,7 +24,11 @@
       margin-bottom: 20px;
     }
     section{
-      width: 100%;
+      border: #54de87 1px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: calc(100% - 42px);
       padding: 20px;
       >svg{
         background-color: #fff;
@@ -37,15 +41,25 @@
     }
     textarea{
       background-color: rgb(226,232,240);
-      width:calc(100% - 40px);
+      width:calc(100%);
       border: none;
       height: 50px;
+      &:focus{
+        background-color: pink;
+        border: pink;
+      }
+      &:hover{
+        background-color: pink;
+        border: none;
+      }
     }
     .content{
-      width: 100%;
-
+      margin: auto;
       padding-left: 20px;
       padding-right: 20px ;
+
+      border: #54de87 1px solid;
+
     }
   </style>
 </head>
@@ -60,7 +74,7 @@
     <br>
   </div>
   <section>
-    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1000" height="300"></svg>
+    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"></svg>
   </section>
   <script>
     var svg = document.querySelector("svg")
@@ -83,6 +97,7 @@
       var node = parseRegularExpression(regularExpressionInput.value)
 
       var graph = drawRegularExpression(node)
+
       var box = graph.getBBox()
       svg.setAttribute('width',box.width)
       svg.setAttribute('height',box.height)
@@ -135,8 +150,10 @@
             i++
             node.nonCapture = true
           }else if(str[i] == "="){
+            i++
             node.assertion = true
           }else if(str[i] == "!"){
+            i++
             node.assertion = true
             node.positive = false
           }else if(str[i] == "<"){
@@ -640,6 +657,10 @@
         return a + b
       }
     }
+    window.onbeforeunload = e =>{
+      return '真的要关闭吗'
+    }
+
 
   </script>
 </body>
