@@ -183,7 +183,7 @@
           }
         }
         if(!node.nonCapture){
-          node.groupIndex++
+          node.groupIndex = groupIndex++
         }
         var branches = parseBranches()
         node.branches = branches
@@ -401,7 +401,7 @@
         var g = svgElt("g")
         g.appendChild(rect)
         g.appendChild(text)
-        
+
         return g
       }
       function drawCharacterClassGraph(node){
@@ -445,7 +445,7 @@
             d:`M 0 ${ height / 2}
                L ${graphPadding} ${height /2}
                M ${width} ${ height / 2}
-               L ${width - graphPadding} ${height /2}
+               L ${width - graphPadding * boxes.length} ${height /2}
 
             `  ,
             stroke : 'black'
@@ -454,7 +454,7 @@
         var x = graphPadding
         graphs.forEach((graph,idx) => {
           graph.setAttribute("transform",`translate(${x},${(height - boxes[idx].height)/2})`)
-          x += boxes[idx].width + graphPadding
+          x += boxes[idx].width
           g.appendChild(graph)
         })
         return g
