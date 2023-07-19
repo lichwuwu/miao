@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+	<section class="intro" id="zen-intro">
+		<header role="banner">
+			<h1>CSS Zen Garden</h1>
+			<h2>The Beauty of <abbr title="Cascading Style Sheets">CSS</abbr> Design</h2>
+		</header>
+
+		<div class="summary" id="zen-summary" role="article">
+			<p>A demonstration of what can be accomplished through <abbr title="Cascading Style Sheets">CSS</abbr>-based design. Select any style sheet from the list to load it into this page.</p>
+			<p>Download the example <a href="/examples/index" title="This page's source HTML code, not to be modified.">html file</a> and <a href="/examples/style.css" title="This page's sample CSS, the file you may modify.">css file</a></p>
+		</div>
+
+		<div class="preamble" id="zen-preamble" role="article">
+			<h3>The Road to Enlightenment</h3>
+			<p>Littering a dark and dreary road lay the past relics of browser-specific tags, incompatible <abbr title="Document Object Model">DOM</abbr>s, broken <abbr title="Cascading Style Sheets">CSS</abbr> support, and abandoned browsers.</p>
+			<p>We must clear the mind of the past. Web enlightenment has been achieved thanks to the tireless efforts of folk like the <abbr title="World Wide Web Consortium">W3C</abbr>, <abbr title="Web Standards Project">WaSP</abbr>, and the major browser creators.</p>
+			<p>The CSS Zen Garden invites you to relax and meditate on the important lessons of the masters. Begin to see with clarity. Learn to use the time-honored techniques in new and invigorating fashion. Become one with the web.</p>
+		</div>
+	</section>
+
+	<div class="main supporting" id="zen-supporting" role="main">
+		<div class="explanation" id="zen-explanation" role="article">
+			<h3>So What is This About?</h3>
+			<p>There is a continuing need to show the power of <abbr title="Cascading Style Sheets">CSS</abbr>. The Zen Garden aims to excite, inspire, and encourage participation. To begin, view some of the existing designs in the list. Clicking on any one will load the style sheet into this very page. The <abbr title="HyperText Markup Language">HTML</abbr> remains the same, the only thing that has changed is the external <abbr title="Cascading Style Sheets">CSS</abbr> file. Yes, really.</p>
+			<p><abbr title="Cascading Style Sheets">CSS</abbr> allows complete and total control over the style of a hypertext document. The only way this can be illustrated in a way that gets people excited is by demonstrating what it can truly be, once the reins are placed in the hands of those able to create beauty from structure. Designers and coders alike have contributed to the beauty of the web; we can always push it further.</p>
+		</div>
+
+		<div class="participation" id="zen-participation" role="article">
+			<h3>Participation</h3>
+			<p>Strong visual design has always been our focus. You are modifying this page, so strong <abbr title="Cascading Style Sheets">CSS</abbr> skills are necessary too, but the example files are commented well enough that even <abbr title="Cascading Style Sheets">CSS</abbr> novices can use them as starting points. Please see the <a href="/pages/resources/" title="A listing of CSS-related resources"><abbr title="Cascading Style Sheets">CSS</abbr> Resource Guide</a> for advanced tutorials and tips on working with <abbr title="Cascading Style Sheets">CSS</abbr>.</p>
+			<p>You may modify the style sheet in any way you wish, but not the <abbr title="HyperText Markup Language">HTML</abbr>. This may seem daunting at first if you’ve never worked this way before, but follow the listed links to learn more, and use the sample files as a guide.</p>
+			<p>Download the sample <a href="/examples/index" title="This page's source HTML code, not to be modified.">HTML</a> and <a href="/examples/style.css" title="This page's sample CSS, the file you may modify.">CSS</a> to work on a copy locally. Once you have completed your masterpiece (and please, don’t submit half-finished work) upload your <abbr title="Cascading Style Sheets">CSS</abbr> file to a web server under your control. <a href="/pages/submit/" title="Use the contact form to send us your CSS file">Send us a link</a> to an archive of that file and all associated assets, and if we choose to use it we will download it and place it on our server.</p>
+		</div>
+
+		<div class="benefits" id="zen-benefits" role="article">
+			<h3>Benefits</h3>
+			<p>Why participate? For recognition, inspiration, and a resource we can all refer to showing people how amazing <abbr title="Cascading Style Sheets">CSS</abbr> really can be. This site serves as equal parts inspiration for those working on the web today, learning tool for those who will be tomorrow, and gallery of future techniques we can all look forward to.</p>
+		</div>
+
+		<div class="requirements" id="zen-requirements" role="article">
+			<h3>Requirements</h3>
+			<p>Where possible, we would like to see mostly <abbr title="Cascading Style Sheets, levels 1 and 2">CSS 1 &amp; 2</abbr> usage. <abbr title="Cascading Style Sheets, levels 3 and 4">CSS 3 &amp; 4</abbr> should be limited to widely-supported elements only, or strong fallbacks should be provided. The CSS Zen Garden is about functional, practical <abbr title="Cascading Style Sheets">CSS</abbr> and not the latest bleeding-edge tricks viewable by 2% of the browsing public. The only real requirement we have is that your <abbr title="Cascading Style Sheets">CSS</abbr> validates.</p>
+			<p>Luckily, designing this way shows how well various browsers have implemented <abbr title="Cascading Style Sheets">CSS</abbr> by now. When sticking to the guidelines you should see fairly consistent results across most modern browsers. Due to the sheer number of user agents on the web these days — especially when you factor in mobile — pixel-perfect layouts may not be possible across every platform. That’s okay, but do test in as many as you can. Your design should work in at least IE9+ and the latest Chrome, Firefox, iOS and Android browsers (run by over 90% of the population).</p>
+			<p>We ask that you submit original artwork. Please respect copyright laws. Please keep objectionable material to a minimum, and try to incorporate unique and interesting visual themes to your work. We’re well past the point of needing another garden-related design.</p>
+			<p>This is a learning exercise as well as a demonstration. You retain full copyright on your graphics (with limited exceptions, see <a href="/pages/submit/guidelines/">submission guidelines</a>), but we ask you release your <abbr title="Cascading Style Sheets">CSS</abbr> under a Creative Commons license identical to the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Zen Garden's license information.">one on this site</a> so that others may learn from your work.</p>
+			<p role="contentinfo">By <a href="http://www.mezzoblue.com/">Dave Shea</a>. Bandwidth graciously donated by <a href="http://www.mediatemple.net/">mediatemple</a>. Now available: <a href="http://www.amazon.com/exec/obidos/ASIN/0321303474/mezzoblue-20/">Zen Garden, the book</a>.</p>
+		</div>
+
+		<footer>
+			<a href="http://validator.w3.org/check/referer" title="Check the validity of this site’s HTML" class="zen-validate-html">HTML</a>
+			<a href="http://jigsaw.w3.org/css-validator/check/referer" title="Check the validity of this site’s CSS" class="zen-validate-css">CSS</a>
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" title="View the Creative Commons license of this site: Attribution-NonCommercial-ShareAlike." class="zen-license">CC</a>
+			<a href="http://mezzoblue.com/zengarden/faq/#aaa" title="Read about the accessibility of this site" class="zen-accessibility">A11y</a>
+			<a href="https://github.com/mezzoblue/csszengarden.com" title="Fork this site on Github" class="zen-github">GH</a>
+		</footer>
+
+	</div>
+
+
+	<aside class="sidebar" role="complementary">
+		<div class="wrapper">
+
+			<div class="design-selection" id="design-selection">
+				<h3 class="select">Select a Design:</h3>
+				<nav role="navigation">
+					<ul>
+					<li>
+						<a href="/221/" class="design-name">Mid Century Modern</a> by						<a href="http://andrewlohman.com/" class="designer-name">Andrew Lohman</a>
+					</li>					<li>
+						<a href="/220/" class="design-name">Garments</a> by						<a href="http://danielmall.com/" class="designer-name">Dan Mall</a>
+					</li>					<li>
+						<a href="/219/" class="design-name">Steel</a> by						<a href="http://steffen-knoeller.de" class="designer-name">Steffen Knoeller</a>
+					</li>					<li>
+						<a href="/218/" class="design-name">Apothecary</a> by						<a href="http://trentwalton.com" class="designer-name">Trent Walton</a>
+					</li>					<li>
+						<a href="/217/" class="design-name">Screen Filler</a> by						<a href="http://elliotjaystocks.com/" class="designer-name">Elliot Jay Stocks</a>
+					</li>					<li>
+						<a href="/216/" class="design-name">Fountain Kiss</a> by						<a href="http://jeremycarlson.com" class="designer-name">Jeremy Carlson</a>
+					</li>					<li>
+						<a href="/215/" class="design-name">A Robot Named Jimmy</a> by						<a href="http://meltmedia.com/" class="designer-name">meltmedia</a>
+					</li>					<li>
+						<a href="/214/" class="design-name">Verde Moderna</a> by						<a href="http://www.mezzoblue.com/" class="designer-name">Dave Shea</a>
+					</li>					</ul>
+				</nav>
+			</div>
+
+			<div class="design-archives" id="design-archives">
+				<h3 class="archives">Archives:</h3>
+				<nav role="navigation">
+					<ul>
+						<li class="next">
+							<a href="/214/page1">
+								Next Designs <span class="indicator">›</span>
+							</a>
+						</li>
+						<li class="viewall">
+							<a href="/pages/alldesigns/" title="View every submission to the Zen Garden.">
+								View All Designs							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="zen-resources" id="zen-resources">
+				<h3 class="resources">Resources:</h3>
+				<ul>
+					<li class="view-css">
+						<a href="/214/214.css" title="View the source CSS file of the currently-viewed design.">
+							View This Design’s <abbr title="Cascading Style Sheets">CSS</abbr>						</a>
+					</li>
+					<li class="css-resources">
+						<a href="/pages/resources/" title="Links to great sites with information on using CSS.">
+							<abbr title="Cascading Style Sheets">CSS</abbr> Resources						</a>
+					</li>
+					<li class="zen-faq">
+						<a href="/pages/faq/" title="A list of Frequently Asked Questions about the Zen Garden.">
+							<abbr title="Frequently Asked Questions">FAQ</abbr>						</a>
+					</li>
+					<li class="zen-submit">
+						<a href="/pages/submit/" title="Send in your own CSS file.">
+							Submit a Design						</a>
+					</li>
+					<li class="zen-translations">
+						<a href="/pages/translations/" title="View translated versions of this page.">
+							Translations						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</aside>
+
+
+</div>
+
+<!--
+
+	These superfluous divs/spans were originally provided as catch-alls to add extra imagery.
+	These days we have full ::before and ::after support, favour using those instead.
+	These only remain for historical design compatibility. They might go away one day.
+
+-->
+<div class="extra1" role="presentation"></div><div class="extra2" role="presentation"></div><div class="extra3" role="presentation"></div>
+<div class="extra4" role="presentation"></div><div class="extra5" role="presentation"></div><div class="extra6" role="presentation"></div>
+
+
+
+  <svg width="800" height="600"></svg>
+  <script src="./d3.js"></script>
+  <script src="./ancestry.js"></script>
+  <script src="./lodash.min.js"></script>
+  <script>
+    var width = 2000
+    var height = 2000
+
+    var ancestry = JSON.parse(ANCESTRY_FILE)
+    var byName = _.keyBy(ancestry, 'name')
+
+    ancestry.forEach(it => {
+      it.children = []
+    })
+
+    ancestry.forEach(it => {
+      var fatherObj = byName[it.father]
+      var motherObj = byName[it.mother]
+
+      if (fatherObj) {
+        it.children.push(fatherObj)
+      }
+
+      if (motherObj) {
+        it.children.push(motherObj)
+      }
+    })
+
+
+    var nokids = ancestry.filter(it => {
+        var name = it.name
+        // 没有任何人以这个人做为父母
+        return ancestry.every(p => {
+            return p.father !== name && p.mother!==name
+        })
+    })
+
+    var ancestryTree = {
+      name: 'NO_NAME',
+      children: nokids,
+    }
+
+    var ancestryRoot = d3.hierarchy(ancestryTree)
+
+
+    var list = [
+      {"name": "Eve",   "parent": ""},
+      {"name": "Cain",  "parent": "Eve"},
+      {"name": "Seth",  "parent": "Eve"},
+      {"name": "Enos",  "parent": "Seth"},
+      {"name": "Noam",  "parent": "Seth"},
+      {"name": "Abel",  "parent": "Eve"},
+      {"name": "Awan",  "parent": "Eve"},
+      {"name": "Enoch", "parent": "Awan"},
+      {"name": "Azura", "parent": "Eve"}
+    ]
+
+
+    var tree = d3.stratify()
+      .id(it => it.name)
+      .parentId(it => it.parent)
+      (list)
+
+    var data = {
+      xxx: 1,
+      yyyy: 2,
+      zzz: 3,
+      children: [
+        {
+          xxx:2,
+          yyy:3,
+          zzz:5,
+          children: [
+            {xxx:2,yyy:3,zz:5,children: []}
+          ],
+        },
+        {
+          xxx: 2,
+          yyy: 3,
+          zzz: 9,
+          children: [],
+        },
+        {
+          xxx: 2,
+          yyy: 3,
+          zzz: 9,
+          children: [],
+        }
+      ]
+    }
+
+    var root = d3.hierarchy(data)
+
+
+
+
+
+    var flare2 = {
+      "name": "flare",
+      "children": [
+        {
+        "name": "analytics",
+        "children": [
+          {
+          "name": "cluster",
+          "children": [
+            {"name": "AgglomerativeCluster", "value": 3938},
+            {"name": "CommunityStructure", "value": 3812},
+            {"name": "HierarchicalCluster", "value": 6714},
+            {"name": "MergeEdge", "value": 743}
+          ]
+          },
+          {
+          "name": "graph",
+          "children": [
+            {"name": "BetweennessCentrality", "value": 3534},
+            {"name": "LinkDistance", "value": 5731},
+            {"name": "MaxFlowMinCut", "value": 7840},
+            {"name": "ShortestPaths", "value": 5914},
+            {"name": "SpanningTree", "value": 3416}
+          ]
+          },
+          {
+          "name": "optimization",
+          "children": [
+            {"name": "AspectRatioBanker", "value": 7074}
+          ]
+          }
+        ]
+        },
+        {
+        "name": "animate",
+        "children": [
+          {"name": "Easing", "value": 17010},
+          {"name": "FunctionSequence", "value": 5842},
+          {
+          "name": "interpolate",
+          "children": [
+            {"name": "ArrayInterpolator", "value": 1983},
+            {"name": "ColorInterpolator", "value": 2047},
+            {"name": "DateInterpolator", "value": 1375},
+            {"name": "Interpolator", "value": 8746},
+            {"name": "MatrixInterpolator", "value": 2202},
+            {"name": "NumberInterpolator", "value": 1382},
+            {"name": "ObjectInterpolator", "value": 1629},
+            {"name": "PointInterpolator", "value": 1675},
+            {"name": "RectangleInterpolator", "value": 2042}
+          ]
+          },
+          {"name": "ISchedulable", "value": 1041},
+          {"name": "Parallel", "value": 5176},
+          {"name": "Pause", "value": 449},
+          {"name": "Scheduler", "value": 5593},
+          {"name": "Sequence", "value": 5534},
+          {"name": "Transition", "value": 9201},
+          {"name": "Transitioner", "value": 19975},
+          {"name": "TransitionEvent", "value": 1116},
+          {"name": "Tween", "value": 6006}
+        ]
+        },
+        {
+        "name": "data",
+        "children": [
+          {
+          "name": "converters",
+          "children": [
+            {"name": "Converters", "value": 721},
+            {"name": "DelimitedTextConverter", "value": 4294},
+            {"name": "GraphMLConverter", "value": 9800},
+            {"name": "IDataConverter", "value": 1314},
+            {"name": "JSONConverter", "value": 2220}
+          ]
+          },
+          {"name": "DataField", "value": 1759},
+          {"name": "DataSchema", "value": 2165},
+          {"name": "DataSet", "value": 586},
+          {"name": "DataSource", "value": 3331},
+          {"name": "DataTable", "value": 772},
+          {"name": "DataUtil", "value": 3322}
+        ]
+        },
+        {
+        "name": "display",
+        "children": [
+          {"name": "DirtySprite", "value": 8833},
+          {"name": "LineSprite", "value": 1732},
+          {"name": "RectSprite", "value": 3623},
+          {"name": "TextSprite", "value": 10066}
+        ]
+        },
+        {
+        "name": "flex",
+        "children": [
+          {"name": "FlareVis", "value": 4116}
+        ]
+        },
+        {
+        "name": "physics",
+        "children": [
+          {"name": "DragForce", "value": 1082},
+          {"name": "GravityForce", "value": 1336},
+          {"name": "IForce", "value": 319},
+          {"name": "NBodyForce", "value": 10498},
+          {"name": "Particle", "value": 2822},
+          {"name": "Simulation", "value": 9983},
+          {"name": "Spring", "value": 2213},
+          {"name": "SpringForce", "value": 1681}
+        ]
+        },
+        {
+        "name": "query",
+        "children": [
+          {"name": "AggregateExpression", "value": 1616},
+          {"name": "And", "value": 1027},
+          {"name": "Arithmetic", "value": 3891},
+          {"name": "Average", "value": 891},
+          {"name": "BinaryExpression", "value": 2893},
+          {"name": "Comparison", "value": 5103},
+          {"name": "CompositeExpression", "value": 3677},
+          {"name": "Count", "value": 781},
+          {"name": "DateUtil", "value": 4141},
+          {"name": "Distinct", "value": 933},
+          {"name": "Expression", "value": 5130},
+          {"name": "ExpressionIterator", "value": 3617},
+          {"name": "Fn", "value": 3240},
+          {"name": "If", "value": 2732},
+          {"name": "IsA", "value": 2039},
+          {"name": "Literal", "value": 1214},
+          {"name": "Match", "value": 3748},
+          {"name": "Maximum", "value": 843},
+          {
+          "name": "methods",
+          "children": [
+            {"name": "add", "value": 593},
+            {"name": "and", "value": 330},
+            {"name": "average", "value": 287},
+            {"name": "count", "value": 277},
+            {"name": "distinct", "value": 292},
+            {"name": "div", "value": 595},
+            {"name": "eq", "value": 594},
+            {"name": "fn", "value": 460},
+            {"name": "gt", "value": 603},
+            {"name": "gte", "value": 625},
+            {"name": "iff", "value": 748},
+            {"name": "isa", "value": 461},
+            {"name": "lt", "value": 597},
+            {"name": "lte", "value": 619},
+            {"name": "max", "value": 283},
+            {"name": "min", "value": 283},
+            {"name": "mod", "value": 591},
+            {"name": "mul", "value": 603},
+            {"name": "neq", "value": 599},
+            {"name": "not", "value": 386},
+            {"name": "or", "value": 323},
+            {"name": "orderby", "value": 307},
+            {"name": "range", "value": 772},
+            {"name": "select", "value": 296},
+            {"name": "stddev", "value": 363},
+            {"name": "sub", "value": 600},
+            {"name": "sum", "value": 280},
+            {"name": "update", "value": 307},
+            {"name": "variance", "value": 335},
+            {"name": "where", "value": 299},
+            {"name": "xor", "value": 354},
+            {"name": "_", "value": 264}
+          ]
+          },
+          {"name": "Minimum", "value": 843},
+          {"name": "Not", "value": 1554},
+          {"name": "Or", "value": 970},
+          {"name": "Query", "value": 13896},
+          {"name": "Range", "value": 1594},
+          {"name": "StringUtil", "value": 4130},
+          {"name": "Sum", "value": 791},
+          {"name": "Variable", "value": 1124},
+          {"name": "Variance", "value": 1876},
+          {"name": "Xor", "value": 1101}
+        ]
+        },
+        {
+        "name": "scale",
+        "children": [
+          {"name": "IScaleMap", "value": 2105},
+          {"name": "LinearScale", "value": 1316},
+          {"name": "LogScale", "value": 3151},
+          {"name": "OrdinalScale", "value": 3770},
+          {"name": "QuantileScale", "value": 2435},
+          {"name": "QuantitativeScale", "value": 4839},
+          {"name": "RootScale", "value": 1756},
+          {"name": "Scale", "value": 4268},
+          {"name": "ScaleType", "value": 1821},
+          {"name": "TimeScale", "value": 5833}
+        ]
+        },
+        {
+        "name": "util",
+        "children": [
+          {"name": "Arrays", "value": 8258},
+          {"name": "Colors", "value": 10001},
+          {"name": "Dates", "value": 8217},
+          {"name": "Displays", "value": 12555},
+          {"name": "Filter", "value": 2324},
+          {"name": "Geometry", "value": 10993},
+          {
+          "name": "heap",
+          "children": [
+            {"name": "FibonacciHeap", "value": 9354},
+            {"name": "HeapNode", "value": 1233}
+          ]
+          },
+          {"name": "IEvaluable", "value": 335},
+          {"name": "IPredicate", "value": 383},
+          {"name": "IValueProxy", "value": 874},
+          {
+          "name": "math",
+          "children": [
+            {"name": "DenseMatrix", "value": 3165},
+            {"name": "IMatrix", "value": 2815},
+            {"name": "SparseMatrix", "value": 3366}
+          ]
+          },
+          {"name": "Maths", "value": 17705},
+          {"name": "Orientation", "value": 1486},
+          {
+          "name": "palette",
+          "children": [
+            {"name": "ColorPalette", "value": 6367},
+            {"name": "Palette", "value": 1229},
+            {"name": "ShapePalette", "value": 2059},
+            {"name": "SizePalette", "value": 2291}
+          ]
+          },
+          {"name": "Property", "value": 5559},
+          {"name": "Shapes", "value": 19118},
+          {"name": "Sort", "value": 6887},
+          {"name": "Stats", "value": 6557},
+          {"name": "Strings", "value": 22026}
+        ]
+        },
+        {
+        "name": "vis",
+        "children": [
+          {
+          "name": "axis",
+          "children": [
+            {"name": "Axes", "value": 1302},
+            {"name": "Axis", "value": 24593},
+            {"name": "AxisGridLine", "value": 652},
+            {"name": "AxisLabel", "value": 636},
+            {"name": "CartesianAxes", "value": 6703}
+          ]
+          },
+          {
+          "name": "controls",
+          "children": [
+            {"name": "AnchorControl", "value": 2138},
+            {"name": "ClickControl", "value": 3824},
+            {"name": "Control", "value": 1353},
+            {"name": "ControlList", "value": 4665},
+            {"name": "DragControl", "value": 2649},
+            {"name": "ExpandControl", "value": 2832},
+            {"name": "HoverControl", "value": 4896},
+            {"name": "IControl", "value": 763},
+            {"name": "PanZoomControl", "value": 5222},
+            {"name": "SelectionControl", "value": 7862},
+            {"name": "TooltipControl", "value": 8435}
+          ]
+          },
+          {
+          "name": "data",
+          "children": [
+            {"name": "Data", "value": 20544},
+            {"name": "DataList", "value": 19788},
+            {"name": "DataSprite", "value": 10349},
+            {"name": "EdgeSprite", "value": 3301},
+            {"name": "NodeSprite", "value": 19382},
+            {
+            "name": "render",
+            "children": [
+              {"name": "ArrowType", "value": 698},
+              {"name": "EdgeRenderer", "value": 5569},
+              {"name": "IRenderer", "value": 353},
+              {"name": "ShapeRenderer", "value": 2247}
+            ]
+            },
+            {"name": "ScaleBinding", "value": 11275},
+            {"name": "Tree", "value": 7147},
+            {"name": "TreeBuilder", "value": 9930}
+          ]
+          },
+          {
+          "name": "events",
+          "children": [
+            {"name": "DataEvent", "value": 2313},
+            {"name": "SelectionEvent", "value": 1880},
+            {"name": "TooltipEvent", "value": 1701},
+            {"name": "VisualizationEvent", "value": 1117}
+          ]
+          },
+          {
+          "name": "legend",
+          "children": [
+            {"name": "Legend", "value": 20859},
+            {"name": "LegendItem", "value": 4614},
+            {"name": "LegendRange", "value": 10530}
+          ]
+          },
+          {
+          "name": "operator",
+          "children": [
+            {
+            "name": "distortion",
+            "children": [
+              {"name": "BifocalDistortion", "value": 4461},
+              {"name": "Distortion", "value": 6314},
+              {"name": "FisheyeDistortion", "value": 3444}
+            ]
+            },
+            {
+            "name": "encoder",
+            "children": [
+              {"name": "ColorEncoder", "value": 3179},
+              {"name": "Encoder", "value": 4060},
+              {"name": "PropertyEncoder", "value": 4138},
+              {"name": "ShapeEncoder", "value": 1690},
+              {"name": "SizeEncoder", "value": 1830}
+            ]
+            },
+            {
+            "name": "filter",
+            "children": [
+              {"name": "FisheyeTreeFilter", "value": 5219},
+              {"name": "GraphDistanceFilter", "value": 3165},
+              {"name": "VisibilityFilter", "value": 3509}
+            ]
+            },
+            {"name": "IOperator", "value": 1286},
+            {
+            "name": "label",
+            "children": [
+              {"name": "Labeler", "value": 9956},
+              {"name": "RadialLabeler", "value": 3899},
+              {"name": "StackedAreaLabeler", "value": 3202}
+            ]
+            },
+            {
+            "name": "layout",
+            "children": [
+              {"name": "AxisLayout", "value": 6725},
+              {"name": "BundledEdgeRouter", "value": 3727},
+              {"name": "CircleLayout", "value": 9317},
+              {"name": "CirclePackingLayout", "value": 12003},
+              {"name": "DendrogramLayout", "value": 4853},
+              {"name": "ForceDirectedLayout", "value": 8411},
+              {"name": "IcicleTreeLayout", "value": 4864},
+              {"name": "IndentedTreeLayout", "value": 3174},
+              {"name": "Layout", "value": 7881},
+              {"name": "NodeLinkTreeLayout", "value": 12870},
+              {"name": "PieLayout", "value": 2728},
+              {"name": "RadialTreeLayout", "value": 12348},
+              {"name": "RandomLayout", "value": 870},
+              {"name": "StackedAreaLayout", "value": 9121},
+              {"name": "TreeMapLayout", "value": 9191}
+            ]
+            },
+            {"name": "Operator", "value": 2490},
+            {"name": "OperatorList", "value": 5248},
+            {"name": "OperatorSequence", "value": 4190},
+            {"name": "OperatorSwitch", "value": 2581},
+            {"name": "SortOperator", "value": 2023}
+          ]
+          },
+          {"name": "Visualization", "value": 16540}
+        ]
+        }
+      ]
+    }
+
+
+
+    var radius = width / 2
+    // 计算树形布局，它只能接收由hierarchy函数返回的数据结构，即d3自己的树
+    var treeLayout = d3.tree()
+      .size([Math.PI * 2, radius])
+
+    var ancestryLayout = treeLayout(
+      d3.hierarchy(flare2).sort((a,b) => {
+        // debugger
+        return (a.descendants().length ?? 0) - (b.descendants().length ?? 0)
+      })
+    )
+    // var ancestryLayout = treeLayout(ancestryRoot)
+
+    var svg = d3.select('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', [-width / 2, -height / 2, width, height]) // 注意Box的B要大写，因为svg元素的属性是区分大小写的
+
+    svg.selectAll('circle')
+      .data(ancestryLayout)
+      .join('circle')
+      .attr('transform', d => {
+        var angle = d.x
+        var r = d.y
+        var x = Math.cos(angle) * r
+        var y = Math.sin(angle) * r
+        return `translate(${x}, ${y})`
+      })
+      .attr('r', 5)
+
+
+
+    const radialLink = d3.linkRadial()
+      .source(link => link.source)
+      .target(link => link.target)
+      .angle((d) => d.x + Math.PI / 2) // 点在圆环的哪个角度
+      .radius((d) => d.y) // 点距离原点的距离
+
+    svg.selectAll('path')
+      .data(ancestryLayout.links())
+      .join('path')
+      .attr('d', link => radialLink(link))
+      .attr('fill', 'none')
+      .attr('stroke', 'black')
+
+    // svg.selectAll('line')
+    //   .data(ancestryLayout.links()) // 返回的是树中结点之间的连线信息
+    //   .join('line')
+    //   .attr('x1', link => {
+    //     var d = link.source
+
+    //     var angle = d.x
+    //     var r = d.y
+    //     var x = Math.cos(angle) * r
+    //     var y = Math.sin(angle) * r
+    //     return x
+    //   })
+    //   .attr('y1', link => {
+    //     var d = link.source
+
+    //     var angle = d.x
+    //     var r = d.y
+    //     var x = Math.cos(angle) * r
+    //     var y = Math.sin(angle) * r
+    //     return y
+    //   })
+    //   .attr('x2', link => {
+    //     var d = link.target
+
+    //     var angle = d.x
+    //     var r = d.y
+    //     var x = Math.cos(angle) * r
+    //     var y = Math.sin(angle) * r
+    //     return x
+    //   })
+    //   .attr('y2', link => {
+    //     var d = link.target
+
+    //     var angle = d.x
+    //     var r = d.y
+    //     var x = Math.cos(angle) * r
+    //     var y = Math.sin(angle) * r
+    //     return y
+    //   })
+    //   .attr('fill', 'none')
+    //   .attr('stroke', 'black')
+
+
+    // svg.selectAll('text')
+    //   .data(ancestryLayout)
+    //   .join('text')
+    //   .text(d => d.data.nodeName)
+    //   .attr('transform', d => `translate(${d.y},${d.x})`)
+    //   .attr('x', d => {
+    //     if (d.height == 0) {
+    //       return 10
+    //     } else {
+    //       return -10
+    //     }
+    //   })
+    //   .attr('y', 5)
+    //   .attr('text-anchor', d => {
+    //     // 树结点的高度为0表示它是叶子结点
+    //     // 叶子结点文字摆在右边
+    //     // 否则摆在左边
+    //     if (d.height == 0) {
+    //       return 'start'
+    //     } else {
+    //       return 'end'
+    //     }
+    //   })
+
+
+
+    // 它将接收一个link对象做为参数
+    // link对象是由root.links()返回的数组中的对象
+    // 形如：{source: Node$1, target: Node$1}
+    var linkLine = d3.linkHorizontal()
+      .target(link => link.target)
+      .source(link => link.source)
+      .x(d => d.y)// 用这两个函数分别取到起点和终点的xy坐标
+      .y(d => d.x)// 用这两个函数分别取到起点和终点的xy坐标
+
+    // 绘制结点之间的链接线
+    // svg.selectAll('path')
+    //   .data(ancestryLayout.links())
+    //   .join('path')
+    //   .attr('d', d => linkLine(d))
+    //   .attr('fill', 'none')
+    //   .attr('stroke', 'black')
+
+    // svg.selectAll('line')
+    //   .data(ancestryLayout.links())
+    //   .join('line')
+    //   .attr('x1', d => d.source.x)
+    //   .attr('y1', d => d.source.y)
+    //   .attr('x2', d => d.target.x)
+    //   .attr('y2', d => d.target.y)
+    //   .attr('stroke', 'black')
+
+  </script>
+</body>
+</html>

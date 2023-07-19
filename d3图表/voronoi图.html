@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <svg width="800" hwight="300"></svg>
+  <script src="./d3.js"></script>
+  <script>
+    var width = window.innerWidth
+    var height = window.innerHeight
+
+    var points = []
+
+    var xrand = d3.randomNormal(0, 1)
+    var yrand = d3.randomNormal(height / 2, height / 2)
+
+    for (var i = 0; i < 600; i++) {
+      var x = xrand() * width / 8 + width / 2
+      var y = xrand() * height / 8 + height / 2
+      points.push( [x, y] )
+    }
+  </script>
+</body>
+</html>

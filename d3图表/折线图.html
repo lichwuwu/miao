@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script src="d3.js"></script>
+  <script>
+    var width = 800
+    var height = 600
+    var margin = 30
+    var data = [20,10,5,35,37.5,45,32,55,70,95]
+    var svg = d3.create("svg")
+              .attr("width",width)
+              .attr("height",height)
+    document.body.append(svg.node())
+    var x = d3.scaleLinear()
+              .domain([0,data.length])
+              .range([margin,width-margin])
+    var y = d3.scaleLinear()
+              .domain([0,d3.extent(data)[1]])
+              .range([height - margin,margin])
+    var line = d3.line()
+        .x((d,i) => x(i +1))
+        .y(d => y(d))
+
+    svg.selectAll("circle")
+       .data(data)
+       .join("circle")
+       .attr("r",5)
+       .attr("fill","black")
+       .attr("cx",(d,i)=>x(i +1))
+       .attr("cy",d=>y(d))
+
+       svg.append("g").selectAll("path")
+       .data([data])
+       .join("path")
+       .attr("d",line)
+       .attr("fill","none")
+       .attr("stroke","black")
+
+
+    var xAxis = svg.append("g")
+        .call(  d3.axisBottom(x)  )
+        .attr('transform', `translate(0, ${height - margin})`)
+    var yAxis = svg.append('g')
+              .call(d3.axisLeft(y))
+              .attr('transform', `translate(${margin}, 0)`)
+
+
+  </script>
+</body>
+</html>

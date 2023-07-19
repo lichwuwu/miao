@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <svg></svg>
+  <script src="d3.js"></script>
+  <script>
+    var width = 800
+    var height = 600
+    var margin = 50
+    var points = []
+    var xExtent = 100 + 100 * Math.random()
+    var yExtent = 100 + 80 * Math.random()
+    for(var i = 0;i<100;i++){
+      points.push([xExtent * Math.random(),yExtent * Math.random()])
+    }
+    var x = d3.scaleLinear()
+            .domain([0,d3.max(points.map(it => it[0]))])
+            .range([margin, width - margin ])
+    var y = d3.scaleLinear()
+            .domain([0,d3.max(points.map(it=>it[1]))])
+            .range([ height-margin,margin])
+    var svg = d3.select("svg")
+              .attr("width",width)
+              .attr("height",height)
+    svg.selectAll("circle")
+       .data(points)
+       .join("circle")
+       .attr("r",5)
+       .attr("fill",d => {
+        var h = Math.sqrt(d[0] ** 2 + d[1] ** 2)
+        return `hsl(${h}, 70%, 70%)`
+      })
+      .attr("cx",d=>x(d[0]))
+      .attr("cy",d=>y(d[1]))
+    var xAxis = svg.append("g")
+        .call(  d3.axisBottom(x)  )
+        .attr('transform', `translate(0, ${height - margin})`)
+    var yAxis = svg.append('g')
+      .call(d3.axisLeft(y))
+      .attr('transform', `translate(${margin}, 0)`)
+
+    svg.on("click",function(){
+      points.length = 0
+      var xExtent = 100 + 200 * Math.random()
+    var yExtent = 100 + 280 * Math.random()
+    for(var i = 0;i<100;i++){
+      points.push([xExtent * Math.random(),yExtent * Math.random()])
+    }
+    var x = d3.scaleLinear()
+            .domain([0,d3.max(points.map(it => it[0]))])
+            .range([margin, width - margin ])
+
+    var y = d3.scaleLinear()
+            .domain([0,d3.max(points.map(it=>it[1]))])
+            .range([ height-margin,margin])
+
+    svg.selectAll("circle")
+       .data(points)
+       .transition()
+       .duration(500)
+
+       .attr("r",5)
+       .attr("fill",d => {
+        var h = Math.sqrt(d[0] ** 2 + d[1] ** 2)
+        return `hsl(${h}, 70%, 70%)`
+      })
+      .attr("cx",d=>x(d[0]))
+      .attr("cy",d=>y(d[1]))
+      xAxis
+          .transition()
+          .duration(500)
+          .call(  d3.axisBottom(x)  )
+          .attr('transform', `translate(0, ${height - margin})`)
+          
+      yAxis
+          .transition()
+          .duration(500)
+          .call(d3.axisLeft(y))
+          .attr('transform', `translate(${margin}, 0)`)
+    })
+
+  </script>
+</body>
+</html>
