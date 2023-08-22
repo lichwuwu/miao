@@ -124,7 +124,7 @@
         <button v-show="editIdx !== idx" id="bh" @click="deleteTodo(idx)">&times;</button>
       </li>
     </ul>
-    <div id="bottom">
+    <div v-show="todos.length" id="bottom">
       <span><em>{{ remain }}</em>items left</span>
       <div class="dx">
         <label ><input v-show="false"  type="radio" name="visible-select"  @click="visibleTodos = $event.target.value" name="visible-select"  value="all" checked>All</label>
