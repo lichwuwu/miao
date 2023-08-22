@@ -77,11 +77,27 @@
         }
         >button{
          float: right;
+         border: none;
+         background-color: white;
+
         }
+        >button:hover{text-decoration: underline;}
         >div{
           display: inline-block;
-          margin-left: 90px;
+          margin-left: 130px;
+
         }
+      }
+    }
+    .dx{
+      >label{
+        padding: 0 3px;
+        cursor: pointer;
+      }
+
+      >label:has(>input:checked){
+        border: 1px solid;
+
       }
     }
   </style>
@@ -90,11 +106,11 @@
   <div class="container">
     <h1>todos</h1>
     <div>
-      <input class="qx" type="checkbox" name=""  @click="toggleAll()" :checked="todos.length && todos.every(it => it.completed)">
-      <input id="inputTodo" @keydown.enter="addTodo($event)" type="text" placeholder="what need to be done?">
+      <input class="qx" type="checkbox" name=""  @click="toggleAll" :checked="isAllCompleted">
+      <input id="inputTodo" v-model="inputText" @keydown.enter="addTodo" type="text" placeholder="what need to be done?">
     </div>
     <ul :class="`visibility-${visibleTodos}`">
-      <li :class="todo.completed ? 'completed' : 'active'" v-for="(todo,idx) of countShow(todos)">
+      <li :class="{completed : todo.completed,active : !todo.completed}" v-for="(todo,idx) of countShow">
         <input type="checkbox" :checked="todo.completed" @change="changeTodoState(idx)" >
         <span v-show="editIdx !== idx" @dblclick="edit(idx);" >{{ todo.content }}</span>
         <input
@@ -109,13 +125,13 @@
       </li>
     </ul>
     <div id="bottom">
-      <span><em>{{ todos.filter(it => !it.completed).length }}</em>items left</span>
-      <div>
-        <label><input type="radio" name="visible-select"  @click="visibleTodos = $event.target.value" name="visible-select"  value="all" checked>All</label>
-        <label><input type="radio" @click="visibleTodos = $event.target.value"  name="visible-select" value="active">Active</label>
-        <label><input type="radio" @click="visibleTodos = $event.target.value" name="visible-select"  value="completed">Completed</label>
+      <span><em>{{ remain }}</em>items left</span>
+      <div class="dx">
+        <label ><input v-show="false"  type="radio" name="visible-select"  @click="visibleTodos = $event.target.value" name="visible-select"  value="all" checked>All</label>
+        <label><input v-show="false"  type="radio" @click="visibleTodos = $event.target.value"  name="visible-select" value="active">Active</label>
+        <label><input v-show="false"  type="radio" @click="visibleTodos = $event.target.value" name="visible-select"  value="completed">Completed</label>
       </div>
-      <button @click="clearCompleted()" v-show="todos.some(it => it.completed)">clear completed</button>
+      <button @click="clearCompleted" v-show="showClear">clear completed</button>
     </div>
   </div>
   <script src="./vue-2.7.14.js"></script>
@@ -135,6 +151,27 @@
         }],
         visibleTodos: 'all',
         editIdx: -1,
+
+        inputText : '',
+      },
+      computed : {
+        isAllCompleted(){
+          return this.todos.length && this.todos.every(it => it.completed)
+        },
+        remain() {
+          return this.todos.filter(it => !it.completed).length
+        },
+        showClear(){
+          return this.todos.some(it => it.completed)
+        },
+        countShow(){
+          if(this.visibleTodos == 'completed'){
+            return this.todos.filter(it => it.completed)
+          }else if(this.visibleTodos == 'active'){
+            return this.todos.filter(it => !it.completed)
+          }
+          return this.todos
+        },
       },
       watch:{
         todos:{
@@ -148,23 +185,15 @@
         edit(idx){
           this.editIdx = idx
         },
-        countShow(){
-          if(this.visibleTodos == 'completed'){
-            return this.todos.filter(it => it.completed)
-          }else if(this.visibleTodos == 'active'){
-            return this.todos.filter(it => !it.completed)
-          }
-          return this.todos
-        },
-        addTodo(e){
-          var text = e.target.value.trim()
+        addTodo(){
+          var text = this.inputText.trim()
           if(text){
             this.todos.push({
               content: text,
               completed: false,
             })
           }
-          e.target.value = ''
+          this.inputText = ''
         },
         deleteTodo(idx){
           this.todos.splice(idx,1)
