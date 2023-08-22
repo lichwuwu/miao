@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .completed {
+    .completed  > span,span + input{
       text-decoration: line-through;
       opacity: 0.5;
     }
@@ -20,31 +20,56 @@
 
       >h1{
         text-align: center;
+        font-size: 100px;
+        font-weight: 100;
+        margin: 0;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif ;
       }
       >div:first-of-type{
         margin: auto;
-        width: 410px;
+        >.qx{
+          position: relative;
+          width: 30px;
+          top: 36px;
+        }
         >#inputTodo{
-          width: 360px;
+          width: 484px;
+          height: 18px;
+          padding: 16px 16px 16px 60px;
         }
       }
       >ul{
-        width: 400px;
+        width: 562px;
         margin: auto;
         padding: 0;
+        box-sizing: border-box;
         >li{
+          padding: 16px 0;
           list-style: none;
           margin: 0;
-          border: 1px solid;
+          border-bottom:1px solid ;
+          border-left: 1px solid;
+          border-right: 1px solid;
+          height: 18px;
+          >span + input{
+            width: 528px;
+            position: relative;
+            height: 48px;
+            top: -16px;
+          }
+          >span + input:focus + button{
+            display: none;
+          }
           >button{
             float: right;
+
           }
         }
 
       }
       >#bottom{
         margin: 10px auto;
-        width: 400px;
+        width: 562px;
         font-size: 12px;
         >span{
           float: left;
@@ -55,7 +80,7 @@
         }
         >div{
           display: inline-block;
-          margin-left: 20px;
+          margin-left: 90px;
         }
       }
     }
@@ -65,13 +90,13 @@
   <div class="container">
     <h1>todos</h1>
     <div>
-      <input type="checkbox" name=""  @click="toggleAll()" :checked="todos.length && todos.every(it => it.completed)">
+      <input class="qx" type="checkbox" name=""  @click="toggleAll()" :checked="todos.length && todos.every(it => it.completed)">
       <input id="inputTodo" @keydown.enter="addTodo($event)" type="text" placeholder="what need to be done?">
     </div>
     <ul :class="`visibility-${visibleTodos}`">
       <li :class="todo.completed ? 'completed' : 'active'" v-for="(todo,idx) of countShow(todos)">
         <input type="checkbox" :checked="todo.completed" @change="changeTodoState(idx)" >
-        <span v-show="editIdx !== idx" @dblclick="edit(idx)" >{{ todo.content }}</span>
+        <span v-show="editIdx !== idx" @dblclick="edit(idx);" >{{ todo.content }}</span>
         <input
           @keydown.enter="todo.content = $event.target.value.trim();editIdx = -1"
           @blur="todo.content = $event.target.value.trim();editIdx =-1"
@@ -80,7 +105,7 @@
           type="text"
           :value="todo.content"
           >
-        <button @click="deleteTodo(idx)">&times;</button>
+        <button v-show="editIdx !== idx" id="bh" @click="deleteTodo(idx)">&times;</button>
       </li>
     </ul>
     <div id="bottom">
@@ -160,7 +185,8 @@
         },
         clearCompleted(){
           this.todos = this.todos.filter(it => !it.completed)
-        }
+        },
+
       }
     })
   </script>
